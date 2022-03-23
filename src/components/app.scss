@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Roboto:wght@100&display=swap");
+@import "../utils/variables";
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    max-width: 1020px;
+  }
+}
