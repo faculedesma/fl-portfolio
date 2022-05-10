@@ -1,0 +1,26 @@
+@import '../../utils/variables';
+
+footer {
+  width: 100%;
+  margin-top: 30px;
+
+  .contact {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    li {
+      cursor: pointer;
+      color: $main-font-color;
+
+      a:hover {
+        color: black;
+        transition: 300ms ease-in;
+      }
+    }
+  }
+}

@@ -1,94 +1,125 @@
 @import "../../../utils//variables";
 
 .home-hero {
-  height: 640px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   .hero {
     &-bg {
       height: 100%;
       width: 100%;
-      background-image: url("../../../static/images/bg-image.png");
       background-size: cover;
       animation: hero-load $hero-load-time ease-in-out;
     }
 
-    &-section {
-      width: 100%;
-      position: absolute;
-      left: 0;
-      top: 30%;
+    &-draws {
+      margin-top: 50px;
+      animation: hero-load $hero-load-time ease-in-out;
 
+      &-image {
+        width: 100%;
+        height: 100%;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    &-section {
       &-top {
         animation: hero-top-load $hero-top-load-time ease-in;
         animation-fill-mode: forwards;
 
         p {
           color: $main-font-color;
-          font-size: 55px;
+          font-size: 80px;
+          font-weight: bolder;
+        }
+
+        img {
+          width: 100%;
         }
       }
 
       &-bottom {
-        max-width: 400px;
+        max-width: 500px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         animation: hero-bottom-load $hero-bottom-load-time ease-in;
         animation-fill-mode: forwards;
 
-        p {
+        p:nth-child(1) {
+          animation: hero-bottom-laod-subtitle 1200ms ease-in;
+          animation-fill-mode: forwards;
           color: $secondary-font-color;
-          font-size: 20px;
-          letter-spacing: 2px;
+          font-size: 30px;
+          font-weight: bold;
+        }
+
+        p:nth-child(2) {
+          font-size: 15px;
+          font-weight: 100;
         }
 
         a {
           position: relative;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
           width: 200px;
           height: 50px;
           margin-top: 20px;
-          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           text-decoration: none;
-          font-family: $main-font-family;
           text-transform: uppercase;
-          letter-spacing: 1px;
           color: $main-font-color;
-          transform: translateX(0);
-          transition: 0.3s ease-in;
+          text-align: center;
+          letter-spacing: 1px;
+          border-radius: 4px;
+          border: 2px solid $main-font-color;
+          cursor: pointer;
+          z-index: 1;
+          transition: color ease-in-out 300ms;
         }
 
         a:hover {
-          color: white;
-          transform: translateX(25%);
+          color: black;
         }
 
-        a:before {
+        a::before {
           content: "";
           position: absolute;
           top: 0;
           left: 0;
-          width: 100%;
-          height: 100%;
-          background: url("../../../static/images/btn-bg1.png");
-          background-size: cover;
-          transform: translateX(-500%);
-          transition: 0.3s ease-in;
+          bottom: 0;
+          right: 0;
+          z-index: -1;
+          background-color: $app-main-light-color;
+          border-radius: 4px;
+          transform: scaleX(0);
+          transition: transform ease-in-out 300ms;
         }
 
-        a:hover:before {
-          transform: translateX(-25%);
+        a:hover::before,
+        a:focus::before {
+          transform: scaleX(1);
         }
 
-        a span {
-          position: relative;
-          z-index: 1;
+        > span {
+          opacity: 0.2;
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .home-hero {
+    flex-direction: column;
   }
 }
 
@@ -125,5 +156,19 @@
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes hero-bottom-laod-subtitle {
+  0% {
+    letter-spacing: 11px;
+  }
+
+  50% {
+    letter-spacing: 5px;
+  }
+
+  100% {
+    letter-spacing: 1px;
   }
 }

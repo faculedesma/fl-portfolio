@@ -1,11 +1,15 @@
-//Stetic
-$main-font-family: "Roboto", sans-serif;
-$main-font-color: #574e4e;
-$secondary-font-color: #918484;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Orelega+One&family=Quicksand:wght@700&family=Updock&display=swap');
 
-//Animations
+//Stetic
+$main-font-family: "Josefin Sans", sans-serif;
+$main-font-color: #574e4e;
+$secondary-font-color: #685656;
+$app-bg-color: #f5f4ef;
+$app-main-light-color: #e2fdf4;
+
 $nav-load-time: 300ms;
 $nav-link-load-time: 500ms;
 $hero-load-time: 400ms;
 $hero-top-load-time: 700ms;
 $hero-bottom-load-time: 800ms;
+$about-load-time: 1000ms;
