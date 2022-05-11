@@ -24,26 +24,27 @@ header {
     }
 
     &-logo {
-      width: 25px;
+      width: 60px;
       transform: rotate(0);
       animation: logo-load 600ms ease-in;
       
       img {
         height: 100%;
         width: 100%;
+        transform: scale(0.9);
         transition: 300ms ease-in;
         cursor: pointer;
       }
 
       img:hover,
       img:focus-within {
-        width: 60px;
+        transform: scale(1);
       }
 
       p {
         font-size: 10px;
         padding-left: 5px;
-        transform: scale(0);
+        opacity: 0;
         animation: logo-name 400ms ease-in-out;
         animation-fill-mode: forwards;
       }
@@ -129,10 +130,10 @@ header {
 
 @keyframes logo-name {
   0% {
-    transform: scale(0);
+    opacity: 0;
   }
 
   100% {
-    transform: scale(1);
+    opacity: 1;
   }
 }

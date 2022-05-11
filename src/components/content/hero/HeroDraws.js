@@ -11,7 +11,7 @@ const HeroDraws = () => {
 
   const handleOnHover = () => {
     setIsHover(!isHover);
-    if (!isHover && mounted) toggle();
+    if (mounted) toggle();
   };
 
   useEffect(() => {

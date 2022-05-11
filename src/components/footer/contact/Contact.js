@@ -1,11 +1,16 @@
 import React from "react";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { FiGithub, FiTwitter } from "react-icons/fi";
+import { FiGithub, FiTwitter, FiMail } from "react-icons/fi";
 
 const Contact = () => {
   return (
     <div className="contact">
       <ul>
+        <li>
+          <a href="mailto: faculedesma1993@gmail.com">
+            <FiMail />
+          </a>
+        </li>
         <li>
           <a href="https://github.com/faculedesma" target="_blank">
             <FiGithub />

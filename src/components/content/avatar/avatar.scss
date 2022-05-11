@@ -1,0 +1,57 @@
+@import "../../../utils//variables";
+
+.avatar {
+  animation: avatar-load $avatar-load-time ease-in-out;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border: 2px solid $main-font-color;
+  border-radius: 50%;
+  background-color: $app-bg-color;
+  align-self: center;
+  cursor: pointer;
+  z-index: 1;
+
+  img {
+    width: 65%;
+    height: 85%;
+    position: absolute;
+    top: 8%;
+    left: 17%;
+  }
+}
+
+.avatar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $app-main-light-color;
+  transform: scale(0);
+  transition: transform ease-in-out 300ms;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.avatar:hover::before,
+.avatar:focus::before {
+  transform: scale(1);
+}
+
+@keyframes avatar-load {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

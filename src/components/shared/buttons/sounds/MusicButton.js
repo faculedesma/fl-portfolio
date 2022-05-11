@@ -10,7 +10,9 @@ const MusicButton = () => {
   const handleClick = () => toggle();
 
   return (
-    <a onClick={handleClick}>{playing ? <MdMusicNote /> : <MdMusicOff />}</a>
+    <button onClick={handleClick}>
+      {playing ? <MdMusicNote /> : <MdMusicOff />}
+    </button>
   );
 };
 

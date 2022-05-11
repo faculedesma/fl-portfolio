@@ -4,7 +4,7 @@ import DoorsOpening from "../static/sounds/door-opening.mp3";
 import Header from "./header/Header";
 import Content from "./content/Content";
 import Footer from "./footer/Footer";
-import BeYourself from "./BeYourself";
+import BeYourself from "./shared/BeYourself";
 import "./app.scss";
 
 const App = () => {
