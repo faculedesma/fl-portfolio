@@ -1,5 +1,5 @@
 import React from "react";
-import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { FiGithub, FiTwitter, FiMail } from "react-icons/fi";
 
 const Contact = () => {
@@ -29,6 +29,11 @@ const Contact = () => {
         <li>
           <a href="https://twitter.com/faculedesma93" target="_blank">
             <FiTwitter />
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/+543816435791" target="_blank">
+            <FaWhatsapp />
           </a>
         </li>
       </ul>

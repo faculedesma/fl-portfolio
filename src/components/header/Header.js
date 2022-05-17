@@ -1,13 +1,24 @@
-import React, { useState } from "react";
-import { HashLink as Link } from "react-router-hash-link";
+import React, { useContext } from "react";
 import Logo from "../../static/images/logo-1.png";
-import MusicButton from "../shared/buttons/sounds/MusicButton";
+import MusicButton from "../shared/buttons/MusicButton";
+import MusicNotes from "../shared/animations/MusicNotes";
+import { AnimationsContext } from "../contexts/AnimationsContext";
 import "./header.scss";
 
 const Header = () => {
-  const [isLogoHovered, setIsLogoHovered] = useState(false);
+  const { animations, setAnimations } = useContext(AnimationsContext);
 
-  const handleLogoHover = (isHovered) => setIsLogoHovered(isHovered);
+  const handleContactClick = () => {
+    setAnimations({
+      fireworks: !animations.fireworks,
+    });
+  };
+
+  const handleMusicClick = () => {
+    setAnimations({
+      music: !animations.music,
+    });
+  };
 
   return (
     <header>
@@ -15,20 +26,15 @@ const Header = () => {
         <div className="container">
           <div className="header-section">
             <div className="header-logo">
-              <img
-                onMouseEnter={() => handleLogoHover(true)}
-                onMouseLeave={() => handleLogoHover(false)}
-                src={Logo}
-                alt="logo"
-              />
-              {isLogoHovered && <p>Facundo Ledesma</p>}
+              <img src={Logo} alt="logo" />
+              <p>Facundo Ledesma</p>
             </div>
             <div className="header-menu">
-              <a>
+              <a onClick={handleMusicClick}>
                 <MusicButton />
+                {animations.music && <MusicNotes />}
               </a>
-              {/* <Link to="home">Home</Link> */}
-              <Link to="contact">Contact</Link>
+              <a onClick={handleContactClick}>Contact</a>
             </div>
           </div>
         </div>

@@ -7,8 +7,10 @@ import "./hero.scss";
 const HomeHero = () => {
   return (
     <section className="home-hero">
-      <Avatar />
-      <HeroSection />
+      <div className="home-hero-top">
+        <Avatar />
+        <HeroSection />
+      </div>
       <HeroDraws />
     </section>
   );

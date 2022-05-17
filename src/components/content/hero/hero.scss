@@ -6,6 +6,11 @@
   align-items: center;
   justify-content: space-between;
 
+  &-top {
+    display: flex;
+    flex-direction: column;
+  }
+
   .hero {
     &-bg {
       height: 100%;
@@ -15,7 +20,6 @@
     }
 
     &-draws {
-      margin-top: 50px;
       animation: hero-load $hero-load-time ease-in-out;
 
       &-image {
@@ -33,6 +37,7 @@
       &-top {
         animation: hero-top-load $hero-top-load-time ease-in;
         animation-fill-mode: forwards;
+        margin-left: -25px;
 
         p {
           color: $main-font-color;
@@ -66,7 +71,7 @@
           font-weight: 100;
         }
 
-        a {
+        button {
           position: relative;
           width: 200px;
           height: 50px;
@@ -86,11 +91,11 @@
           transition: color ease-in-out 300ms;
         }
 
-        a:hover {
+        button:hover {
           color: black;
         }
 
-        a::before {
+        button::before {
           content: "";
           position: absolute;
           top: 0;
@@ -104,8 +109,8 @@
           transition: transform ease-in-out 300ms;
         }
 
-        a:hover::before,
-        a:focus::before {
+        button:hover::before,
+        button:focus::before {
           transform: scaleX(1);
         }
 
@@ -120,6 +125,18 @@
 @media only screen and (max-width: 900px) {
   .home-hero {
     flex-direction: column;
+
+    .hero {
+      &-draws {
+        margin-top: 0;
+      }
+
+      // &-section {
+      //   &-top {
+      //     margin-left: 0;
+      //   }
+      // }
+    }
   }
 }
 

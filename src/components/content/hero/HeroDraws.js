@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import useAudio from "../../shared/hooks/useAudio";
-import BrainDamage from "../../../static/sounds/brain-damage.mp3";
+import BrainDamage from "../../../static/sounds/brain-damage-0.mp3";
 import RoomMusicGIF from "../../../static/images/room-music-1-final.png";
 import RoomMusicHoverGIF from "../../../static/images/room-music-0-final.png";
 
@@ -11,7 +11,7 @@ const HeroDraws = () => {
 
   const handleOnHover = () => {
     setIsHover(!isHover);
-    if (mounted) toggle();
+    // if (mounted) toggle();
   };
 
   useEffect(() => {

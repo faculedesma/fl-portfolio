@@ -1,6 +1,7 @@
 @import "../../../utils//variables";
 
 .avatar {
+  align-self: flex-start;
   animation: avatar-load $avatar-load-time ease-in-out;
   position: relative;
   width: 250px;
@@ -8,9 +9,10 @@
   border: 2px solid $main-font-color;
   border-radius: 50%;
   background-color: $app-bg-color;
-  align-self: center;
   cursor: pointer;
   z-index: 1;
+  transform: scale(1);
+  transition: transform 200ms ease-in;
 
   img {
     width: 65%;
@@ -19,6 +21,10 @@
     top: 8%;
     left: 17%;
   }
+}
+
+.avatar:hover {
+  transform: scale(1.1);
 }
 
 .avatar::before {
@@ -38,6 +44,12 @@
 .avatar:hover::before,
 .avatar:focus::before {
   transform: scale(1);
+}
+
+@media only screen and (max-width: 900px) {
+  .avatar {
+    align-self: center;
+  }
 }
 
 @keyframes avatar-load {

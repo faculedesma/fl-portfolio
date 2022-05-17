@@ -1,14 +1,19 @@
 @import '../../utils/variables';
 
 footer {
-  width: 100%;
-  margin-top: 30px;
+  position: fixed;
+  right: 0;
+  bottom: 30px;
+  background-color: rgba(244, 243, 239, 0.6);
+  border-radius: 5px;
+  z-index: 99;
 
   .contact {
     ul {
       list-style-type: none;
       padding: 0;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: space-around;
     }
@@ -16,11 +21,26 @@ footer {
     li {
       cursor: pointer;
       color: $main-font-color;
+      transform: scale(1);
+      margin-top: 30px;
+      transition: all 500ms ease-in;
 
       a:hover {
         color: black;
-        transition: 300ms ease-in;
+        transition: all 500ms ease-in;
       }
+    }
+    
+    li:hover {
+      transform: scale(1.2);
     }
   }
 }
+
+@media only screen and (max-width: 900px) {
+  footer {
+    top: 40px;
+    bottom: unset;
+  }
+}
+
