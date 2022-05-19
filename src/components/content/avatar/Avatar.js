@@ -1,5 +1,5 @@
 import React from "react";
-import AvatarPNG from "../../../static/images/avatar.png";
+import AvatarPNG from "../../../assets/images/avatar.png";
 import "./avatar.scss";
 
 const Avatar = () => {

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import Logo from "../../static/images/logo-1.png";
-import MusicButton from "../shared/buttons/MusicButton";
-import MusicNotes from "../shared/animations/MusicNotes";
+import Logo from "../../assets/images/logo-1.png";
+import MusicButton from "../common/buttons/MusicButton";
+import MusicNotes from "../common/animations/MusicNotes";
 import { AnimationsContext } from "../contexts/AnimationsContext";
 import "./header.scss";
 

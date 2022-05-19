@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AnimationsContext } from "../../contexts/AnimationsContext";
-import MainTitleGIF from "../../../static/images/main-title.png";
+import MainTitleGIF from "../../../assets/images/main-title.png";
 
 const HeroSection = () => {
   const { animations, setAnimations } = useContext(AnimationsContext);

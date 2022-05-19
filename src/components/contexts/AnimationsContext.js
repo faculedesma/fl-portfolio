@@ -1,8 +1,9 @@
 import React from "react";
 
-export const defaultContextValue = {
+export const defaultContextValues = {
   animations: {
     fireworks: false,
+    ["arrow-right"]: false,
     music: false,
   },
   setAnimations: () => {},
