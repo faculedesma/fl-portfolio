@@ -37,3 +37,26 @@ footer {
   }
 }
 
+@media only screen and (max-width: 900px) {
+  footer {
+    height: 50px;
+    position: unset;
+
+    .container {
+      position: relative;
+      height: 100%;
+      
+      .contact {
+        ul {
+          flex-direction: row ;
+  
+          li {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+  }
+}
+

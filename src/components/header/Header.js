@@ -9,6 +9,8 @@ const Header = () => {
   const { animations, setAnimations } = useContext(AnimationsContext);
 
   const handleContactClick = () => {
+    const footer = document.getElementById("footer");
+    footer.scrollIntoView({ behavior: "smooth" });
     setAnimations({
       fireworks: !animations.fireworks,
     });

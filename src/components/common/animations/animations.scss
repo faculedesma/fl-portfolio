@@ -4,13 +4,13 @@
 }
 
 .fireworks {
-	top: 10%;
+	bottom: 50px;
 	right: 30%;
   width: 200px;
 }
 
 .arrow-right {
-	top: 30%;
+	bottom: 50px;
 	right: 65%;
   width: 120px;
   opacity: 0.4;
@@ -19,4 +19,21 @@
 .music-notes {
   bottom: 0;
   width: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+  .arrow-right, .fireworks {
+    right: unset;
+    left: 0;
+  }
+  
+  .arrow-right {
+    bottom: 65px;
+    transform: rotate(90deg);
+  }
+  
+  .fireworks {
+    bottom: 50px;
+    width: 200px;
+  }
 }
