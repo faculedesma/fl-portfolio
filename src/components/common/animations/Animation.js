@@ -3,7 +3,7 @@ import { AnimationsContext } from "../../contexts/AnimationsContext";
 import lottie from "lottie-web";
 import "./animations.scss";
 
-const Animation = ({ name, file }) => {
+const Animation = ({ name, file, loop }) => {
   const container = useRef(null);
   const { animations, setAnimations } = useContext(AnimationsContext);
 
@@ -18,7 +18,7 @@ const Animation = ({ name, file }) => {
       container: container.current,
       animationData: file,
       renderer: "svg",
-      loop: false,
+      loop: loop || false,
       autoplay: false,
       setQuality: "low",
     });

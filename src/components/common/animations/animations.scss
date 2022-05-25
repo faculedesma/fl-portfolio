@@ -21,6 +21,15 @@
   width: 100px;
 }
 
+.strings {
+  width: 200px;
+  z-index: 9;
+}
+
+.pulse {
+  width: 200px;
+}
+
 @media only screen and (max-width: 600px) {
   .arrow-right, .fireworks {
     right: unset;
