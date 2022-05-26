@@ -1,18 +1,22 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import useAudio from "../../hooks/useAudio";
 import BrainDamage from "../../../assets/sounds/brain-damage-0.mp3";
 import RoomMusicPNG from "../../../assets/images/room-music-1-final.png";
 import RoomMusicHoverPNG from "../../../assets/images/room-music-0-final.png";
+import { AudioContext } from "../../contexts/AudioContext";
 
 const HeroDraws = () => {
   const [shouldToggle, setShouldToggle] = useState(false);
   const [playing, toggle] = useAudio(BrainDamage);
+  const { audio } = useContext(AudioContext);
   const mounted = useRef(false);
 
   const handleOnMouseEnter = () => {
     if (mounted) {
       setShouldToggle(true);
-      toggle();
+      if (audio) {
+        toggle();
+      }
     }
   };
 
@@ -21,7 +25,9 @@ const HeroDraws = () => {
       return;
     } else {
       setShouldToggle(false);
-      toggle();
+      if (audio) {
+        toggle();
+      }
     }
   };
 
@@ -34,7 +40,9 @@ const HeroDraws = () => {
 
   useEffect(() => {
     if (!playing && shouldToggle) {
-      toggle();
+      if (audio) {
+        toggle();
+      }
     }
   }, [playing, shouldToggle]);
 

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Logo from "../../assets/images/logo-1.png";
 import MusicButton from "../common/buttons/MusicButton";
-import MusicNotes from "../common/animations/MusicNotes";
 import { AnimationsContext } from "../contexts/AnimationsContext";
 import "./header.scss";
 
@@ -16,12 +15,6 @@ const Header = () => {
     });
   };
 
-  const handleMusicClick = () => {
-    setAnimations({
-      music: !animations.music,
-    });
-  };
-
   return (
     <header>
       <div className="header-container">
@@ -32,10 +25,7 @@ const Header = () => {
               <p>Facundo Ledesma</p>
             </div>
             <div className="header-menu">
-              <a onClick={handleMusicClick}>
-                <MusicButton />
-                {animations.music && <MusicNotes />}
-              </a>
+              <MusicButton />
               <a onClick={handleContactClick}>Contact</a>
             </div>
           </div>

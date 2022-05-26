@@ -16,6 +16,7 @@ header {
 
     &-logo,
     &-menu {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -76,6 +77,7 @@ header {
 
       a:hover,
       a:focus {
+        //TODO: why is lagging
         color: black;
         font-size: 13px;
         transition: 0.3s ease-in;

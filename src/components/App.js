@@ -10,12 +10,17 @@ import {
   AnimationsContext,
   defaultContextValues,
 } from "./contexts/AnimationsContext";
+import {
+  AudioContext,
+  defaultAudioContextValues,
+} from "./contexts/AudioContext";
 import "./app.scss";
 
-const pageLoadTime = 8000;
+const pageLoadTime = 7000;
 
 const App = () => {
   const [animations, setAnimations] = useState(defaultContextValues);
+  const [audio, setAudio] = useState(defaultAudioContextValues);
   const [isLoading, setIsLoading] = useState(true);
   const [playing, toggle] = useAudio(DoorsOpening);
   const mounted = useRef(false);
@@ -34,8 +39,8 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (mounted.current & !isLoading) {
-      toggle(); //TODO: add sound context
+    if (mounted.current && !isLoading && audio) {
+      toggle();
     }
   }, [isLoading]);
 
@@ -43,13 +48,15 @@ const App = () => {
 
   return (
     <AnimationsContext.Provider value={{ animations, setAnimations }}>
-      <div className={`app ${isLoading ? "" : "animate"}`}>
-        <Header />
-        <Content />
-        <Footer />
-        <BeYourself />
-      </div>
-      {isLoading && <Loader />}
+      <AudioContext.Provider value={{ audio, setAudio }}>
+        <div className={`app ${isLoading ? "" : "animate"}`}>
+          <Header />
+          <Content />
+          <Footer />
+          <BeYourself />
+        </div>
+        {isLoading && <Loader />}
+      </AudioContext.Provider>
     </AnimationsContext.Provider>
   );
 };

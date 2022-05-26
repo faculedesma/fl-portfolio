@@ -14,6 +14,7 @@ const useAudio = (url) => {
   }, []);
 
   useEffect(() => {
+    // TODO: fade in & fade out
     if (playing) {
       audio.volume = 0.5;
       audio.play();
