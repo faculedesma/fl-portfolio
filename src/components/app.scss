@@ -6,6 +6,7 @@ body {
 }
 
 .app {
+  display: none;
   width: 100vw;
   background-color: #f5f4f0;
   background-image: url("../assets/images/bg-main.png");
@@ -32,6 +33,10 @@ body {
   a { 
     color: $main-font-color;
   }
+}
+
+.animate {
+  display: inherit;
 }
 
 .container {
