@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
+import MainTitle from "./MainTitle";
 import { AnimationsContext } from "../../contexts/AnimationsContext";
-import MainTitleGIF from "../../../assets/images/main-title.png";
 
 const HeroSection = () => {
   const { animations, setAnimations } = useContext(AnimationsContext);
 
   const handleClick = () => {
+    const footer = document.getElementById("footer");
+    footer.scrollIntoView({ behavior: "smooth" });
     setAnimations({
       fireworks: !animations.fireworks,
     });
@@ -14,7 +16,7 @@ const HeroSection = () => {
   return (
     <div className="hero-section">
       <div className="hero-section-top">
-        <img src={MainTitleGIF} />
+        <MainTitle />
       </div>
       <div className="hero-section-bottom">
         <p>Trying to live the present moment by doing things I love</p>

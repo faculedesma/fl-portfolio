@@ -1,0 +1,143 @@
+@import "../../../utils//variables";
+
+#main-title {
+  animation: letter-fill 0.5s ease-in-out forwards 2.4s;
+  
+  path {
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  path:hover {
+    animation: letter-hover 1s ease-in-out forwards;
+  }
+
+  path:nth-child(1) {
+    stroke-dasharray: 246.5279998779297;
+    stroke-dashoffset: 246.5279998779297;
+    animation: dash-animation 1s ease-in-out forwards 1s;
+  }
+
+  path:nth-child(2) {
+    stroke-dasharray: 86.3968734741211;
+    stroke-dashoffset: 86.3968734741211;
+    animation: dash-animation 1s ease-in-out forwards 1.1s;
+  }
+
+  path:nth-child(3) {
+    stroke-dasharray: 38.82335662841797;
+    stroke-dashoffset: 38.82335662841797;
+    animation: dash-animation 1s ease-in-out forwards 1.2s;
+  }
+
+  path:nth-child(4) {
+    stroke-dasharray: 104.96002197265625;
+    stroke-dashoffset: 104.96002197265625;
+    animation: dash-animation 1s ease-in-out forwards 1.3s;
+  }
+
+  path:nth-child(5) {
+    stroke-dasharray: 28.23464012145996;
+    stroke-dashoffset: 28.23464012145996;
+    animation: dash-animation 1s ease-in-out forwards 1.4s;
+  }
+
+  path:nth-child(6) {
+    stroke-dasharray: 228.4973907470703;
+    stroke-dashoffset: 228.4973907470703;
+    animation: dash-animation 1s ease-in-out forwards 1.5s;
+  }
+
+  path:nth-child(7) {
+    stroke-dasharray: 184.70401000976562;
+    stroke-dashoffset: 184.70401000976562;
+    animation: dash-animation 1s ease-in-out forwards 1.6s,
+    letter-fill-colored 1s ease-in-out forwards 3s;
+  }
+  
+  path:nth-child(8) {
+    stroke-dasharray: 179.66378784179688;
+    stroke-dashoffset: 179.66378784179688;
+    animation: dash-animation 1s ease-in-out forwards 1.7s;
+  }
+
+  path:nth-child(9) {
+    stroke-dasharray: 116.37446594238281;
+    stroke-dashoffset: 116.37446594238281;
+    animation: dash-animation 1s ease-in-out forwards 1.8s;
+  }
+
+  path:nth-child(10) {
+    stroke-dasharray: 149.0155792236328;
+    stroke-dashoffset: 149.0155792236328;
+    animation: dash-animation 1s ease-in-out forwards 1.9s;
+  }
+
+  path:nth-child(11) {
+    stroke-dasharray: 149.51441955566406;
+    stroke-dashoffset: 149.51441955566406;
+    animation: dash-animation 1s ease-in-out forwards 2s;
+  }
+
+  path:nth-child(12) {
+    stroke-dasharray: 227.94357299804688;
+    stroke-dashoffset: 227.94357299804688;
+    animation: dash-animation 1s ease-in-out forwards 2.1s;
+  }
+
+  path:nth-child(13) {
+    stroke-dasharray: 147.0243682861328;
+    stroke-dashoffset: 147.0243682861328;
+    animation: dash-animation 1s ease-in-out forwards 2.2s;
+  }
+}
+
+@keyframes dash-animation {
+  to {
+    stroke-dashoffset: 0%;
+  }
+}
+
+@keyframes letter-fill {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: #444445;
+  }
+}
+
+@keyframes letter-fill-colored {
+  from {
+    fill: #444445;
+  }
+
+  to {
+    fill: #bafbfa;
+  }
+}
+
+@keyframes letter-hover {
+  0% {
+    transform: scaleY(0.3)
+  }
+
+  25% {
+    transform: scaleY(0.6)
+  }
+
+  50% {
+    transform: scaleY(1)
+  }
+
+  75% {
+    transform: scaleY(1.3)
+  }
+
+  100% {
+    transform: scaleY(1)
+  }
+}

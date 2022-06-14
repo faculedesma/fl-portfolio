@@ -3,6 +3,7 @@ import useAudio from "../../hooks/useAudio";
 import BrainDamage from "../../../assets/sounds/brain-damage-0.mp3";
 import RoomMusicPNG from "../../../assets/images/room-music-1-final.png";
 import RoomMusicHoverPNG from "../../../assets/images/room-music-0-final.png";
+import DSOTMFrame from "../../../assets/images/dsotm-frame.png";
 import { AudioContext } from "../../contexts/AudioContext";
 
 const HeroDraws = () => {
@@ -10,15 +11,6 @@ const HeroDraws = () => {
   const [playing, toggle] = useAudio(BrainDamage);
   const { audio } = useContext(AudioContext);
   const mounted = useRef(false);
-
-  const handleOnMouseEnter = () => {
-    if (mounted) {
-      setShouldToggle(true);
-      if (audio) {
-        toggle();
-      }
-    }
-  };
 
   const handleOnMouseLeave = () => {
     if (!playing) {
@@ -28,6 +20,13 @@ const HeroDraws = () => {
       if (audio) {
         toggle();
       }
+    }
+  };
+
+  const onDSOFTMClick = () => {
+    setShouldToggle(true);
+    if (audio) {
+      toggle();
     }
   };
 
@@ -50,14 +49,16 @@ const HeroDraws = () => {
     <div className="hero-draws">
       <div className="hero-draws-image">
         <img
+          className={`dsotm-logo ${shouldToggle ? "hide-dsotm" : ""}`}
+          src={DSOTMFrame}
+          onClick={onDSOFTMClick}
+        />
+        <img
           className={shouldToggle ? "hide-room" : "show-room"}
-          onMouseEnter={handleOnMouseEnter}
-          onMouseLeave={handleOnMouseLeave}
           src={RoomMusicPNG}
         />
         <img
           className={shouldToggle ? "show-room-hove" : "hide-room-hover"}
-          onMouseEnter={handleOnMouseEnter}
           onMouseLeave={handleOnMouseLeave}
           src={RoomMusicHoverPNG}
         />

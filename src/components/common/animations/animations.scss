@@ -30,14 +30,14 @@
   width: 200px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .arrow-right, .fireworks {
     right: unset;
-    left: 0;
+    left: 50px;
   }
   
   .arrow-right {
-    bottom: 65px;
+    bottom: 100px;
     transform: rotate(90deg);
   }
   
