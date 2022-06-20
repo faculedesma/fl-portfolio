@@ -8,7 +8,7 @@ body {
 .app {
   display: none;
   width: 100vw;
-  background-color: #f5f4f0;
+  background-color: $app-bg-color;
   background-image: url("../assets/images/bg-main.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -40,7 +40,7 @@ body {
 }
 
 .container {
-  max-width: 1320px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
 }

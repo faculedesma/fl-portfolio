@@ -10,6 +10,11 @@
   align-items: center;
   justify-content: center;
   background-color: $app-bg-color;
+  background-color: #f5f4f0;
+  background-image: url("../../assets/images/bg-main.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 99;
   
   .animation {

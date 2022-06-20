@@ -24,13 +24,22 @@
 .strings {
   width: 200px;
   z-index: 9;
+
+  svg {
+    opacity: 0.5;
+  }
 }
 
 .pulse {
   width: 200px;
+  
+  svg {
+    opacity: 0.5;
+  }
 }
 
-@media only screen and (max-width: 900px) {
+
+@media only screen and (max-width: 1280px) {
   .arrow-right, .fireworks {
     right: unset;
     left: 50px;
