@@ -8,6 +8,7 @@ body {
 .app {
   display: none;
   width: 100vw;
+  min-height: 100vh;
   background-color: $app-bg-color;
   background-image: url("../assets/images/bg-main.png");
   background-attachment: fixed;
