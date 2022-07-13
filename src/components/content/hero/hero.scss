@@ -166,8 +166,12 @@
 
 @media only screen and (min-width: 1280px) {
   .home-hero {
-    &-section {
-      min-width: 400px;
+    .hero {
+      &-section {
+        &-top {
+          min-width: 400px;
+        }
+      }
     }
   }
 }

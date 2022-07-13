@@ -11,6 +11,7 @@ const HeroDraws = () => {
   const [playing, toggle] = useAudio(BrainDamage);
   const { audio } = useContext(AudioContext);
   const mounted = useRef(false);
+  const hoverImgRef = useRef(null);
 
   const handleOnMouseLeave = () => {
     if (!playing) {
@@ -23,7 +24,7 @@ const HeroDraws = () => {
     }
   };
 
-  const onDSOFTMClick = () => {
+  const handleDSOFTMClick = () => {
     setShouldToggle(true);
     if (audio) {
       toggle();
@@ -45,22 +46,35 @@ const HeroDraws = () => {
     }
   }, [playing, shouldToggle]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (hoverImgRef.current && !hoverImgRef.current.contains(event.target)) {
+        handleOnMouseLeave && handleOnMouseLeave();
+      }
+    };
+    document.addEventListener("click", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, true);
+    };
+  }, [handleOnMouseLeave]);
+
   return (
     <div className="hero-draws">
       <div className="hero-draws-image">
         <img
           className={`dsotm-logo ${shouldToggle ? "hide-dsotm" : ""}`}
           src={DSOTMFrame}
-          onClick={onDSOFTMClick}
+          onClick={handleDSOFTMClick}
         />
         <img
           className={shouldToggle ? "hide-room" : "show-room"}
           src={RoomMusicPNG}
         />
         <img
-          className={shouldToggle ? "show-room-hove" : "hide-room-hover"}
+          className={shouldToggle ? "show-room-hover" : "hide-room-hover"}
           onMouseLeave={handleOnMouseLeave}
           src={RoomMusicHoverPNG}
+          ref={hoverImgRef}
         />
       </div>
     </div>
