@@ -1,6 +1,6 @@
 import React from "react";
-import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
-import { FiGithub, FiTwitter, FiMail } from "react-icons/fi";
+import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { FiGithub, FiMail } from "react-icons/fi";
 
 const Contact = () => {
   return (
@@ -14,11 +14,6 @@ const Contact = () => {
         <li>
           <a href="https://github.com/faculedesma" target="_blank">
             <FiGithub />
-          </a>
-        </li>
-        <li>
-          <a href="https://instagram.com/faculedesma73" target="_blank">
-            <FaInstagram />
           </a>
         </li>
         <li>
