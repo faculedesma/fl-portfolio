@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import useAudio from "../../hooks/useAudio";
 import BrainDamage from "../../../assets/sounds/brain-damage-0.mp3";
 import RoomMusicPNG from "../../../assets/images/room-music-1-final.png";
-import RoomMusicHoverPNG from "../../../assets/images/room-music-0-final.png";
+import RoomMusicHoverPNG from "../../../assets/images/room-music-0-final.gif";
 import DSOTMFrame from "../../../assets/images/dsotm-frame.png";
 import { AudioContext } from "../../contexts/AudioContext";
 

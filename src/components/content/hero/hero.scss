@@ -20,7 +20,7 @@
     }
 
     &-draws {
-      animation: hero-load $hero-load-time ease-in-out;
+      animation: hero-load 1000 ease-in-out; /*using hero-load animation for img & video transitions*/
 
       &-image {
         position: relative;
@@ -30,6 +30,7 @@
         img {
           height: 100%;
           width: 100%;
+          animation: hero-load $hero-load-time ease-in-out;
         }
 
         .hide-room, .hide-room-hover {
@@ -52,7 +53,7 @@
       }
 
       .hide-dsotm {
-        visibility: hidden;
+        display: none;
       }
     }
 
