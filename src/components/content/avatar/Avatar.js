@@ -1,13 +1,13 @@
 import React from "react";
-import AvatarPNG from "../../../assets/images/avatar.png";
+import AvatarPNG from "../../../assets/images/avatar.webp";
 import "./avatar.scss";
 
 const Avatar = () => {
   return (
     //TODO: add event on click modal with brief story
-    <div className="avatar">
+    <picture className="avatar">
       <img src={AvatarPNG} />
-    </div>
+    </picture>
   );
 };
 
