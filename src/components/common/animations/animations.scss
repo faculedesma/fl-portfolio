@@ -9,16 +9,22 @@
   width: 200px;
 }
 
-.arrow-right {
+.arrow {
 	bottom: 50px;
 	right: 65%;
   width: 120px;
   opacity: 0.4;
 }
 
-.music-notes {
+.music {
   bottom: 0;
   width: 100px;
+}
+
+.hand {
+  top: 40%;
+  left: 15%;
+  width: 5%;
 }
 
 .strings {
@@ -38,14 +44,13 @@
   }
 }
 
-
 @media only screen and (max-width: 1280px) {
-  .arrow-right, .fireworks {
+  .arrow, .fireworks {
     right: unset;
     left: 50px;
   }
   
-  .arrow-right {
+  .arrow {
     bottom: 100px;
     transform: rotate(90deg);
   }

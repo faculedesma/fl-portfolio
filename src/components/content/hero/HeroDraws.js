@@ -5,28 +5,31 @@ import RoomMusicWEBM from "../../../assets/images/room-music-animation.webm";
 import RoomMusicHoverWEBM from "../../../assets/images/room-music-hover-animation.webm";
 import DSOTMFrame from "../../../assets/images/dsotm-frame.webp";
 import { AudioContext } from "../../contexts/AudioContext";
+import { AnimationsContext } from "../../contexts/AnimationsContext";
+import HandPoint from "../../common/animations/HandPoint";
 
 const HeroDraws = () => {
   const [shouldToggle, setShouldToggle] = useState(false);
   const [playing, toggle] = useAudio(BrainDamage);
   const { audio } = useContext(AudioContext);
+  const { animations, toggleAnimation } = useContext(AnimationsContext);
   const mounted = useRef(false);
   const hoverImgRef = useRef(null);
 
   const handleOnMouseLeave = () => {
-    if (!playing) {
+    if (!shouldToggle) {
       return;
-    } else {
-      setShouldToggle(false);
-      if (audio) {
-        toggle();
-      }
+    }
+    setShouldToggle(false);
+    toggleAnimation("hand");
+    if (audio) {
+      toggle();
     }
   };
 
   const handleDSOFTMClick = () => {
     setShouldToggle(true);
-    document.getElementById("psych-room").play();
+    toggleAnimation("hand");
 
     if (audio) {
       toggle();
@@ -35,10 +38,6 @@ const HeroDraws = () => {
 
   useEffect(() => {
     mounted.current = true;
-    const waiting = document.getElementById("waiting-room");
-    waiting.muted = true;
-    waiting.play();
-
     return () => {
       mounted.current = false;
     };
@@ -71,16 +70,16 @@ const HeroDraws = () => {
           className={`dsotm-logo ${shouldToggle ? "hide-dsotm" : ""}`}
           onClick={handleDSOFTMClick}
         >
-          <source srcset={DSOTMFrame} type="image/webp" />
+          <source src={DSOTMFrame} type="image/webp" />
         </picture>
+        {animations.hand && <HandPoint />}
         <video
           id="waiting-room"
           src={RoomMusicWEBM}
           className={shouldToggle ? "hide-room" : "show-room"}
           type="video/webm"
-          preload
           loop
-          autoplay
+          autoPlay
           muted
         ></video>
         <video
@@ -90,9 +89,8 @@ const HeroDraws = () => {
           className={shouldToggle ? "show-room-hover" : "hide-room-hover"}
           onMouseLeave={handleOnMouseLeave}
           type="video/webm"
-          preload
           loop
-          autoplay
+          autoPlay
           muted
         ></video>
       </div>

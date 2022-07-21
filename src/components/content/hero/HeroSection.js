@@ -3,14 +3,12 @@ import MainTitle from "./MainTitle";
 import { AnimationsContext } from "../../contexts/AnimationsContext";
 
 const HeroSection = () => {
-  const { animations, setAnimations } = useContext(AnimationsContext);
+  const { animations, toggleAnimation } = useContext(AnimationsContext);
 
   const handleClick = () => {
     const footer = document.getElementById("footer");
     footer.scrollIntoView({ behavior: "smooth" });
-    setAnimations({
-      fireworks: !animations.fireworks,
-    });
+    toggleAnimation(["fireworks", "arrow"]);
   };
 
   return (

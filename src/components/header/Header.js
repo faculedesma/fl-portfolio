@@ -5,14 +5,12 @@ import { AnimationsContext } from "../contexts/AnimationsContext";
 import "./header.scss";
 
 const Header = () => {
-  const { animations, setAnimations } = useContext(AnimationsContext);
+  const { toggleAnimation } = useContext(AnimationsContext);
 
   const handleContactClick = () => {
     const footer = document.getElementById("footer");
     footer.scrollIntoView({ behavior: "smooth" });
-    setAnimations({
-      fireworks: !animations.fireworks,
-    });
+    toggleAnimation(["fireworks", "arrow"]);
   };
 
   return (
