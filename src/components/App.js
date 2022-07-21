@@ -16,7 +16,7 @@ import {
 } from "./contexts/AudioContext";
 import "./app.scss";
 
-const pageLoadTime = 3000;
+const pageLoadTime = 4000;
 
 const App = () => {
   const [animations, setAnimations] = useState(defaultContextValues.animations);
