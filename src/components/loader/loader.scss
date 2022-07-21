@@ -16,27 +16,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 99;
-  
+
   .animation {
-    transform: scale(0);
-    animation: initial-loader-animation 800 ease-in-out;
-    animation-fill-mode: forwards;
     cursor: pointer;
-  }
-}
-
-@keyframes initial-loader-animation {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
   }
 }

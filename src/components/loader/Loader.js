@@ -1,13 +1,11 @@
 import React from "react";
-import Strings from "../common/animations/Strings";
-import Pulse from "../common/animations/Pulse";
+import Satellite from "../common/animations/Satellite";
 import "./loader.scss";
 
 const Loader = () => {
   return (
     <div className="initial-loader">
-      <Strings />
-      <Pulse />
+      <Satellite />
     </div>
   );
 };
