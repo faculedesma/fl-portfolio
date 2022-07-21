@@ -5,12 +5,10 @@ import "./animations.scss";
 
 const Animation = ({ name, file, loop }) => {
   const container = useRef(null);
-  const { animations, setAnimations } = useContext(AnimationsContext);
+  const { toggleAnimation } = useContext(AnimationsContext);
 
   const handleComplete = () => {
-    setAnimations({
-      [name]: !animations[name],
-    });
+    toggleAnimation(name);
   };
 
   useEffect(() => {
@@ -27,7 +25,7 @@ const Animation = ({ name, file, loop }) => {
     animation.play();
   }, []);
 
-  return <div className={name} ref={container}></div>;
+  return <div className={`animation ${name}`} ref={container}></div>;
 };
 
 export default Animation;

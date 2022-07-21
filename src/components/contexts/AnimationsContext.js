@@ -1,12 +1,12 @@
-import React from "react";
+import * as React from "react";
 
 export const defaultContextValues = {
   animations: {
     fireworks: false,
-    ["arrow-right"]: false,
+    arrow: false,
     music: false,
+    hand: true,
   },
-  setAnimations: () => {},
 };
 
 export const AnimationsContext = React.createContext();
