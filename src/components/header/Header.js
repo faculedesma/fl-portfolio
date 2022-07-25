@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Logo from "../../assets/images/logo.webp";
+import Logo from "../../assets/images/logo.png";
 import MusicButton from "../common/buttons/MusicButton";
 import { AnimationsContext } from "../contexts/AnimationsContext";
 import "./header.scss";
