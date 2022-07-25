@@ -1,4 +1,4 @@
-![fl][logo]
+![fl][avatar]
 
 # Facundo Ledesma's Portfolio
 
@@ -80,4 +80,4 @@ Project Link: [https://github.com/faculedesma/fl-portfolio](https://github.com/f
 [bruno-simon-url]: https://bruno-simon.com/
 [jacek-jeznach-url]: https://jacekjeznach.com/
 [robby-leonardi-url]: http://www.rleonardi.com/
-[logo]: https://github.com/faculedesma/fl-portfolio/blob/main/src/assets/images/logo.png
+[logo]: https://github.com/faculedesma/fl-portfolio/blob/main/src/assets/images/avatar.png
