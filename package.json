@@ -1,7 +1,7 @@
 {
   "homepage": "https://faculedesma.github.io/fl-portfolio",
   "name": "fl-portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@babel/preset-react": "^7.18.6",
@@ -17,7 +17,7 @@
     "build": "webpack",
     "dev": "webpack serve"
   },
-  "author": "",
+  "author": "Facundo Ledesma",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.17.8",
