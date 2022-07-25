@@ -5,7 +5,7 @@ Created with love :star2:.
 ## About The Project
 
 I've created this project with the motivation to mix my passions for art :art:, music :guitar: & computers :computer:. I felt that the best way to do it was creating my own animations and draws (some are borrowed from lottie files) and represent all things i love that connect me with myself and the world :earth_americas:.
-Took inspiration of some awesome websites :boom: out there that i really recommend you to see if you enjoy creativity, somo of them are:
+Took inspiration of some awesome websites :boom: out there that i really recommend you to see if you enjoy creativity, some of them are:
 
 - [Bruno Simon][bruno-simon-url]
 - [Robby Leonardi][robby-leonardi-url]
