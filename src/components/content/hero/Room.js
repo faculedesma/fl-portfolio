@@ -7,6 +7,7 @@ import CancionAnimal from "../../../assets/images/layers/cancion-animal.png";
 import DSOTM from "../../../assets/images/layers/dsotm.png";
 import Guy from "../../../assets/images/layers/guy.png";
 import Electricity from "../../../assets/images/layers/electricity.png";
+import Eyes from "../../../assets/images/layers/eyes.png";
 import KeyWest from "../../../assets/images/layers/key-west.png";
 import Lamp from "../../../assets/images/layers/lamp.png";
 import LeftSpeaker from "../../../assets/images/layers/left-speaker.png";
@@ -32,6 +33,7 @@ const Room = ({ onClickDSOTM }) => {
       <img src={CancionAnimal} className="cancion-animal" />
       <img src={DSOTM} className="dsotm" onClick={onClickDSOTM} />
       <img src={Electricity} className="electricity" />
+      <img src={Eyes} className="eyes" />
       <img src={KeyWest} className="key-west" />
       <img src={Guy} className="guy" />
       <img src={Lamp} className="lamp" />
