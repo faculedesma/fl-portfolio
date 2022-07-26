@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import useAudio from "../../hooks/useAudio";
 import BrainDamage from "../../../assets/sounds/brain-damage-0.mp3";
-import RoomMusicWEBM from "../../../assets/images/room-music-animation.webm";
 import RoomMusicHoverWEBM from "../../../assets/images/room-music-hover-animation.webm";
-import DSOTMFrame from "../../../assets/images/dsotm-frame.webp";
 import { AudioContext } from "../../contexts/AudioContext";
 import { AnimationsContext } from "../../contexts/AnimationsContext";
 import HandPoint from "../../common/animations/HandPoint";
+import Room from "./Room";
 
 const HeroDraws = () => {
   const [shouldToggle, setShouldToggle] = useState(false);
@@ -28,7 +27,7 @@ const HeroDraws = () => {
   };
 
   const handleDSOFTMClick = () => {
-    setShouldToggle(true);
+    setShouldToggle(!shouldToggle);
     toggleAnimation("hand");
 
     if (audio) {
@@ -66,33 +65,22 @@ const HeroDraws = () => {
   return (
     <div className="hero-draws">
       <div className="hero-draws-image">
-        <picture
-          className={`dsotm-logo ${shouldToggle ? "hide-dsotm" : ""}`}
-          onClick={handleDSOFTMClick}
-        >
-          <source src={DSOTMFrame} type="image/webp" />
-        </picture>
         {animations.hand && <HandPoint />}
-        <video
-          id="waiting-room"
-          src={RoomMusicWEBM}
-          className={shouldToggle ? "hide-room" : "show-room"}
-          type="video/webm"
-          loop
-          autoPlay
-          muted
-        ></video>
-        <video
-          id="psych-room"
-          ref={hoverImgRef}
-          src={RoomMusicHoverWEBM}
-          className={shouldToggle ? "show-room-hover" : "hide-room-hover"}
-          onMouseLeave={handleOnMouseLeave}
-          type="video/webm"
-          loop
-          autoPlay
-          muted
-        ></video>
+        <Room onClickDSOTM={handleDSOFTMClick} />
+      </div>
+      <div className="hero-draws-videos">
+        {shouldToggle && (
+          <video
+            id="psych-room"
+            ref={hoverImgRef}
+            src={RoomMusicHoverWEBM}
+            onMouseLeave={handleOnMouseLeave}
+            type="video/webm"
+            loop
+            autoPlay
+            muted
+          ></video>
+        )}
       </div>
     </div>
   );

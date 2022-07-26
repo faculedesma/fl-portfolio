@@ -1,0 +1,207 @@
+.room {
+  img {
+    width: 100%;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .amp {
+    width: 12%;
+    top: 47%;
+    left: 6%;
+    z-index: 1;
+  }
+
+  .artaud {
+    width: 8%;
+    top: 15%;
+    left: 46.5%;
+    z-index: 1;
+  }
+
+  .base {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    cursor: inherit;
+  }
+
+  .cactus {
+    width: 7%;
+    top: 49%;
+    right: 6%;
+    z-index: 1;
+  }
+
+  .cancion-animal {
+    width: 7%;
+    top: 49%;
+    left: 62%;
+    z-index: 1;
+  }
+
+  .dsotm {
+    width: 8%;
+    top: 25%;
+    left: 6%;
+    z-index: 1;
+  }
+
+  .guy {
+    width: 27%;
+    top: 27%;
+    left: 25%;
+    z-index: 1;
+  }
+
+  .electricity {
+    width: 3%;
+    top: 52%;
+    left: 3%;
+    z-index: 1;
+  }
+
+  .eyes {
+    width: 2%;
+    top: 32.1%;
+    left: 39.5%;
+    z-index: 2;
+    transform: translateX(0);
+    animation: eyes-animation 1s ease-in-out infinite;
+  }
+
+  .key-west {
+    width: 6%;
+    top: 54%;
+    right: 33%;
+    z-index: 1;
+  }
+
+  .lamp {
+    width: 5%;
+    top: 41%;
+    left: 63.5%;
+    z-index: 2;
+  }
+
+  .lamp:hover {
+    fill: red;
+  }
+
+  .left-speaker {
+    width: 8%;
+    top: 36%;
+    left: 57%;
+    z-index: 1;
+  }
+
+  .little-plant {
+    width: 3%;
+    top: 50%;
+    right: 22%;
+    z-index: 4;
+  }
+
+  .lupe {
+    width: 3%;
+    top: 56%;
+    right: 27%;
+    z-index: 1;
+  }
+  
+  .plant {
+    width: 5%;
+    bottom: 45.5%;
+    left: 19%;
+    z-index: 1;
+  }
+
+  .plant-top {
+    width: 5%;
+    bottom: 50.5%;
+    left: 19%;
+    z-index: 1;
+    transform: skew(0, 0);
+    animation: plant-top-animation 1s ease-in-out infinite;
+  }
+
+  .right-speaker {
+    width: 7%;
+    top: 49%;
+    right: 15%;
+    z-index: 5;
+  }
+
+  .sofa {
+    width: 42%;
+    bottom: 7%;
+    left: 19%;
+    z-index: 2;
+  }
+
+  .stand {
+    width: 48%;
+    top: 2.5%;
+    left: 53%;
+    z-index: 0;
+    cursor: inherit;
+  }
+
+  .sunglasses {
+    width: 4.5%;
+    top: 59%;
+    right: 26%;
+    z-index: 1;
+  }
+
+  .table {
+    width: 27%;
+    top: 58%;
+    right: 31%;
+    z-index: 1;
+  }
+
+  .triangle {
+    width: 7%;
+    top: 35%;
+    right: 21%;
+    z-index: 1;
+  }
+
+  .turntable {
+    width: 13%;
+    top: 44%;
+    right: 22%;
+    z-index: 3;
+  }
+}
+
+
+@keyframes eyes-animation {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-25%);
+  }
+  
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes plant-top-animation {
+  0% {
+    transform: skew(0, 0)
+  }
+  
+  50% {
+    transform: skew(5deg, 5deg)
+  }
+  
+  100% {
+    transform: skew(0, 0)
+  }
+}
