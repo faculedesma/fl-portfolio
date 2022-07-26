@@ -20,41 +20,33 @@
     }
 
     &-draws {
+      position: relative;
+      width: 100%;
+      height: 100%;
       animation: hero-load 1000 ease-in-out; /*using hero-load animation for img & video transitions*/
 
       &-image {
+        width: 89%;
+        margin: 0 auto;
         position: relative;
-        width: 100%;
-        height: 100%;
-
+        
+        .hide-room {
+          display: none;
+        }
+      }
+      
+      &-videos {
         video {
-          height: 100%;
-          width: 100%;
           animation: hero-load $hero-load-time ease-in-out;
         }
 
-        .hide-room, .hide-room-hover {
-          display: none;
+        #psych-room {
+          width: 100%;
+          position: absolute;
+          top: -3.5%;
+          left: -0.5%;
+          z-index: 99;
         }
-
-        .show-room, .show-room-hover {
-          display: inherit;
-        }
-      }
-
-      .dsotm-logo {
-        cursor: pointer;
-        width: 6%;
-        height: 15%;
-        position: absolute;
-        left: 12.8%;
-        top: 27.3%;
-        transform: scale(1.1);
-        z-index: 99;
-      }
-
-      .hide-dsotm {
-        display: none;
       }
     }
 
