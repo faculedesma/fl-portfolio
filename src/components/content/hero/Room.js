@@ -14,6 +14,7 @@ import LeftSpeaker from "../../../assets/images/layers/left-speaker.png";
 import LittlePlant from "../../../assets/images/layers/little-plant.png";
 import Lupe from "../../../assets/images/layers/lupe.png";
 import Plant from "../../../assets/images/layers/plant.png";
+import PlantTop from "../../../assets/images/layers/plant-top.png";
 import RightSpeaker from "../../../assets/images/layers/right-speaker.png";
 import Sofa from "../../../assets/images/layers/sofa.png";
 import Stand from "../../../assets/images/layers/stand.png";
@@ -41,6 +42,7 @@ const Room = ({ onClickDSOTM }) => {
       <img src={LittlePlant} className="little-plant" />
       <img src={Lupe} className="lupe" />
       <img src={Plant} className="plant" />
+      <img src={PlantTop} className="plant-top" />
       <img src={RightSpeaker} className="right-speaker" />
       <img src={Sofa} className="sofa" />
       <img src={Stand} className="stand" />

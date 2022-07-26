@@ -117,6 +117,15 @@
     z-index: 1;
   }
 
+  .plant-top {
+    width: 5%;
+    bottom: 50.5%;
+    left: 19%;
+    z-index: 1;
+    transform: skew(0, 0);
+    animation: plant-top-animation 1s ease-in-out infinite;
+  }
+
   .right-speaker {
     width: 7%;
     top: 49%;
@@ -180,5 +189,19 @@
   
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes plant-top-animation {
+  0% {
+    transform: skew(0, 0)
+  }
+  
+  50% {
+    transform: skew(5deg, 5deg)
+  }
+  
+  100% {
+    transform: skew(0, 0)
   }
 }
