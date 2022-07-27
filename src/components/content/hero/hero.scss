@@ -37,7 +37,7 @@
       
       &-videos {
         video {
-          animation: hero-load $hero-load-time ease-in-out;
+          animation: hero-load 1200ms ease-in-out;
         }
 
         #psych-room {
