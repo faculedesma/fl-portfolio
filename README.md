@@ -33,6 +33,12 @@ I'm using this technologies to build this project:
 
 ## Getting Started
 
+### Prerequisites
+
+:white_check_mark: To run this application you will need latest version of Nodejs installed.
+
+### Steps
+
 If you want to play with it just follow this steps:
 
 1. Clone the repo
@@ -47,10 +53,6 @@ If you want to play with it just follow this steps:
    ```sh
    npm run dev
    ```
-
-## Prerequisites
-
-:white_check_mark: To run this application you will need latest version of Nodejs installed.
 
 ## License
 
