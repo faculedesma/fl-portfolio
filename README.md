@@ -4,8 +4,8 @@ Created with love :star2:.
 
 ## About The Project
 
-I've created this project with the motivation to mix my passions for art :art:, music :guitar: & computers :computer:. I felt that the best way to do it was creating my own animations and draws (some are borrowed from lottie files) and represent all things i love that connect me with myself and the world :earth_americas:.
-Took inspiration of some awesome websites :boom: out there that i really recommend you to see if you enjoy creativity, some of them are:
+I've created this project with the motivation to mix my passions for art :art:, music :guitar: & computers :computer:. I felt that the best way to do it was creating my own animations and draws (some are borrowed from lottie files) and represent all things I love that connect me with myself and the world :earth_americas:.
+Took inspiration from some awesome websites :boom: out there that I really recommend you to see if you enjoy creativity, some of them are:
 
 - [Bruno Simon][bruno-simon-url]
 - [Robby Leonardi][robby-leonardi-url]
@@ -16,9 +16,9 @@ Hope you enjoy it! Have FUN! :beers:
 
 ## Built With
 
-I'm using this technologies to build this project:
+I'm using these technologies to build this project:
 
-### Web develpment
+### Web development
 
 [![React][react.js]][react-url]
 [![Javascript][javascript.js]][javascript-url]
@@ -35,11 +35,11 @@ I'm using this technologies to build this project:
 
 ### Prerequisites
 
-:white_check_mark: To run this application you will need latest version of Nodejs installed.
+:white_check_mark: To run this application you will need the latest version of Nodejs installed.
 
 ### Steps
 
-If you want to play with it just follow this steps:
+If you want to play with it just follow these steps:
 
 1. Clone the repo
    ```sh
@@ -49,7 +49,7 @@ If you want to play with it just follow this steps:
    ```sh
    npm install
    ```
-3. Run application in development mode
+3. Run the application in development mode
    ```sh
    npm run dev
    ```
