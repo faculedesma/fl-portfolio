@@ -1,6 +1,6 @@
 # Facundo Ledesma's Portfolio
 
-Created with love :star2:.
+Created with love :star2:
 
 ## About The Project
 
