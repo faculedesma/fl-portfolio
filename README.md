@@ -61,7 +61,6 @@ Distributed under the ISC License.
 ## Contact
 
 Facundo Ledesma - faculedesma1993@gmail.com
-Project Link: [https://github.com/faculedesma/fl-portfolio](https://github.com/faculedesma/fl-portfolio)
 
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/

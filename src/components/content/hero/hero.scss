@@ -25,27 +25,22 @@
       height: 100%;
       animation: hero-load 1000 ease-in-out; /*using hero-load animation for img & video transitions*/
 
-      &-image {
+      .room {
         width: 89%;
         margin: 0 auto;
         position: relative;
-        
-        .hide-room {
-          display: none;
-        }
-      }
-      
-      &-videos {
-        video {
-          animation: hero-load 1200ms ease-in-out;
-        }
 
-        #psych-room {
-          width: 100%;
-          position: absolute;
-          top: -3.5%;
-          left: -0.5%;
-          z-index: 99;
+        .module {
+          &-animation {
+            video {
+              width: 113%;
+              position: absolute;
+              top: -3.5%;
+              left: -6.5%;
+              animation: hero-load 1200ms ease-in-out;
+              z-index: 99;
+            }
+          }
         }
       }
     }
