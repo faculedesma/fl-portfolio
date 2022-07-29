@@ -23,8 +23,9 @@
 
 .hand {
   top: 40%;
-  left: 15%;
+  left: 13%;
   width: 5%;
+  z-index: 100;
 }
 
 .strings {
@@ -53,7 +54,7 @@
 @media only screen and (max-width: 1280px) {
   .arrow, .fireworks {
     right: unset;
-    left: 50px;
+    left: 10%;
   }
   
   .arrow {
@@ -62,7 +63,7 @@
   }
   
   .fireworks {
-    bottom: 50px;
-    width: 200px;
+    bottom: 0;
+    width: 100px;
   }
 }

@@ -53,12 +53,25 @@
     top: 27%;
     left: 25%;
     z-index: 1;
+    cursor: inherit;
+  }
+
+  .guy-hand {
+    width: 3%;
+    top: 40.5%;
+    left: 36%;
+    z-index: 2;
+  }
+
+  .guy-hand:hover {
+    transform: skewX(0);
+    animation: guy-hand-animation 500ms ease-in-out infinite;
   }
 
   .electricity {
     width: 3%;
     top: 52%;
-    left: 3%;
+    left: 2%;
     z-index: 1;
   }
 
@@ -90,14 +103,14 @@
   }
 
   .left-speaker {
-    width: 8%;
+    width: 7%;
     top: 36%;
-    left: 57%;
+    left: 57.5%;
     z-index: 1;
   }
 
   .little-plant {
-    width: 3%;
+    width: 3.2%;
     top: 50%;
     right: 22%;
     z-index: 4;
@@ -203,5 +216,25 @@
   
   100% {
     transform: skew(0, 0)
+  }
+}
+
+@keyframes guy-hand-animation {
+  0% {
+    transform: 
+    rotate(0)
+    skew(0, 0);
+  }
+
+  50% {
+    transform:
+    rotate(15deg)
+    skew(10deg, 0);
+  }
+  
+  100% {
+    transform:
+    rotate(0)
+    skew(0, 0);
   }
 }
