@@ -1,8 +1,36 @@
 .room {
-  img {
-    width: 100%;
-    position: absolute;
-    cursor: pointer;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+
+  .module {
+    &-image {
+      position: absolute;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-animation {
+      #dsotm {
+        width: 113%;
+        position: absolute;
+        top: -3.5%;
+        left: -6.5%;
+        animation: hero-load 1200ms ease-in-out;
+        z-index: 99;
+      }
+
+      #key-west {
+        width: 40%;
+        position: absolute;
+        top: 3%;
+        left: 0;
+        z-index: 0;
+      }
+    }
   }
 
   .amp {
@@ -23,7 +51,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    z-index: 0;
+    z-index: 0; 
     cursor: inherit;
   }
 
@@ -38,7 +66,7 @@
     width: 7%;
     top: 49%;
     left: 62%;
-    z-index: 1;
+    z-index: 5;
   }
 
   .dsotm {
@@ -56,16 +84,11 @@
     cursor: inherit;
   }
 
-  .guy-hand {
-    width: 3%;
-    top: 40.5%;
-    left: 36%;
+  .right-hand {
+    width: 3.5%;
+    top: 39.5%;
+    left: 35.5%;
     z-index: 2;
-  }
-
-  .guy-hand:hover {
-    transform: skewX(0);
-    animation: guy-hand-animation 500ms ease-in-out infinite;
   }
 
   .electricity {
@@ -76,19 +99,17 @@
   }
 
   .eyes {
-    width: 2%;
-    top: 32.1%;
-    left: 39.5%;
+    width: 3%;
+    top: 31%;
+    left: 38.6%;
     z-index: 2;
-    transform: translateX(0);
-    animation: eyes-animation 1s ease-in-out infinite;
   }
 
   .key-west {
-    width: 6%;
+    width: 6.5%;
     top: 54%;
-    right: 33%;
-    z-index: 1;
+    right: 32%;
+    z-index: 6;
   }
 
   .lamp {
@@ -100,6 +121,13 @@
 
   .lamp:hover {
     fill: red;
+  }
+
+  .laptop {
+    width: 11%;
+    top: 59%;
+    left: 49%;
+    z-index: 3;
   }
 
   .left-speaker {
@@ -125,16 +153,18 @@
   
   .plant {
     width: 5%;
-    bottom: 45.5%;
+    bottom: 45%;
     left: 19%;
     z-index: 1;
+    cursor: inherit;
   }
 
   .plant-top {
-    width: 5%;
+    width: 5.5%;
     bottom: 50.5%;
-    left: 19%;
+    left: 18.5%;
     z-index: 1;
+    cursor: inherit;
     transform: skew(0, 0);
     animation: plant-top-animation 1s ease-in-out infinite;
   }
@@ -147,8 +177,8 @@
   }
 
   .sofa {
-    width: 42%;
-    bottom: 7%;
+    width: 43%;
+    bottom: 6%;
     left: 19%;
     z-index: 2;
   }
@@ -162,8 +192,8 @@
   }
 
   .sunglasses {
-    width: 4.5%;
-    top: 59%;
+    width: 5%;
+    top: 58.8%;
     right: 26%;
     z-index: 1;
   }
@@ -173,6 +203,7 @@
     top: 58%;
     right: 31%;
     z-index: 1;
+    cursor: inherit;
   }
 
   .triangle {

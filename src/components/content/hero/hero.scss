@@ -23,26 +23,7 @@
       position: relative;
       width: 100%;
       height: 100%;
-      animation: hero-load 1000 ease-in-out; /*using hero-load animation for img & video transitions*/
-
-      .room {
-        width: 89%;
-        margin: 0 auto;
-        position: relative;
-
-        .module {
-          &-animation {
-            video {
-              width: 113%;
-              position: absolute;
-              top: -3.5%;
-              left: -6.5%;
-              animation: hero-load 1200ms ease-in-out;
-              z-index: 99;
-            }
-          }
-        }
-      }
+      animation: hero-load 1000 ease-in-out; 
     }
 
     &-section {

@@ -13,8 +13,9 @@ const Room = ({ handleOnMouseLeave, handleModuleClick }) => {
             id={module.id}
             src={module.src}
             animation={module.animation}
-            media={module.media}
             clickable={module.clickable}
+            information={module.information}
+            styles={module.styles}
             handleOnMouseLeave={handleOnMouseLeave}
             handleModuleClick={handleModuleClick}
           />
