@@ -1,0 +1,39 @@
+.tooltip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: fit-content;
+  animation: tooltip-open 300ms ease-in forwards;
+  background-color: white;
+  opacity: 0.8;
+  border: 1px solid black;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  
+  &-content {
+    padding: 15%;
+    font-size: 15px;
+  }
+}
+
+@keyframes tooltip-open {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  80% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
