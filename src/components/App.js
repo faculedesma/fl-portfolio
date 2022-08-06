@@ -11,16 +11,16 @@ import {
   defaultContextValues,
 } from "./contexts/AnimationsContext";
 import {
-  AudioContext,
-  defaultAudioContextValues,
-} from "./contexts/AudioContext";
+  SoundContext,
+  defaultSoundContextValues,
+} from "./contexts/SoundContext";
 import "./app.scss";
 
 const pageLoadTime = 2500;
 
 const App = () => {
   const [animations, setAnimations] = useState(defaultContextValues.animations);
-  const [audio, setAudio] = useState(defaultAudioContextValues);
+  const [sound, setSound] = useState(defaultSoundContextValues.audios);
   const [isLoading, setIsLoading] = useState(true);
   const [playing, toggle] = useAudio(DoorsOpening);
   const mounted = useRef(false);
@@ -54,14 +54,14 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (mounted.current && !isLoading && audio) {
+    if (mounted.current && !isLoading && sound.isOn) {
       toggle();
     }
   }, [isLoading]);
 
   return (
     <AnimationsContext.Provider value={{ animations, toggleAnimation }}>
-      <AudioContext.Provider value={{ audio, setAudio }}>
+      <SoundContext.Provider value={{ sound, setSound }}>
         <div className={`app ${isLoading ? "" : "animate"}`}>
           <Header />
           <Content />
@@ -69,7 +69,7 @@ const App = () => {
           <BeYourself />
         </div>
         {isLoading && <Loader />}
-      </AudioContext.Provider>
+      </SoundContext.Provider>
     </AnimationsContext.Provider>
   );
 };
