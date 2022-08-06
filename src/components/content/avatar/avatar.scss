@@ -28,6 +28,7 @@
 }
 
 .avatar::before {
+  display: none;
   content: "";
   position: absolute;
   top: 0;
@@ -43,6 +44,7 @@
 
 .avatar:hover::before,
 .avatar:focus::before {
+  display: inherit;
   transform: scale(1);
 }
 
