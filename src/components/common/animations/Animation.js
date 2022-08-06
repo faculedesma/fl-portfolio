@@ -3,7 +3,7 @@ import { AnimationsContext } from "../../contexts/AnimationsContext";
 import lottie from "lottie-web";
 import "./animations.scss";
 
-const Animation = ({ name, file, loop }) => {
+const Animation = ({ name, file, loop, speed = 2 }) => {
   const container = useRef(null);
   const { toggleAnimation } = useContext(AnimationsContext);
 
@@ -21,6 +21,7 @@ const Animation = ({ name, file, loop }) => {
       setQuality: "low",
     });
 
+    animation.setSpeed(speed);
     animation.onComplete = handleComplete;
     animation.play();
   }, []);
