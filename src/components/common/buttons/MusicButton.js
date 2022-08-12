@@ -16,7 +16,9 @@ const MusicButton = () => {
 
   return (
     <>
-      <a onClick={handleClick}>{sound ? <MdMusicNote /> : <MdMusicOff />}</a>
+      <a className="music-button" onClick={handleClick}>
+        {sound ? <MdMusicNote /> : <MdMusicOff />}
+      </a>
       {animations.music && <MusicNotes />}
     </>
   );

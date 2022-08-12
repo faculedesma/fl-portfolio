@@ -26,7 +26,7 @@ const Module = ({
   };
 
   const handleLeave = () => {
-    if (showAnimation && !animation.isFullPage) {
+    if (showAnimation && !animation?.isFullPage) {
       setshowAnimation(false);
       handleOnMouseLeave();
     } else {
@@ -86,24 +86,25 @@ const Module = ({
 
   return (
     <>
-      <div className={`module-image ${id}`}>
-        <img
-          src={src}
-          onClick={clickable ? handleClick : undefined}
-          onMouseEnter={clickable ? handleOpen : undefined}
-          onMouseLeave={clickable ? handleLeave : undefined}
-        />
+      <div
+        className={`module-image ${id}`}
+        onClick={animation ? handleClick : undefined}
+        onMouseEnter={clickable ? handleOpen : undefined}
+        onMouseLeave={clickable ? handleLeave : undefined}
+      >
+        <img src={src} />
         {open && (
           <Tooltip
-            content={information}
+            information={information}
             top={styles.top}
             bottom={styles.bottom}
             left={styles.left}
             right={styles.right}
+            maxHeight={styles.maxHeight}
           />
         )}
       </div>
-      {showAnimation && (
+      {showAnimation && animation && (
         <div className="module-animation">{getMediaContent()}</div>
       )}
     </>

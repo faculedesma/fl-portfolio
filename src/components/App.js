@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import useAudio from "./hooks/useAudio";
+import useCheckIsMobile from "./hooks/useCheckIsMobile";
 import DoorsOpening from "../assets/sounds/door-opening.mp3";
 import Header from "./header/Header";
+import Avatar from "../components/common/avatar/Avatar";
 import Content from "./content/Content";
 import Footer from "./footer/Footer";
 import BeYourself from "./common/BeYourself";
+import StillWorking from "./common/still-working/StillWorking";
 import Loader from "./loader/Loader";
 import {
   AnimationsContext,
@@ -15,6 +18,7 @@ import {
   defaultSoundContextValues,
 } from "./contexts/SoundContext";
 import "./app.scss";
+import MusicButton from "./common/buttons/MusicButton";
 
 const pageLoadTime = 2500;
 
@@ -23,6 +27,7 @@ const App = () => {
   const [sound, setSound] = useState(defaultSoundContextValues.audios);
   const [isLoading, setIsLoading] = useState(true);
   const [playing, toggle] = useAudio(DoorsOpening);
+  const isMobile = useCheckIsMobile();
   const mounted = useRef(false);
 
   const toggleAnimation = (names) => {
@@ -59,11 +64,13 @@ const App = () => {
     }
   }, [isLoading]);
 
-  return (
+  return !isMobile ? (
     <AnimationsContext.Provider value={{ animations, toggleAnimation }}>
       <SoundContext.Provider value={{ sound, setSound }}>
         <div className={`app ${isLoading ? "" : "animate"}`}>
-          <Header />
+          {/* <Header /> */}
+          <MusicButton />
+          <Avatar />
           <Content />
           <Footer />
           <BeYourself />
@@ -71,6 +78,8 @@ const App = () => {
         {isLoading && <Loader />}
       </SoundContext.Provider>
     </AnimationsContext.Provider>
+  ) : (
+    <StillWorking />
   );
 };
 

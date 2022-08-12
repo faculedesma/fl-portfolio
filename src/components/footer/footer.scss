@@ -1,63 +1,78 @@
 @import '../../utils/variables';
 
 footer {
-  position: fixed;
-  right: 0;
-  bottom: 30px;
-  background-color: rgba(244, 243, 239, 0.6);
-  border-radius: 5px;
-  z-index: 99;
-
   .contact {
-    ul {
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-    }
-
-    li {
-      cursor: pointer;
+    a {
+      position: absolute;
       color: $main-font-color;
-      transform: scale(1);
-      margin-top: 30px;
-      transition: all 500ms ease-in;
-
-      a:hover {
-        color: black;
-        transition: all 500ms ease-in;
+      cursor: pointer;
+      animation: footer-load 400ms ease-in-out forwards;
+      
+      svg {
+        width: 10px;
+        height: 10px;
+        animation: link-load 600ms ease-in-out forwards;
+        z-index: 2;
+      }
+      
+      img {
+        width: 20px;
+        transform: scale(0) translate(0, 0);
+        animation: social-animation 600ms ease-in-out forwards;
       }
     }
     
-    li:hover {
-      transform: scale(1.2);
+    
+    .mail {
+      bottom: 11%;
+      right: 26%;
+    }
+    
+    .github {
+      bottom: 15%;
+      right: 22%;
+    }
+    
+    .linkedin {
+      bottom: 19.5%;
+      right: 18.5%;
+    }
+    
+    .whatsapp {
+      bottom: 23%;
+      right: 15%;
+      z-index: 16;
     }
   }
 }
 
-@media only screen and (max-width: 1280px) {
-  footer {
-    height: 50px;
-    position: unset;
-    margin-top: 50px;
+@keyframes footer-load {
+  0% {
+    transform: scale(0);
+  }
 
-    .container {
-      position: relative;
-      height: 100%;
-      
-      .contact {
-        ul {
-          flex-direction: row ;
-  
-          li {
-            margin-top: 0;
-          }
-        }
-      }
-    }
+  100% {
+    transform: scale(1);
+  }
+}
 
+@keyframes social-animation {
+  0% {
+    transform: scale(0) translate(0, 0);
+  }
+
+  100% {
+    transform: scale(5) translate(0, -5px);
+  }
+}
+
+@keyframes link-load {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1) skew(60deg, -30deg);
   }
 }
 

@@ -4,11 +4,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   &-top {
     display: flex;
     flex-direction: column;
+    align-self: center;
   }
 
   .hero {
@@ -27,12 +27,15 @@
     }
 
     &-section {
+      min-height: 500px;
+      transform: skew(0deg, -30deg);
+      
       &-top {
         width: 100%;
         animation: hero-top-load $hero-top-load-time ease-in;
         animation-fill-mode: forwards;
-        margin: 70px 0 10px;
-
+        margin-bottom: 10px;
+        
         p {
           color: $main-font-color;
           font-size: 80px;
@@ -48,7 +51,7 @@
         max-width: 500px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         animation: hero-bottom-load $hero-bottom-load-time ease-in;
         animation-fill-mode: forwards;
 
@@ -56,62 +59,79 @@
           animation: hero-bottom-laod-subtitle 1200ms ease-in;
           animation-fill-mode: forwards;
           color: $secondary-font-color;
-          font-size: 30px;
+          font-size: 20px;
           font-weight: bold;
         }
 
         p:nth-child(2) {
           font-size: 15px;
           font-weight: 100;
-        }
-
-        button {
-          position: relative;
-          width: 200px;
-          height: 50px;
-          margin-top: 20px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-decoration: none;
-          text-transform: uppercase;
-          color: $main-font-color;
-          text-align: center;
-          letter-spacing: 1px;
-          border-radius: 20px;
-          border: 2px solid $main-font-color;
-          cursor: pointer;
-          z-index: 1;
-          transition: color ease-in-out 300ms;
-        }
-
-        button:hover {
-          color: black;
-        }
-
-        button::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          z-index: -1;
-          background-color: $app-main-light-color;
-          border-radius: 20px;
-          transform: scaleX(0);
-          transition: transform ease-in-out 300ms;
-        }
-
-        button:hover::before,
-        button:focus::before {
-          transform: scaleX(1);
-        }
-
-        > span {
-          opacity: 0.2;
+          align-self: baseline;
         }
       }
+    }
+
+    &-button {
+      position: absolute;
+      bottom: 16%;
+      left: 15%;
+      transform: skew(60deg, -30deg) scale(0);
+      animation: button-load 600ms ease-in-out forwards;
+      box-shadow: 4px 3px #dbd9d9;
+
+      button {
+        position: relative;
+        width: 150px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 1px;
+        border: 2px solid $main-font-color;
+        cursor: pointer;
+        z-index: 1;
+        
+        span {
+          font-size: 10px;
+          color: $main-font-color;
+          animation: color ease-in-out 300ms;
+        }
+      }
+      
+      button:hover {
+        span {
+          color: black;
+        }
+      }
+
+      button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background-color: $app-main-light-color;
+        transform: scaleX(0);
+        transition: transform ease-in-out 500ms;
+      }
+
+      button:hover::before,
+      button:focus::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &-infinite {
+      position: absolute;
+      bottom: 16%;
+      left: 22%;
+      opacity: 0.2;
+      transform: skew(60deg, -30deg);
     }
   }
 }
@@ -193,5 +213,15 @@
 
   100% {
     letter-spacing: 1px;
+  }
+}
+
+@keyframes button-load {
+  0% {
+    transform: skew(60deg, -30deg) scale(0);
+  }
+
+  100% {
+    transform: skew(60deg, -30deg) scale(1);
   }
 }

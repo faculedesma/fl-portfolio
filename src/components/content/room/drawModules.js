@@ -25,6 +25,7 @@ import Triangle from "../../../assets/images/layers/triangle.png";
 import Turntable from "../../../assets/images/layers/turntable.png";
 import DSOTMAnimation from "../../../assets/images/gifs/dsotm-animation.webm";
 import KWAnimation from "../../../assets/images/gifs/kw-animation.webm";
+import LaptopAnimation from "../../../assets/images/gifs/laptop-animation.webm";
 
 export const drawModules = [
   {
@@ -42,12 +43,13 @@ export const drawModules = [
     animation: null,
     media: "video",
     clickable: true,
-    information: `"Todas las hojas son del viento..." Luis Alberto Spinetta.`,
+    information: {
+      generic: `"Todas las hojas son del viento..." Luis Alberto Spinetta.`,
+      personal: "Te quiero flaco.",
+    },
     styles: {
       top: "-100%",
-      bottom: 0,
       left: "100%",
-      right: 0,
     },
   },
   {
@@ -65,11 +67,12 @@ export const drawModules = [
     animation: null,
     media: "video",
     clickable: true,
-    information: "Un cactus suaviza mi llema con su piel.",
+    information: {
+      generic: "Un cactus suaviza mi llema con su piel.",
+      personal: "Te quiero gus.",
+    },
     styles: {
-      top: 0,
-      bottom: 0,
-      left: "100%",
+      bottom: "100%",
       right: 0,
     },
   },
@@ -79,12 +82,14 @@ export const drawModules = [
     animation: null,
     media: "video",
     clickable: true,
-    information: `"Meses navegando, tierra a la vista..." Gustavo Cerati was an argentinian music player. He is a great inspiration.`,
+    information: {
+      generic: `"Meses navegando, tierra a la vista..." Gustavo Cerati was an argentinian music player. He is a great inspiration.`,
+      personal:
+        "Sometimes we have to jump to the void to experiencie extraordinarie things.",
+    },
     styles: {
-      top: "-100%",
-      bottom: 0,
-      left: "100%",
-      right: 0,
+      top: "100%",
+      left: 0,
     },
   },
   {
@@ -97,13 +102,14 @@ export const drawModules = [
     },
     media: "video",
     clickable: true,
-    information:
-      "Pink Floyd - The Dark Side Of The Moon (1973). Well, what to say? Feels like waking up.",
+    information: {
+      generic:
+        "Pink Floyd - The Dark Side Of The Moon (1973). Well, what to say? Feels like waking up.",
+      personal: "No se cuantas veces esuche dark side.",
+    },
     styles: {
-      top: "-100%",
-      bottom: 0,
+      bottom: "75%",
       left: "100%",
-      right: 0,
     },
   },
   {
@@ -130,7 +136,7 @@ export const drawModules = [
     animation: null,
     media: "video",
     clickable: false,
-    information: "Be carefull!",
+    information: null,
     styles: null,
   },
   {
@@ -139,12 +145,10 @@ export const drawModules = [
     animation: null,
     media: "video",
     clickable: true,
-    information: "Answers.",
+    information: { generic: "Everybodys eyes is unic.", personal: "Answers." },
     styles: {
-      top: "-100%",
-      bottom: 0,
-      left: "100%",
-      right: 0,
+      bottom: "100%",
+      right: "75%",
     },
   },
   {
@@ -157,12 +161,13 @@ export const drawModules = [
     },
     media: "video",
     clickable: true,
-    information: "Travel other realities to know who you really are.",
+    information: {
+      generic: "Travel other realities to know who you really are.",
+      personal: "It changed my life.",
+    },
     styles: {
-      top: "-100%",
-      bottom: 0,
+      top: "75%",
       left: "100%",
-      right: 0,
     },
   },
   {
@@ -171,27 +176,30 @@ export const drawModules = [
     animation: null,
     media: "video",
     clickable: true,
-    information: "Spirituality.",
+    information: { generic: "Spirituality.", personal: "Connection to God?" },
     styles: {
-      top: "-100%",
-      bottom: 0,
-      left: "100%",
-      right: 0,
+      bottom: "100%",
+      right: "75%",
     },
   },
   {
     id: "laptop",
     src: Laptop,
-    animation: null,
+    animation: {
+      src: LaptopAnimation,
+      type: "video",
+      isFullPage: false,
+    },
     media: "video",
     clickable: true,
-    information:
-      "Hello World! was the first string to be sent on the internet. A revolution!",
+    information: {
+      generic:
+        "Hello World! was the first message to be sent on the internet. A revolution! My humans understand me.",
+      personal: "Mi information.",
+    },
     styles: {
-      top: "-100%",
       bottom: 0,
-      left: "100%",
-      right: 0,
+      right: "100%",
     },
   },
   {
@@ -200,11 +208,9 @@ export const drawModules = [
     animation: null,
     media: "video",
     clickable: true,
-    information: "Go to the right speaker!",
+    information: { generic: "Go to the right speaker!" },
     styles: {
       top: "-100%",
-      bottom: 0,
-      left: "100%",
       right: 0,
     },
   },
@@ -213,28 +219,18 @@ export const drawModules = [
     src: LittlePlant,
     animation: null,
     media: "video",
-    clickable: true,
-    information: "Take aware of the planet!",
-    styles: {
-      top: 0,
-      bottom: "-100%",
-      left: 0,
-      right: "100%",
-    },
+    clickable: false,
+    information: null,
+    styles: null,
   },
   {
     id: "lupe",
     src: Lupe,
     animation: null,
     media: "video",
-    clickable: true,
-    information: "Quiero un zoom anatomico.",
-    styles: {
-      top: "100%",
-      bottom: 0,
-      left: 0,
-      right: "100%",
-    },
+    clickable: false,
+    information: null,
+    styles: null,
   },
   {
     id: "plant",
@@ -260,12 +256,10 @@ export const drawModules = [
     animation: null,
     media: "video",
     clickable: true,
-    information: "Go to the left speaker!",
+    information: { generic: "Go to the left speaker!" },
     styles: {
       top: "100%",
-      bottom: 0,
-      left: 0,
-      right: "100%",
+      right: 0,
     },
   },
   {
@@ -291,14 +285,9 @@ export const drawModules = [
     src: Sunglasses,
     animation: null,
     media: "video",
-    clickable: true,
-    information: "Sometimes sun is too shinny.",
-    styles: {
-      top: "100%",
-      bottom: 0,
-      left: 0,
-      right: "100%",
-    },
+    clickable: false,
+    information: null,
+    styles: null,
   },
   {
     id: "table",
@@ -306,13 +295,8 @@ export const drawModules = [
     animation: null,
     media: "video",
     clickable: false,
-    information: "DIY with friends.",
-    styles: {
-      top: "100%",
-      bottom: 0,
-      left: 0,
-      right: "100%",
-    },
+    information: null,
+    styles: null,
   },
   {
     id: "triangle",
@@ -320,12 +304,10 @@ export const drawModules = [
     animation: null,
     media: "video",
     clickable: true,
-    information: "I love triangles!",
+    information: { personal: "I love triangles!" },
     styles: {
-      top: "100%",
-      bottom: 0,
-      left: 0,
-      right: "100%",
+      bottom: "100%",
+      right: "50%",
     },
   },
   {
@@ -334,12 +316,10 @@ export const drawModules = [
     animation: null,
     media: "video",
     clickable: true,
-    information: "Music quality.",
+    information: { generic: "Music quality." },
     styles: {
-      top: "100%",
-      bottom: 0,
-      left: 0,
-      right: "100%",
+      top: "-100%",
+      left: "50%",
     },
   },
 ];

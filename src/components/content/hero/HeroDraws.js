@@ -14,9 +14,7 @@ const HeroDraws = () => {
 
   const handleOnMouseLeave = () => {
     toggleAnimation("hand");
-    if (sound) {
-      toggle();
-    }
+    toggle();
   };
 
   const handleModuleClick = () => {

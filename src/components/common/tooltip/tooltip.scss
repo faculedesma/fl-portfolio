@@ -2,9 +2,9 @@
   position: absolute;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   width: 250px;
-  height: fit-content;
   animation: tooltip-open 300ms ease-in forwards;
   background-color: white;
   opacity: 0.8;
@@ -12,12 +12,19 @@
   border-left: 0;
   border-right: 0;
   border-radius: 10px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
   
   &-content {
-    padding: 15%;
+    overflow-y: scroll;
+  }
+  
+  &-generic,
+  &-personal {
+    padding: 5% 15%;
     font-size: 15px;
+  }
+
+  &-generic {
+    font-style: italic;
   }
 }
 
