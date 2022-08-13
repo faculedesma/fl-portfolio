@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import useAudio from "./hooks/useAudio";
 import useCheckIsMobile from "./hooks/useCheckIsMobile";
-import DoorsOpening from "../assets/sounds/door-opening.mp3";
-import Header from "./header/Header";
 import Avatar from "../components/common/avatar/Avatar";
 import Content from "./content/Content";
 import Footer from "./footer/Footer";
@@ -19,14 +17,15 @@ import {
 } from "./contexts/SoundContext";
 import "./app.scss";
 import MusicButton from "./common/buttons/MusicButton";
+import WakeUPMP3 from "../assets/sounds/wake-up.mp3";
 
-const pageLoadTime = 2500;
+const pageLoadTime = 3000;
 
 const App = () => {
   const [animations, setAnimations] = useState(defaultContextValues.animations);
   const [sound, setSound] = useState(defaultSoundContextValues.audios);
   const [isLoading, setIsLoading] = useState(true);
-  const [playing, toggle] = useAudio(DoorsOpening);
+  const [playing, toggle] = useAudio(WakeUPMP3);
   const isMobile = useCheckIsMobile();
   const mounted = useRef(false);
 
@@ -59,7 +58,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (mounted.current && !isLoading && sound.isOn) {
+    if (mounted.current && !isLoading) {
       toggle();
     }
   }, [isLoading]);
@@ -68,8 +67,7 @@ const App = () => {
     <AnimationsContext.Provider value={{ animations, toggleAnimation }}>
       <SoundContext.Provider value={{ sound, setSound }}>
         <div className={`app ${isLoading ? "" : "animate"}`}>
-          {/* <Header /> */}
-          <MusicButton />
+          {/* <MusicButton /> */}
           <Avatar />
           <Content />
           <Footer />

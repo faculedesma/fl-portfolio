@@ -9,8 +9,8 @@ const StillWorking = () => {
         <img src={Logo} type="image/webp" />
       </picture>
       <p>
-        Still working on mobile version! If you want to play with it go to a
-        desktop!
+        Still working on mobile version! I encourague you to go to your laptop
+        and have fun!
       </p>
     </div>
   );
