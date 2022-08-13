@@ -5,13 +5,14 @@
   flex-direction: column;
   justify-content: center;
   width: 250px;
-  animation: tooltip-open 300ms ease-in forwards;
+  animation: tooltip-open 300ms ease-out forwards;
   background-color: white;
-  opacity: 0.8;
+  transform : scale(0);
   border: 1px solid black;
   border-left: 0;
   border-right: 0;
   border-radius: 10px;
+  opacity: 0.8;
   
   &-content {
     overflow-y: scroll;
@@ -31,16 +32,9 @@
 @keyframes tooltip-open {
   0% {
     transform: scale(0);
-    opacity: 0;
-  }
-
-  80% {
-    transform: scale(1.2);
-    opacity: 0.6;
   }
 
   100% {
     transform: scale(1);
-    opacity: 0.8;
   }
 }

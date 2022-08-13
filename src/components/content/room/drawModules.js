@@ -26,13 +26,20 @@ import Turntable from "../../../assets/images/layers/turntable.png";
 import DSOTMAnimation from "../../../assets/images/gifs/dsotm-animation.webm";
 import KWAnimation from "../../../assets/images/gifs/kw-animation.webm";
 import LaptopAnimation from "../../../assets/images/gifs/laptop-animation.webm";
+import LionKing from "../../../assets/images/lion-king.png";
+import Spinetta from "../../../assets/images/gifs/spinetta-artaud.webm";
+import LionSuelesMP3 from "../../../assets/sounds/lion-sueles-dejarme.mp3";
+import BrainDamageMP3 from "../../../assets/sounds/brain-damage.mp3";
+import SpinettaInterviewMP3 from "../../../assets/sounds/spinetta-interview.mp3";
+import InterferenceSimulationMP3 from "../../../assets/sounds/interference-simulation.mp3";
+import TheEndMP3 from "../../../assets/sounds/the-end-intro.mp3";
+import MotherOceanMP3 from "../../../assets/sounds/mother-ocean.mp3";
 
 export const drawModules = [
   {
     id: "amp",
     src: Amp,
     animation: null,
-    media: "video",
     clickable: false,
     information: null,
     styles: null,
@@ -40,8 +47,12 @@ export const drawModules = [
   {
     id: "artaud",
     src: Artaud,
-    animation: null,
-    media: "video",
+    animation: {
+      src: Spinetta,
+      type: "video",
+      sound: SpinettaInterviewMP3,
+      isFullPage: false,
+    },
     clickable: true,
     information: {
       generic: `"Todas las hojas son del viento..." Luis Alberto Spinetta.`,
@@ -56,7 +67,6 @@ export const drawModules = [
     id: "base",
     src: Base,
     animation: null,
-    media: "video",
     clickable: false,
     information: null,
     styles: null,
@@ -65,7 +75,6 @@ export const drawModules = [
     id: "cactus",
     src: Cactus,
     animation: null,
-    media: "video",
     clickable: true,
     information: {
       generic: "Un cactus suaviza mi llema con su piel.",
@@ -79,11 +88,15 @@ export const drawModules = [
   {
     id: "cancion-animal",
     src: CancionAnimal,
-    animation: null,
-    media: "video",
+    animation: {
+      src: LionKing,
+      type: "image",
+      sound: LionSuelesMP3,
+      isFullPage: false,
+    },
     clickable: true,
     information: {
-      generic: `"Meses navegando, tierra a la vista..." Gustavo Cerati was an argentinian music player. He is a great inspiration.`,
+      generic: `"Meses navegando, tierra a la vista..." Gustavo Cerati was an argentinian musician. He is a great inspiration.`,
       personal:
         "Sometimes we have to jump to the void to experiencie extraordinarie things.",
     },
@@ -98,9 +111,9 @@ export const drawModules = [
     animation: {
       src: DSOTMAnimation,
       type: "video",
+      sound: BrainDamageMP3,
       isFullPage: true,
     },
-    media: "video",
     clickable: true,
     information: {
       generic:
@@ -116,16 +129,6 @@ export const drawModules = [
     id: "guy",
     src: Guy,
     animation: null,
-    media: "video",
-    clickable: false,
-    information: null,
-    styles: null,
-  },
-  {
-    id: "right-hand",
-    src: RightHand,
-    animation: null,
-    media: "image",
     clickable: false,
     information: null,
     styles: null,
@@ -134,7 +137,6 @@ export const drawModules = [
     id: "electricity",
     src: Electricity,
     animation: null,
-    media: "video",
     clickable: false,
     information: null,
     styles: null,
@@ -143,7 +145,6 @@ export const drawModules = [
     id: "eyes",
     src: Eyes,
     animation: null,
-    media: "video",
     clickable: true,
     information: { generic: "Everybodys eyes is unic.", personal: "Answers." },
     styles: {
@@ -157,13 +158,13 @@ export const drawModules = [
     animation: {
       src: KWAnimation,
       type: "video",
+      sound: MotherOceanMP3,
       isFullPage: false,
     },
-    media: "video",
     clickable: true,
     information: {
       generic: "Travel other realities to know who you really are.",
-      personal: "It changed my life.",
+      personal: "It changed my life. Connection to the mother ocean.",
     },
     styles: {
       top: "75%",
@@ -174,7 +175,6 @@ export const drawModules = [
     id: "lamp",
     src: Lamp,
     animation: null,
-    media: "video",
     clickable: true,
     information: { generic: "Spirituality.", personal: "Connection to God?" },
     styles: {
@@ -188,9 +188,9 @@ export const drawModules = [
     animation: {
       src: LaptopAnimation,
       type: "video",
+      sound: InterferenceSimulationMP3,
       isFullPage: false,
     },
-    media: "video",
     clickable: true,
     information: {
       generic:
@@ -205,10 +205,16 @@ export const drawModules = [
   {
     id: "left-speaker",
     src: LeftSpeaker,
-    animation: null,
-    media: "video",
+    animation: {
+      src: null,
+      type: null,
+      sound: TheEndMP3,
+      isFullPage: false,
+    },
     clickable: true,
-    information: { generic: "Go to the right speaker!" },
+    information: {
+      generic: "Go to the right speaker without touching anything!",
+    },
     styles: {
       top: "-100%",
       right: 0,
@@ -218,7 +224,6 @@ export const drawModules = [
     id: "little-plant",
     src: LittlePlant,
     animation: null,
-    media: "video",
     clickable: false,
     information: null,
     styles: null,
@@ -227,7 +232,6 @@ export const drawModules = [
     id: "lupe",
     src: Lupe,
     animation: null,
-    media: "video",
     clickable: false,
     information: null,
     styles: null,
@@ -236,7 +240,6 @@ export const drawModules = [
     id: "plant",
     src: Plant,
     animation: null,
-    media: "video",
     clickable: false,
     information: null,
     styles: null,
@@ -245,7 +248,14 @@ export const drawModules = [
     id: "plant-top",
     src: PlantTop,
     animation: null,
-    media: "video",
+    clickable: false,
+    information: null,
+    styles: null,
+  },
+  {
+    id: "right-hand",
+    src: RightHand,
+    animation: null,
     clickable: false,
     information: null,
     styles: null,
@@ -253,10 +263,16 @@ export const drawModules = [
   {
     id: "right-speaker",
     src: RightSpeaker,
-    animation: null,
-    media: "video",
+    animation: {
+      src: null,
+      type: null,
+      sound: TheEndMP3,
+      isFullPage: false,
+    },
     clickable: true,
-    information: { generic: "Go to the left speaker!" },
+    information: {
+      generic: "Go to the left speaker without touching anything!",
+    },
     styles: {
       top: "100%",
       right: 0,
@@ -266,7 +282,6 @@ export const drawModules = [
     id: "sofa",
     src: Sofa,
     animation: null,
-    media: "video",
     clickable: false,
     information: null,
     styles: null,
@@ -275,7 +290,6 @@ export const drawModules = [
     id: "stand",
     src: Stand,
     animation: null,
-    media: "video",
     clickable: false,
     information: null,
     styles: null,
@@ -284,7 +298,6 @@ export const drawModules = [
     id: "sunglasses",
     src: Sunglasses,
     animation: null,
-    media: "video",
     clickable: false,
     information: null,
     styles: null,
@@ -293,7 +306,6 @@ export const drawModules = [
     id: "table",
     src: Table,
     animation: null,
-    media: "video",
     clickable: false,
     information: null,
     styles: null,
@@ -302,7 +314,6 @@ export const drawModules = [
     id: "triangle",
     src: Triangle,
     animation: null,
-    media: "video",
     clickable: true,
     information: { personal: "I love triangles!" },
     styles: {
@@ -314,7 +325,6 @@ export const drawModules = [
     id: "turntable",
     src: Turntable,
     animation: null,
-    media: "video",
     clickable: true,
     information: { generic: "Music quality." },
     styles: {

@@ -7,10 +7,10 @@
     &-image {
       position: absolute;
       cursor: pointer;
-      animation: room-load 800ms ease-in-out;
-
+      
       img {
         width: 100%;
+        animation: room-load 800ms ease-in-out;
       }
     }
 
@@ -39,6 +39,34 @@
         left: 23.5%;
         z-index: 2;
       }
+
+      #cancion-animal {
+        position: absolute;
+        width: 100px;
+        height: 120px;
+        left: 45%;
+        bottom: 40%;
+        z-index: 20;
+        opacity: 0;
+        transform: scale(0);
+        animation: lion-animation 400ms ease-in-out;
+      }
+
+      #artaud {
+        position: absolute;
+        left: 16%;
+        bottom: 72%;
+        width: 20%;
+        transform: skew(0deg, -30deg) scale(0);
+        box-shadow: 0 0 4px 3px #acacac;
+        animation: artaud-animation 400ms ease-in-out forwards;
+      }
+    }
+
+    &-be-patient {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 
@@ -254,5 +282,27 @@
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes lion-animation {
+  0% {
+    transform: scale(0);
+    opacity: 0.2;
+  }
+  
+  100% {
+    transform: scale(5);
+    opacity: 0.6;
+  }
+}
+
+@keyframes artaud-animation {
+  0% {
+    transform: skew(0, 0) scale(0);
+  }
+  
+  100% {
+    transform: skew(0deg, -30deg) scale(1);
   }
 }
