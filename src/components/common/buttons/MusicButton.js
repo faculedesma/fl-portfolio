@@ -1,23 +1,24 @@
 import React, { useContext } from "react";
-import useAudio from "../../hooks/useAudio";
 import MusicNotes from "../animations/MusicNotes";
 import { MdMusicNote, MdMusicOff } from "react-icons/md";
-import { AudioContext } from "../../contexts/AudioContext";
+import { SoundContext } from "../../contexts/SoundContext";
 import { AnimationsContext } from "../../contexts/AnimationsContext";
 import "./buttons.scss";
 
 const MusicButton = () => {
   const { animations, toggleAnimation } = useContext(AnimationsContext);
-  const { audio, setAudio } = useContext(AudioContext);
+  const { sound, setSound } = useContext(SoundContext);
 
   const handleClick = () => {
-    setAudio(!audio);
+    setSound(!sound);
     toggleAnimation("music");
   };
 
   return (
     <>
-      <a onClick={handleClick}>{audio ? <MdMusicNote /> : <MdMusicOff />}</a>
+      <a className="music-button" onClick={handleClick}>
+        {sound ? <MdMusicNote /> : <MdMusicOff />}
+      </a>
       {animations.music && <MusicNotes />}
     </>
   );

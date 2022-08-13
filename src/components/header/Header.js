@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import Logo from "../../assets/images/logo.png";
 import MusicButton from "../common/buttons/MusicButton";
 import { AnimationsContext } from "../contexts/AnimationsContext";
+import Logo from "../common/logo/Logo";
 import "./header.scss";
 
 const Header = () => {
@@ -19,10 +19,7 @@ const Header = () => {
         <div className="container">
           <div className="header-section">
             <div className="header-logo">
-              <picture>
-                <img src={Logo} type="image/webp" />
-              </picture>
-              <p>Facundo Ledesma</p>
+              <Logo />
             </div>
             <div className="header-menu">
               <MusicButton />

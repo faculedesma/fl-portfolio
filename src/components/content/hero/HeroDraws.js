@@ -1,27 +1,25 @@
 import React, { useContext, useEffect, useRef } from "react";
 import useAudio from "../../hooks/useAudio";
 import BrainDamage from "../../../assets/sounds/brain-damage-0.mp3";
-import { AudioContext } from "../../contexts/AudioContext";
+import { SoundContext } from "../../contexts/SoundContext";
 import { AnimationsContext } from "../../contexts/AnimationsContext";
 import HandPoint from "../../common/animations/HandPoint";
 import Room from "../room/Room";
 
 const HeroDraws = () => {
   const [playing, toggle] = useAudio(BrainDamage);
-  const { audio } = useContext(AudioContext);
+  const { sound } = useContext(SoundContext);
   const { animations, toggleAnimation } = useContext(AnimationsContext);
   const mounted = useRef(false);
 
   const handleOnMouseLeave = () => {
     toggleAnimation("hand");
-    if (audio) {
-      toggle();
-    }
+    toggle();
   };
 
   const handleModuleClick = () => {
     toggleAnimation("hand");
-    if (audio) {
+    if (sound) {
       toggle();
     }
   };
@@ -35,7 +33,7 @@ const HeroDraws = () => {
 
   useEffect(() => {
     if (!playing) {
-      if (audio) {
+      if (sound) {
         toggle();
       }
     }

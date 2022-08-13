@@ -1,32 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { FiGithub, FiMail } from "react-icons/fi";
+import GmailLogo from "../../../assets/images/gmail-logo.png";
+import GithubLogo from "../../../assets/images/github-logo.png";
+import LinkedInLogo from "../../../assets/images/linkedin-logo.png";
+import WhatsAppLogo from "../../../assets/images/whatsapp-logo.png";
 
 const Contact = () => {
+  const [selectedLink, setSelectedLink] = useState("");
+
+  const handleSelectLink = (name) => setSelectedLink(name);
+
+  const cleanUpLink = () => setSelectedLink("");
+
   return (
     <div className="contact">
-      <ul>
-        <li>
-          <a href="mailto: faculedesma1993@gmail.com">
-            <FiMail />
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/faculedesma" target="_blank">
-            <FiGithub />
-          </a>
-        </li>
-        <li>
-          <a href="https://linkedin.com/in/facundo-ledesma/" target="_blank">
-            <FaLinkedinIn />
-          </a>
-        </li>
-        <li>
-          <a href="https://wa.me/+543816435791" target="_blank">
-            <FaWhatsapp />
-          </a>
-        </li>
-      </ul>
+      <a
+        className="mail"
+        href="mailto: faculedesma1993@gmail.com"
+        onMouseEnter={() => handleSelectLink("gmail")}
+        onMouseLeave={cleanUpLink}
+      >
+        {selectedLink === "gmail" ? <img src={GmailLogo} /> : <FiMail />}
+      </a>
+      <a
+        className="github"
+        href="https://github.com/faculedesma"
+        target="_blank"
+        onMouseEnter={() => handleSelectLink("github")}
+        onMouseLeave={cleanUpLink}
+      >
+        {selectedLink === "github" ? <img src={GithubLogo} /> : <FiGithub />}
+      </a>
+      <a
+        className="linkedin"
+        href="https://linkedin.com/in/facundo-ledesma/"
+        target="_blank"
+        onMouseEnter={() => handleSelectLink("linkedin")}
+        onMouseLeave={cleanUpLink}
+      >
+        {selectedLink === "linkedin" ? (
+          <img src={LinkedInLogo} />
+        ) : (
+          <FaLinkedinIn />
+        )}
+      </a>
+      <a
+        className="whatsapp"
+        href="https://wa.me/+543816435791"
+        target="_blank"
+        onMouseEnter={() => handleSelectLink("whatsapp")}
+        onMouseLeave={cleanUpLink}
+      >
+        {selectedLink === "whatsapp" ? (
+          <img src={WhatsAppLogo} />
+        ) : (
+          <FaWhatsapp />
+        )}
+      </a>
     </div>
   );
 };

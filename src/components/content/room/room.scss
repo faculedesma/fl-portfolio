@@ -1,8 +1,45 @@
 .room {
-  img {
-    width: 100%;
-    position: absolute;
-    cursor: pointer;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+
+  .module {
+    &-image {
+      position: absolute;
+      cursor: pointer;
+      animation: room-load 800ms ease-in-out;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-animation {
+      #dsotm {
+        position: absolute;
+        width: 113%;
+        top: -3.5%;
+        left: -6.5%;
+        animation: room-load 1200ms ease-in-out;
+        z-index: 17;
+      }
+
+      #key-west {
+        position: absolute;
+        width: 40%;
+        top: 3%;
+        left: 0;
+        z-index: 0;
+      }
+
+      #laptop {
+        position: absolute;
+        width: 30%;
+        top: 25%;
+        left: 23.5%;
+        z-index: 2;
+      }
+    }
   }
 
   .amp {
@@ -10,6 +47,7 @@
     top: 47%;
     left: 6%;
     z-index: 1;
+    cursor: inherit;
   }
 
   .artaud {
@@ -23,7 +61,8 @@
     position: relative;
     height: 100%;
     width: 100%;
-    z-index: 0;
+    z-index: 0; 
+    opacity: 0.5;
     cursor: inherit;
   }
 
@@ -31,21 +70,21 @@
     width: 7%;
     top: 49%;
     right: 6%;
-    z-index: 1;
+    z-index: 15;
   }
 
   .cancion-animal {
-    width: 7%;
-    top: 49%;
-    left: 62%;
-    z-index: 1;
+    width: 7.5%;
+    top: 51.5%;
+    left: 62.5%;
+    z-index: 17;
   }
 
   .dsotm {
     width: 8%;
     top: 25%;
     left: 6%;
-    z-index: 1;
+    z-index: 4;
   }
 
   .guy {
@@ -56,16 +95,11 @@
     cursor: inherit;
   }
 
-  .guy-hand {
-    width: 3%;
-    top: 40.5%;
-    left: 36%;
-    z-index: 2;
-  }
-
-  .guy-hand:hover {
-    transform: skewX(0);
-    animation: guy-hand-animation 500ms ease-in-out infinite;
+  .right-hand {
+    width: 3.5%;
+    top: 39.5%;
+    left: 35.5%;
+    z-index: 3;
   }
 
   .electricity {
@@ -73,47 +107,50 @@
     top: 52%;
     left: 2%;
     z-index: 1;
+    cursor: inherit;
   }
 
   .eyes {
-    width: 2%;
-    top: 32.1%;
-    left: 39.5%;
-    z-index: 2;
-    transform: translateX(0);
-    animation: eyes-animation 1s ease-in-out infinite;
+    width: 3%;
+    top: 31%;
+    left: 38.6%;
+    z-index: 5;
   }
 
   .key-west {
-    width: 6%;
+    width: 6.5%;
     top: 54%;
-    right: 33%;
-    z-index: 1;
+    right: 32%;
+    z-index: 16;
   }
 
   .lamp {
     width: 5%;
     top: 41%;
     left: 63.5%;
-    z-index: 2;
+    z-index: 12;
   }
 
-  .lamp:hover {
-    fill: red;
+  .laptop {
+    width: 11%;
+    top: 59%;
+    left: 49%;
+    z-index: 3;
   }
 
   .left-speaker {
     width: 7%;
     top: 36%;
     left: 57.5%;
-    z-index: 1;
+    z-index: 11;
   }
 
   .little-plant {
     width: 3.2%;
     top: 50%;
     right: 22%;
-    z-index: 4;
+    z-index: 14;
+    cursor: inherit;
   }
 
   .lupe {
@@ -121,36 +158,37 @@
     top: 56%;
     right: 27%;
     z-index: 1;
+    cursor: inherit;
   }
   
   .plant {
     width: 5%;
-    bottom: 45.5%;
+    bottom: 45%;
     left: 19%;
     z-index: 1;
+    cursor: inherit;
   }
 
   .plant-top {
-    width: 5%;
+    width: 5.5%;
     bottom: 50.5%;
-    left: 19%;
+    left: 18.5%;
     z-index: 1;
-    transform: skew(0, 0);
-    animation: plant-top-animation 1s ease-in-out infinite;
   }
 
   .right-speaker {
     width: 7%;
     top: 49%;
     right: 15%;
-    z-index: 5;
+    z-index: 11;
   }
 
   .sofa {
-    width: 42%;
-    bottom: 7%;
+    width: 43%;
+    bottom: 6%;
     left: 19%;
     z-index: 2;
+    cursor: inherit;
   }
 
   .stand {
@@ -162,10 +200,11 @@
   }
 
   .sunglasses {
-    width: 4.5%;
-    top: 59%;
+    width: 5%;
+    top: 58.8%;
     right: 26%;
     z-index: 1;
+    cursor: inherit;
   }
 
   .table {
@@ -173,6 +212,7 @@
     top: 58%;
     right: 31%;
     z-index: 1;
+    cursor: inherit;
   }
 
   .triangle {
@@ -186,7 +226,7 @@
     width: 13%;
     top: 44%;
     right: 22%;
-    z-index: 3;
+    z-index: 13;
   }
 }
 
@@ -205,36 +245,14 @@
   }
 }
 
-@keyframes plant-top-animation {
+@keyframes room-load {
   0% {
-    transform: skew(0, 0)
-  }
-  
-  50% {
-    transform: skew(5deg, 5deg)
-  }
-  
-  100% {
-    transform: skew(0, 0)
-  }
-}
-
-@keyframes guy-hand-animation {
-  0% {
-    transform: 
-    rotate(0)
-    skew(0, 0);
+    transform: scale(0);
+    opacity: 0;
   }
 
-  50% {
-    transform:
-    rotate(15deg)
-    skew(10deg, 0);
-  }
-  
   100% {
-    transform:
-    rotate(0)
-    skew(0, 0);
+    transform: scale(1);
+    opacity: 1;
   }
 }

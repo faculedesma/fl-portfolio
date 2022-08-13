@@ -4,16 +4,17 @@
 }
 
 .fireworks {
-	bottom: 50px;
-	right: 30%;
-  width: 200px;
+	bottom: 0;
+	right: 25%;
+  width: 150px;
 }
 
 .arrow {
-	bottom: 50px;
-	right: 65%;
-  width: 120px;
+	bottom: 5%;
+	right: 30%;
+  width: 80px;
   opacity: 0.4;
+  transform: skew(60deg, -30deg);
 }
 
 .music {
@@ -23,7 +24,7 @@
 
 .hand {
   top: 40%;
-  left: 13%;
+  left: 12%;
   width: 5%;
   z-index: 100;
 }
@@ -63,7 +64,7 @@
   }
   
   .fireworks {
-    bottom: 0;
-    width: 100px;
+    bottom: 50px;
+    width: 150px;
   }
 }

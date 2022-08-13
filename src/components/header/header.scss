@@ -23,7 +23,7 @@ header {
     }
 
     &-logo {
-      width: 120px;
+      width: 140px;
       transform: rotate(0);
       animation: logo-load 600ms ease-in;
 
@@ -119,15 +119,5 @@ header {
 
   100% {
     transform: translateX(0);
-  }
-}
-
-@keyframes logo-load {
-  0% {
-    transform: rotateX(90);
-  }
-
-  100% {
-    transform: rotateX(0);
   }
 }

@@ -1,38 +1,55 @@
 import React, { useState, useEffect, useRef } from "react";
+import Tooltip from "../../common/tooltip/Tooltip";
 
 const Module = ({
   id,
   src,
-  media,
   animation,
   clickable,
+  styles,
+  information,
   handleOnMouseLeave,
   handleModuleClick,
 }) => {
-  const [shouldToggle, setShouldToggle] = useState(false);
+  const [showAnimation, setshowAnimation] = useState(false);
+  const [open, setOpen] = useState(false);
   const animationRef = useRef(null);
 
+  const handleClose = () => setOpen(false);
+
+  const handleOpen = () => setOpen(true);
+
   const handleClick = () => {
-    if (clickable) {
-      setShouldToggle(true);
-      handleModuleClick();
-    }
+    handleClose();
+    setshowAnimation(true);
+    handleModuleClick();
   };
 
   const handleLeave = () => {
-    setShouldToggle(false);
+    if (showAnimation && !animation?.isFullPage) {
+      setshowAnimation(false);
+      handleOnMouseLeave();
+    } else {
+      handleClose();
+    }
+  };
+
+  const handleCloseFullPageAnimation = () => {
+    setshowAnimation(false);
     handleOnMouseLeave();
   };
 
   const getMediaContent = () => {
-    switch (media) {
+    switch (animation.type) {
       case "video":
         return (
           <video
             id={id}
             ref={animationRef}
-            src={animation}
-            onMouseLeave={handleLeave}
+            src={animation.src}
+            onMouseLeave={
+              animation.isFullPage ? handleCloseFullPageAnimation : undefined
+            }
             type="media/webm"
             loop
             autoPlay
@@ -40,7 +57,15 @@ const Module = ({
           ></video>
         );
       case "image":
-        return <img id={id} src={animation} onMouseLeave={handleLeave} />;
+        return (
+          <img
+            id={id}
+            src={animation.src}
+            onMouseLeave={
+              animation.isFullPage ? handleCloseFullPageAnimation : undefined
+            }
+          />
+        );
     }
   };
 
@@ -61,10 +86,25 @@ const Module = ({
 
   return (
     <>
-      <div className="module-image">
-        <img src={src} className={id} onClick={handleClick} />
+      <div
+        className={`module-image ${id}`}
+        onClick={animation ? handleClick : undefined}
+        onMouseEnter={clickable ? handleOpen : undefined}
+        onMouseLeave={clickable ? handleLeave : undefined}
+      >
+        <img src={src} />
+        {open && (
+          <Tooltip
+            information={information}
+            top={styles.top}
+            bottom={styles.bottom}
+            left={styles.left}
+            right={styles.right}
+            maxHeight={styles.maxHeight}
+          />
+        )}
       </div>
-      {shouldToggle && (
+      {showAnimation && animation && (
         <div className="module-animation">{getMediaContent()}</div>
       )}
     </>
