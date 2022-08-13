@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import useAudio from "../../hooks/useAudio";
 import Tooltip from "../../common/tooltip/Tooltip";
 
 const Module = ({
@@ -8,21 +9,36 @@ const Module = ({
   clickable,
   styles,
   information,
+  loopCount,
+  cleanLoopCount,
+  incrementLoop,
   handleOnMouseLeave,
   handleModuleClick,
 }) => {
   const [showAnimation, setshowAnimation] = useState(false);
   const [open, setOpen] = useState(false);
+  const [count, setCount] = useState(0);
   const animationRef = useRef(null);
+  const [playing, toggle] = useAudio(animation?.sound);
 
   const handleClose = () => setOpen(false);
 
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    setOpen(true);
+    setCount(count + 1);
+    if (id === "left-speaker" || id === "right-speaker") {
+      incrementLoop(id);
+    }
+  };
 
   const handleClick = () => {
     handleClose();
     setshowAnimation(true);
     handleModuleClick();
+    if (animation?.sound && !animation?.src) {
+      return;
+    }
+    toggle();
   };
 
   const handleLeave = () => {
@@ -31,6 +47,9 @@ const Module = ({
       handleOnMouseLeave();
     } else {
       handleClose();
+    }
+    if (playing && !animation?.isFullPage) {
+      toggle();
     }
   };
 
@@ -84,6 +103,23 @@ const Module = ({
     };
   }, [handleLeave]);
 
+  useEffect(() => {
+    if (playing && !showAnimation) {
+      toggle();
+    }
+  }, [playing, showAnimation]);
+
+  useEffect(() => {
+    if (
+      loopCount.left === 3 &&
+      loopCount.right === 3 &&
+      (id === "left-speaker" || id === "right-speaker")
+    ) {
+      toggle();
+      cleanLoopCount();
+    }
+  }, [loopCount]);
+
   return (
     <>
       <div
@@ -107,6 +143,11 @@ const Module = ({
       {showAnimation && animation && (
         <div className="module-animation">{getMediaContent()}</div>
       )}
+      {/* {(id === "right-speaker" || id === "left-speaker") && (
+        <p style={{ position: "absolute", top: 0, right: "250px" }}>
+          Loop Count: {loopCount.left} {loopCount.right}
+        </p>
+      )} */}
     </>
   );
 };

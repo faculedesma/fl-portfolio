@@ -8,7 +8,7 @@
   &-top {
     display: flex;
     flex-direction: column;
-    align-self: center;
+    align-self: flex-start;
   }
 
   .hero {
@@ -73,8 +73,8 @@
 
     &-button {
       position: absolute;
-      bottom: 16%;
-      left: 15%;
+      bottom: 10%;
+      left: 20%;
       transform: skew(60deg, -30deg) scale(0);
       animation: button-load 600ms ease-in-out forwards;
       box-shadow: 4px 3px #dbd9d9;

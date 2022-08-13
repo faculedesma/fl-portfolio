@@ -1,9 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Module from "./Module";
 import { drawModules } from "./drawModules";
 import "./room.scss";
 
+const defaultLoopCount = {
+  right: 0,
+  left: 0,
+};
+
 const Room = ({ handleOnMouseLeave, handleModuleClick }) => {
+  const [loopCount, setLoopCount] = useState(defaultLoopCount);
+
+  const handleIncrementLoop = (id) => {
+    let updatedLoop = {};
+    if (id === "left-speaker") {
+      updatedLoop = {
+        ...loopCount,
+        left: loopCount.left + 1,
+      };
+    } else {
+      updatedLoop = {
+        ...loopCount,
+        right: loopCount.right + 1,
+      };
+    }
+    setLoopCount(updatedLoop);
+  };
+
+  const cleanLoopCount = () => setLoopCount(defaultLoopCount);
+
+  useEffect(() => {
+    if (loopCount.left === 4) {
+      setLoopCount({
+        ...loopCount,
+        left: 0,
+      });
+    }
+  }, [loopCount.left]);
+
+  useEffect(() => {
+    if (loopCount.right === 4) {
+      setLoopCount({
+        ...loopCount,
+        right: 0,
+      });
+    }
+  }, [loopCount.right]);
+
   return (
     <div className="room">
       {drawModules.map((module) => {
@@ -16,6 +59,9 @@ const Room = ({ handleOnMouseLeave, handleModuleClick }) => {
             clickable={module.clickable}
             information={module.information}
             styles={module.styles}
+            loopCount={loopCount}
+            cleanLoopCount={cleanLoopCount}
+            incrementLoop={(id) => handleIncrementLoop(id)}
             handleOnMouseLeave={handleOnMouseLeave}
             handleModuleClick={handleModuleClick}
           />
