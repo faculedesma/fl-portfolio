@@ -2,17 +2,15 @@
 
 .avatar {
   align-self: flex-start;
-  animation: avatar-load 1000ms ease-in-out;
   transform: scale(1);
   transition: transform 200ms ease-in;
   position: absolute;
-  bottom: 0;
-  left: 32%;
+  bottom: 22%;
+  left: 15%;
   z-index: 1;
   cursor: pointer;
-  // border: 2px solid $main-font-color;
-  // border-radius: 50%;
-  // background-color: $app-bg-color;
+  animation: avatar-load 1000ms ease-in-out;
+  transform: skew(0deg, -30deg);
   z-index: 99;
 
   img {
@@ -24,27 +22,6 @@
   transform: scale(1.1);
 }
 
-// .avatar::before {
-//   display: none;
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   background-color: $app-main-light-color;
-//   transform: scale(0);
-//   transition: transform ease-in-out 300ms;
-//   border-radius: 50%;
-//   z-index: -1;
-// }
-
-// .avatar:hover::before,
-// .avatar:focus::before {
-//   display: inherit;
-//   transform: scale(1);
-// }
-
 @media only screen and (max-width: 1280px) {
   .avatar {
     align-self: center;
@@ -53,16 +30,12 @@
 
 @keyframes avatar-load {
   0% {
-    transform: scale(0);
+    transform: scale(0) skew(0, 0);
     opacity: 0;
   }
-
-  50% {
-    opacity: 0.5;
-  }
-
+  
   100% {
-    transform: scale(1);
+    transform: scale(1) skew(0deg, -30deg);
     opacity: 1;
   }
 }

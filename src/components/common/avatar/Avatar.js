@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AvatarPNG from "../../../assets/images/avatar.png";
 import Tooltip from "../../common/tooltip/Tooltip";
 import "./avatar.scss";
@@ -11,22 +11,37 @@ const avatarContent = {
 const Avatar = () => {
   const [open, setOpen] = useState(false);
   const avatarRef = useRef(null);
+  const mounted = useRef(false);
 
-  const handleToggleTooltip = () => setOpen(!open);
+  useEffect(() => {
+    mounted.current = true;
+
+    setTimeout(() => {
+      setOpen(true);
+    }, 4000);
+
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
+
+  const handleClose = () => setOpen(false);
+
+  const handleOpen = () => setOpen(true);
 
   return (
     <picture
       ref={avatarRef}
-      onMouseEnter={handleToggleTooltip}
-      onMouseLeave={handleToggleTooltip}
+      onMouseEnter={handleOpen}
+      onMouseLeave={handleClose}
       className="avatar"
     >
       <img src={AvatarPNG} />
       {open && (
         <Tooltip
           information={avatarContent}
-          bottom="80%"
-          right="80%"
+          bottom="75%"
+          left="75%"
           maxHeight="250px"
         />
       )}

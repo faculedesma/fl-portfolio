@@ -1,11 +1,7 @@
 import React from "react";
 
 export const defaultSoundContextValues = {
-  audios: {
-    reggeaBackingTrack: false,
-    brainDamage: false,
-  },
-  isOn: false,
+  sound: true,
   setSound: () => {},
 };
 
