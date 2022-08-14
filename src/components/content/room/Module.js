@@ -48,7 +48,7 @@ const Module = ({
     } else {
       handleClose();
     }
-    if (playing && !animation?.isFullPage) {
+    if (showAnimation && !animation?.isFullPage) {
       toggle();
     }
   };
@@ -104,7 +104,11 @@ const Module = ({
   }, [handleLeave]);
 
   useEffect(() => {
-    if (playing && !showAnimation) {
+    if (
+      playing &&
+      !showAnimation &&
+      (id !== "left-speaker" || id === "right-speaker")
+    ) {
       toggle();
     }
   }, [playing, showAnimation]);
@@ -139,6 +143,13 @@ const Module = ({
             maxHeight={styles.maxHeight}
           />
         )}
+        {/* {(id === "right-speaker" || id === "left-speaker") && (
+          <div className="loop-triangle">
+            {count === 1 && <img className="bottom" />}
+            {count === 2 && <img className="left" />}
+            {count === 3 && <img className="right" />}
+          </div>
+        )} */}
       </div>
       {showAnimation && animation && (
         <div className="module-animation">{getMediaContent()}</div>
