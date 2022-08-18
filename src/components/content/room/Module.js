@@ -32,13 +32,15 @@ const Module = ({
   };
 
   const handleClick = () => {
-    handleClose();
-    setshowAnimation(true);
-    handleModuleClick();
-    if (animation?.sound && !animation?.src) {
-      return;
+    if (clickable) {
+      handleClose();
+      setshowAnimation(true);
+      handleModuleClick();
+      if (animation?.sound && !animation?.src) {
+        return;
+      }
+      toggle();
     }
-    toggle();
   };
 
   const handleLeave = () => {
@@ -107,7 +109,8 @@ const Module = ({
     if (
       playing &&
       !showAnimation &&
-      (id !== "left-speaker" || id === "right-speaker")
+      id !== "left-speaker" &&
+      id !== "right-speaker"
     ) {
       toggle();
     }
@@ -115,8 +118,8 @@ const Module = ({
 
   useEffect(() => {
     if (
-      loopCount.left === 3 &&
-      loopCount.right === 3 &&
+      loopCount.left === 5 &&
+      loopCount.right === 5 &&
       (id === "left-speaker" || id === "right-speaker")
     ) {
       toggle();
@@ -132,7 +135,7 @@ const Module = ({
         onMouseEnter={clickable ? handleOpen : undefined}
         onMouseLeave={clickable ? handleLeave : undefined}
       >
-        <img src={src} />
+        <img src={src} alt={id} />
         {open && (
           <Tooltip
             information={information}

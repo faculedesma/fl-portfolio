@@ -34,24 +34,24 @@
 
       #laptop {
         position: absolute;
-        width: 30%;
-        top: 25%;
-        left: 23.75%;
-        z-index: 2;
+        width: 46.5%;
+        top: 20.2%;
+        left: 17.5%;
+        z-index: 3;
       }
 
       #cancion-animal {
         position: absolute;
         width: 100px;
         height: 120px;
-        left: 45%;
+        left: 25%;
         bottom: 40%;
         z-index: 20;
         opacity: 0;
         transform: scale(0);
         animation: lion-animation 400ms ease-in-out;
       }
-
+      
       #artaud {
         position: absolute;
         left: 16%;
@@ -61,12 +61,14 @@
         box-shadow: 0 0 4px 3px #acacac;
         animation: artaud-animation 400ms ease-in-out forwards;
       }
-    }
 
-    &-be-patient {
-      position: absolute;
-      top: 0;
-      left: 0;
+      #triangle {
+        position: absolute;
+        width: 17%;
+        left: 67%;
+        bottom: 51%;
+        z-index: 20;
+      }
     }
   }
 
@@ -74,7 +76,7 @@
     width: 12%;
     top: 47%;
     left: 6%;
-    z-index: 1;
+    z-index: 3;
     cursor: inherit;
   }
 
@@ -82,7 +84,7 @@
     width: 8%;
     top: 15%;
     left: 46.5%;
-    z-index: 1;
+    z-index: 6;
   }
 
   .base {
@@ -99,6 +101,7 @@
     top: 49%;
     right: 6%;
     z-index: 15;
+    cursor: inherit;
   }
 
   .cancion-animal {
@@ -112,7 +115,7 @@
     width: 8%;
     top: 25%;
     left: 6%;
-    z-index: 4;
+    z-index: 6;
   }
 
   .guy {
@@ -128,6 +131,7 @@
     top: 39.5%;
     left: 35.5%;
     z-index: 3;
+    cursor: inherit;
   }
 
   .electricity {
@@ -142,7 +146,8 @@
     width: 3%;
     top: 31%;
     left: 38.6%;
-    z-index: 5;
+    z-index: 7;
+    cursor: inherit;
   }
 
   .key-west {
@@ -157,6 +162,7 @@
     top: 41%;
     left: 63.5%;
     z-index: 12;
+    cursor: inherit;
   }
 
   .laptop {
@@ -171,13 +177,14 @@
     top: 36%;
     left: 57.5%;
     z-index: 11;
+    cursor: inherit;
   }
 
   .little-plant {
     width: 3.2%;
     top: 50%;
     right: 22%;
-    z-index: 14;
+    z-index: 17;
     cursor: inherit;
   }
 
@@ -193,15 +200,15 @@
     width: 5%;
     bottom: 45%;
     left: 19%;
-    z-index: 1;
     cursor: inherit;
   }
-
+  
   .plant-top {
     width: 5.5%;
     bottom: 50.5%;
     left: 18.5%;
-    z-index: 1;
+    z-index: 14;
+    cursor: inherit;
   }
 
   .right-speaker {
@@ -209,6 +216,7 @@
     top: 49%;
     right: 15%;
     z-index: 11;
+    cursor: inherit;
   }
 
   .sofa {
@@ -255,6 +263,7 @@
     top: 44%;
     right: 22%;
     z-index: 13;
+    cursor: inherit;
   }
 }
 

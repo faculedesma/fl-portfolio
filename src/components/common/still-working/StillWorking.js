@@ -6,7 +6,7 @@ const StillWorking = () => {
   return (
     <div className="still-working">
       <picture>
-        <img src={Logo} type="image/webp" />
+        <img src={Logo} type="image/webp" alt="logo" />
       </picture>
       <p>
         Still working on mobile version! I encourague you to go to your laptop
