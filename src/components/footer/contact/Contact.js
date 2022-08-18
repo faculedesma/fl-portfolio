@@ -21,7 +21,11 @@ const Contact = () => {
         onMouseEnter={() => handleSelectLink("gmail")}
         onMouseLeave={cleanUpLink}
       >
-        {selectedLink === "gmail" ? <img src={GmailLogo} /> : <FiMail />}
+        {selectedLink === "gmail" ? (
+          <img src={GmailLogo} alt="gmail" />
+        ) : (
+          <FiMail />
+        )}
       </a>
       <a
         className="github"
@@ -30,7 +34,11 @@ const Contact = () => {
         onMouseEnter={() => handleSelectLink("github")}
         onMouseLeave={cleanUpLink}
       >
-        {selectedLink === "github" ? <img src={GithubLogo} /> : <FiGithub />}
+        {selectedLink === "github" ? (
+          <img src={GithubLogo} alt="github" />
+        ) : (
+          <FiGithub />
+        )}
       </a>
       <a
         className="linkedin"
@@ -40,7 +48,7 @@ const Contact = () => {
         onMouseLeave={cleanUpLink}
       >
         {selectedLink === "linkedin" ? (
-          <img src={LinkedInLogo} />
+          <img src={LinkedInLogo} alt="linkedin" />
         ) : (
           <FaLinkedinIn />
         )}
@@ -53,7 +61,7 @@ const Contact = () => {
         onMouseLeave={cleanUpLink}
       >
         {selectedLink === "whatsapp" ? (
-          <img src={WhatsAppLogo} />
+          <img src={WhatsAppLogo} alt="whatsapp" />
         ) : (
           <FaWhatsapp />
         )}

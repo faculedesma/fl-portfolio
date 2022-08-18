@@ -36,7 +36,7 @@ const Avatar = () => {
       onMouseLeave={handleClose}
       className="avatar"
     >
-      <img src={AvatarPNG} />
+      <img src={AvatarPNG} alt="avatar-image" />
       {open && (
         <Tooltip
           information={avatarContent}
