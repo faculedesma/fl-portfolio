@@ -10,7 +10,7 @@ const Logo = ({ onMouseEnter, onMouseLeave }) => {
       onMouseLeave={onMouseLeave}
     >
       <picture>
-        <img src={FLLogo} type="image/webp" />
+        <img src={FLLogo} type="image/webp" alt="logo" />
       </picture>
       <p>Facundo Ledesma</p>
     </div>

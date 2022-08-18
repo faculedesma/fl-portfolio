@@ -30,7 +30,7 @@ const Room = ({ handleOnMouseLeave, handleModuleClick }) => {
   const cleanLoopCount = () => setLoopCount(defaultLoopCount);
 
   useEffect(() => {
-    if (loopCount.left === 4) {
+    if (loopCount.left === 6) {
       setLoopCount({
         ...loopCount,
         left: 0,
@@ -39,7 +39,7 @@ const Room = ({ handleOnMouseLeave, handleModuleClick }) => {
   }, [loopCount.left]);
 
   useEffect(() => {
-    if (loopCount.right === 4) {
+    if (loopCount.right === 6) {
       setLoopCount({
         ...loopCount,
         right: 0,

@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
+import { AnimationsContext } from "../../contexts/AnimationsContext";
 import MainTitle from "./MainTitle";
 import Logo from "../../common/logo/Logo";
-import { AnimationsContext } from "../../contexts/AnimationsContext";
+import Avatar from "../../common/avatar/Avatar";
 
 const HeroSection = () => {
   const [showInfinite, setShowInfinite] = useState(false);
@@ -34,6 +35,7 @@ const HeroSection = () => {
           <span>Let's talk!</span>
         </button>
       </div>
+      <Avatar />
       {showInfinite && (
         <div className="hero-infinite">
           <span>&#8734;</span>

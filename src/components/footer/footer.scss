@@ -1,58 +1,35 @@
 @import '../../utils/variables';
 
 footer {
+  width: 20%;
+  position: absolute;
+  right: 15%;
+  bottom: 14%;
+  transform: skew(60deg, -30deg);
+  z-index: 20;
+
   .contact {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     a {
-      position: absolute;
       color: $main-font-color;
       cursor: pointer;
-      animation: footer-load 400ms ease-in-out forwards;
       
       svg {
-        width: 10px;
-        height: 10px;
-        animation: link-load 600ms ease-in-out forwards;
-        z-index: 2;
+        width: 8px;
+        transform: scale(0);
+        animation: link-load 400ms ease-in-out forwards;
       }
       
       img {
         width: 20px;
-        transform: scale(0) translate(0, 0);
+        transform: scale(0) translate(0, 0) skew(0, 0);
         animation: social-animation 400ms ease-in-out forwards;
       }
     }
-    
-    
-    .mail {
-      bottom: 11%;
-      right: 26%;
-    }
-    
-    .github {
-      bottom: 15%;
-      right: 22%;
-    }
-    
-    .linkedin {
-      bottom: 19.5%;
-      right: 18.5%;
-    }
-    
-    .whatsapp {
-      bottom: 23%;
-      right: 15%;
-      z-index: 16;
-    }
-  }
-}
-
-@keyframes footer-load {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
   }
 }
 
@@ -62,7 +39,7 @@ footer {
   }
 
   100% {
-    transform: scale(5) translate(0, -5px);
+    transform: scale(3) translate(0, -5px) skew(-60deg, 30deg);
   }
 }
 
@@ -72,7 +49,7 @@ footer {
   }
 
   100% {
-    transform: scale(1) skew(60deg, -30deg);
+    transform: scale(1);
   }
 }
 

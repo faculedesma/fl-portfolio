@@ -25,13 +25,14 @@ import Triangle from "../../../assets/images/layers/triangle.png";
 import Turntable from "../../../assets/images/layers/turntable.png";
 import DSOTMAnimation from "../../../assets/images/gifs/dsotm-animation.webm";
 import KWAnimation from "../../../assets/images/gifs/kw-animation.webm";
-import LaptopAnimation from "../../../assets/images/gifs/laptop-animation.webm";
+import LaptopAnimation from "../../../assets/images/gifs/laptop-animation.gif";
 import LionKing from "../../../assets/images/lion-king.png";
 import Spinetta from "../../../assets/images/gifs/spinetta-artaud.webm";
+import TrianglePaint from "../../../assets/images/gifs/triangle-animation.webm";
 import LionSuelesMP3 from "../../../assets/sounds/lion-sueles-dejarme.mp3";
 import BrainDamageMP3 from "../../../assets/sounds/brain-damage.mp3";
 import SpinettaInterviewMP3 from "../../../assets/sounds/spinetta-interview.mp3";
-import InterferenceSimulationMP3 from "../../../assets/sounds/interference-simulation.mp3";
+import HAL9000DeactivationMP3 from "../../../assets/sounds/hal9000-deactivation.mp3";
 import TheEndMP3 from "../../../assets/sounds/the-end-intro.mp3";
 import MotherOceanMP3 from "../../../assets/sounds/mother-ocean.mp3";
 
@@ -40,9 +41,14 @@ export const drawModules = [
     id: "amp",
     src: Amp,
     animation: null,
-    clickable: false,
-    information: null,
-    styles: null,
+    clickable: true,
+    information: {
+      generic: "Hear me through the noise.",
+    },
+    styles: {
+      bottom: 0,
+      left: "100%",
+    },
   },
   {
     id: "artaud",
@@ -55,12 +61,12 @@ export const drawModules = [
     },
     clickable: true,
     information: {
-      generic: `"Todas las hojas son del viento..." Luis Alberto Spinetta.`,
+      generic: `"Todas las hojas son del viento... Que calor hará sin vos en verano... Siempre desear, nunca tener... Siempre soñar, nunca creer... Las almas repudian todo encierro... No todo tiempo por pasado es mejor, manaña es mejor... Tengo tiempo para saber si lo que sueño concluye en algo... No estoy atado a ningún sueño ya..." Luis Alberto Spinetta.`,
       personal: "Te quiero flaco.",
     },
     styles: {
-      top: "-100%",
-      left: "100%",
+      top: "-50%",
+      right: "100%",
     },
   },
   {
@@ -78,7 +84,8 @@ export const drawModules = [
     clickable: true,
     information: {
       generic: "Un cactus suaviza mi llema con su piel.",
-      personal: "Te quiero gus.",
+      personal:
+        "We are part of nature and nature is part of us. It's printed in our DNA, everything that happened before us makes us reach this moment, right here right now. The future will always be uncertain. Be grateful for everything you have done to reach this point. Share yourself with others and be part of them. Be free.",
     },
     styles: {
       bottom: "100%",
@@ -96,13 +103,14 @@ export const drawModules = [
     },
     clickable: true,
     information: {
-      generic: `"Meses navegando, tierra a la vista..." Gustavo Cerati was an argentinian musician. He is a great inspiration.`,
+      generic: `"Meses navegando, tierra a la vista..." Gustavo Cerati was an argentinian musician. He is a great inspiration. `,
       personal:
-        "Sometimes we have to jump to the void to experiencie extraordinarie things.",
+        "Opportunities at each moment are infinite and at that point we have to make a decision, 0 or 1. Based on each one, a completely new reality develops, the effect of a cause of which we are co-creators. The other part will always be a mystery and the elemental reason for human curiosity. Jump into the void and become infinite.",
     },
     styles: {
       top: "100%",
       left: 0,
+      maxHeight: "150px",
     },
   },
   {
@@ -118,10 +126,11 @@ export const drawModules = [
     information: {
       generic:
         "Pink Floyd - The Dark Side Of The Moon (1973). Well, what to say? Feels like waking up.",
-      personal: "No se cuantas veces esuche dark side.",
+      personal:
+        "We'll learn what we've forgotten. As a child we dream in paradise, it feels like each new day is an opportunity to play. Then as we grow we start forgetting the earth is spinning around the sun and we don't even wonder why. Time seems to pull you down as gravity. Will you ever have the time to do what you've ever wanted before you are dead? We hope to find the ones that left us behind in another gig. But you know, why do you need all the things money can buy? What's missing there? Sharing with other beings is what connects us, no matter how different we can be from each other. We shouldn't forget that from here we only see one side of the moon.",
     },
     styles: {
-      bottom: "75%",
+      bottom: "50%",
       left: "100%",
     },
   },
@@ -146,10 +155,14 @@ export const drawModules = [
     src: Eyes,
     animation: null,
     clickable: true,
-    information: { generic: "Everybodys eyes is unic.", personal: "Answers." },
+    information: {
+      generic: "Florecer mirandote a los ojos.",
+      personal:
+        "Everybody's eyes are unique. Go deep into them to find answers. Everything is your reflection. Empathy.",
+    },
     styles: {
       bottom: "100%",
-      right: "75%",
+      left: 0,
     },
   },
   {
@@ -164,11 +177,12 @@ export const drawModules = [
     clickable: true,
     information: {
       generic: "Travel other realities to know who you really are.",
-      personal: "It changed my life. Connection to the mother ocean.",
+      personal:
+        "If I had to choose one trip: finishing 2017 I travelled to a magical place called Key West, in Florida. Didn't know what to really expect but I had the conviction I wanted to do it. It changed my life. Made me realize the power of humans when we work together and collaborate for a greater purpose. Definitely want to keep exploring this vast world in which we live.",
     },
     styles: {
-      top: "75%",
-      left: "100%",
+      top: 0,
+      right: "100%",
     },
   },
   {
@@ -176,7 +190,7 @@ export const drawModules = [
     src: Lamp,
     animation: null,
     clickable: true,
-    information: { generic: "Spirituality.", personal: "Connection to God?" },
+    information: { generic: "Who's your God?", personal: "" },
     styles: {
       bottom: "100%",
       right: "75%",
@@ -187,18 +201,18 @@ export const drawModules = [
     src: Laptop,
     animation: {
       src: LaptopAnimation,
-      type: "video",
-      sound: InterferenceSimulationMP3,
-      isFullPage: false,
+      type: "image",
+      sound: HAL9000DeactivationMP3,
+      isFullPage: true,
     },
     clickable: true,
     information: {
       generic:
         "Hello World! was the first message to be sent on the internet. A revolution! My humans understand me.",
-      personal: "Mi information.",
+      personal: `My love for computers started when i was a kid, always made me courious how to interact with them. First playing video-games and then studying computer science in my town's college. I've graduate and started working as a software developer. After years of working i became aware of the true power of technology and how limitless can be. The universe is expanding and we are expanding with him, there's no stopping for learning. Let's join.`,
     },
     styles: {
-      bottom: 0,
+      top: 0,
       right: "100%",
     },
   },
@@ -223,10 +237,19 @@ export const drawModules = [
   {
     id: "little-plant",
     src: LittlePlant,
-    animation: null,
-    clickable: false,
-    information: null,
-    styles: null,
+    animation: {
+      src: null,
+    },
+    clickable: true,
+    information: {
+      generic: "Take care of your home!",
+      personal:
+        "Plant more trees. Save electricity. Save water. Use less paper. Save fuel. Use jute bags. Quit smoking. Recycle.",
+    },
+    styles: {
+      top: "50%",
+      right: 0,
+    },
   },
   {
     id: "lupe",
@@ -240,6 +263,7 @@ export const drawModules = [
     id: "plant",
     src: Plant,
     animation: null,
+    animation: null,
     clickable: false,
     information: null,
     styles: null,
@@ -247,10 +271,19 @@ export const drawModules = [
   {
     id: "plant-top",
     src: PlantTop,
-    animation: null,
-    clickable: false,
-    information: null,
-    styles: null,
+    animation: {
+      src: null,
+    },
+    clickable: true,
+    information: {
+      generic: "Take care of your home!",
+      personal:
+        "Plant more trees. Save electricity. Save water. Use less paper. Save fuel. Use jute bags. Quit smoking. Recycle.",
+    },
+    styles: {
+      bottom: "50%",
+      left: "100%",
+    },
   },
   {
     id: "right-hand",
@@ -313,12 +346,20 @@ export const drawModules = [
   {
     id: "triangle",
     src: Triangle,
-    animation: null,
+    animation: {
+      src: TrianglePaint,
+      type: "video",
+      sound: null,
+      isFullPage: true,
+    },
     clickable: true,
-    information: { personal: "I love triangles!" },
+    information: {
+      generic: "Paint who you are.",
+      personal: `Art was always a really important part of my expression and a direct bridge with my imagination. Started as a child painting in school going through upside downs and today is an essential part of me. I love to create things from fantasy trying to have a better understanding of reality.`,
+    },
     styles: {
       bottom: "100%",
-      right: "50%",
+      right: "-50%",
     },
   },
   {
@@ -326,10 +367,13 @@ export const drawModules = [
     src: Turntable,
     animation: null,
     clickable: true,
-    information: { generic: "Music quality." },
+    information: {
+      generic: "",
+      personal: "As you may realized music is a really big part of my life.",
+    },
     styles: {
-      top: "-100%",
-      left: "50%",
+      bottom: "50%",
+      right: "100%",
     },
   },
 ];

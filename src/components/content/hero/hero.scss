@@ -97,13 +97,6 @@
         span {
           font-size: 10px;
           color: $main-font-color;
-          animation: color ease-in-out 300ms;
-        }
-      }
-      
-      button:hover {
-        span {
-          color: black;
         }
       }
 
@@ -116,12 +109,14 @@
         right: 0;
         z-index: -1;
         background-color: $app-main-light-color;
+        opacity: 0;
         transform: scaleX(0);
-        transition: transform ease-in-out 500ms;
+        transition: all ease-in-out 500ms;
       }
 
       button:hover::before,
       button:focus::before {
+        opacity: 1;
         transform: scaleX(1);
       }
     }

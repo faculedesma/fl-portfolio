@@ -4,8 +4,8 @@
 }
 
 .fireworks {
-	bottom: 0;
-	right: 25%;
+	bottom: -30px;
+  left: 8%;
   width: 150px;
 }
 
@@ -48,9 +48,11 @@
 
 .satellite {
   position: relative;
-  
+  transform: scale(0);
+  animation: animation-load 600ms ease-in forwards;
+
   svg {
-    opacity: 0.7;
+    opacity: 0.5;
   }
 }
 
@@ -68,5 +70,15 @@
   .fireworks {
     bottom: 50px;
     width: 150px;
+  }
+}
+
+@keyframes animation-load {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
   }
 }

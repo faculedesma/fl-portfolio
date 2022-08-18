@@ -17,29 +17,90 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 99;
-
+    z-index: 100;
+    
     &-recom {
       position: relative;
+      transform: scale(0);
+      animation: recom-load 400ms ease-in forwards;
       
       img {
         width: 150px;
       }
 
       p {
-        cursor: pointer;
         position: absolute;
+        font-size: 12px;
+        width: 50%;
         top: 35%;
         left: 25%;
         margin: 0;
         opacity: 0.5;
+        text-align: center;
       }
     }
     
+    &-goto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      transform: scale(0);
+      animation: goto-load 500ms ease-in forwards;
+      opacity: 0.7;
+
+      button {
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-family: inherit;
+        transition: color 300ms ease-in;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+          
+        svg {
+          font-size: 25px;
+        }
+        
+        :nth-child(3) {
+          animation: arrow-animation 600ms ease-in-out infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes recom-load {
+  from {
+    transform: scale(0);
   }
 
+  to {
+    transform: scale(1);
+  }
+}
 
-  .animation {
-    cursor: pointer;
+@keyframes goto-load {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes arrow-animation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

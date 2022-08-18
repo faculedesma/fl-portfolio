@@ -6,7 +6,7 @@ const Tooltip = ({ information, top, bottom, left, right, maxHeight }) => {
     <div className="tooltip" style={{ top, bottom, left, right }}>
       <div
         className="tooltip-content"
-        style={{ maxHeight: maxHeight || "150px" }}
+        style={{ maxHeight: maxHeight || "250px" }}
       >
         {information.generic && (
           <p className="tooltip-generic">{information.generic}</p>
