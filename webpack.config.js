@@ -57,6 +57,7 @@ module.exports = {
       title: "FL | Facundo Ledesma",
       filename: "index.html",
       template: "src/assets/template.html",
+      favicon: "src/assets/logo.ico",
     }),
     new BundleAnalyzerPlugin(),
   ],
