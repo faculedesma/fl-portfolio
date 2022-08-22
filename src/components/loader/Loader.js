@@ -1,6 +1,6 @@
 import React from "react";
 import Satellite from "../common/animations/Satellite";
-import PsychHeadphones from "../../assets/images/psych-headphones.png";
+import PsychHeadphones from "../../assets/images/other/psych-headphones.png";
 import { MdArrowRightAlt } from "react-icons/md";
 import { BsFillDoorOpenFill } from "react-icons/bs";
 import "./loader.scss";

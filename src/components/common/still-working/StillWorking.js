@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../../assets/images/logo-golden-ratio.png";
+import Logo from "../../../assets/images/logos/logo-golden-ratio.png";
 import "./still-working.scss";
 
 const StillWorking = () => {

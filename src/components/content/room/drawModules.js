@@ -26,7 +26,7 @@ import Turntable from "../../../assets/images/layers/turntable.png";
 import DSOTMAnimation from "../../../assets/images/gifs/dsotm-animation.webm";
 import KWAnimation from "../../../assets/images/gifs/kw-animation.webm";
 import LaptopAnimation from "../../../assets/images/gifs/laptop-animation.gif";
-import LionKing from "../../../assets/images/lion-king.png";
+import LionAnimation from "../../../assets/images/gifs/lion-animation.webm";
 import Spinetta from "../../../assets/images/gifs/spinetta-artaud.webm";
 import TrianglePaint from "../../../assets/images/gifs/triangle-animation.webm";
 import LionSuelesMP3 from "../../../assets/sounds/lion-sueles-dejarme.mp3";
@@ -96,8 +96,8 @@ export const drawModules = [
     id: "cancion-animal",
     src: CancionAnimal,
     animation: {
-      src: LionKing,
-      type: "image",
+      src: LionAnimation,
+      type: "video",
       sound: LionSuelesMP3,
       isFullPage: false,
     },
