@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import AvatarPNG from "../../../assets/images/avatar.png";
+import AvatarPNG from "../../../assets/images/other/avatar.png";
 import Tooltip from "../../common/tooltip/Tooltip";
 import "./avatar.scss";
 

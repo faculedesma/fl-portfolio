@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { FiGithub, FiMail } from "react-icons/fi";
-import GmailLogo from "../../../assets/images/gmail-logo.png";
-import GithubLogo from "../../../assets/images/github-logo.png";
-import LinkedInLogo from "../../../assets/images/linkedin-logo.png";
-import WhatsAppLogo from "../../../assets/images/whatsapp-logo.png";
+import GmailLogo from "../../../assets/images/logos/gmail-logo.png";
+import GithubLogo from "../../../assets/images/logos/github-logo.png";
+import LinkedInLogo from "../../../assets/images/logos/linkedin-logo.png";
+import WhatsAppLogo from "../../../assets/images/logos/whatsapp-logo.png";
 
 const Contact = () => {
   const [selectedLink, setSelectedLink] = useState("");

@@ -1,5 +1,5 @@
 import React from "react";
-import FLLogo from "../../../assets/images/logo-golden-ratio.png";
+import FLLogo from "../../../assets/images/logos/logo-golden-ratio.png";
 import "./logo.scss";
 
 const Logo = ({ onMouseEnter, onMouseLeave }) => {
