@@ -9,14 +9,6 @@
   width: 150px;
 }
 
-.arrow {
-	bottom: 5%;
-	right: 30%;
-  width: 80px;
-  opacity: 0.4;
-  transform: skew(60deg, -30deg);
-}
-
 .music {
   bottom: 0;
   width: 100px;
@@ -27,23 +19,6 @@
   left: 12%;
   width: 5%;
   z-index: 100;
-}
-
-.strings {
-  width: 200px;
-  z-index: 9;
-
-  svg {
-    opacity: 0.5;
-  }
-}
-
-.pulse {
-  width: 200px;
-  
-  svg {
-    opacity: 0.5;
-  }
 }
 
 .satellite {
@@ -57,14 +32,9 @@
 }
 
 @media only screen and (max-width: 1280px) {
-  .arrow, .fireworks {
+  .fireworks {
     right: unset;
     left: 10%;
-  }
-  
-  .arrow {
-    bottom: 100px;
-    transform: rotate(90deg);
   }
   
   .fireworks {

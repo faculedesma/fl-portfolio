@@ -16,7 +16,7 @@ import {
 import WakeUPMP3 from "../assets/sounds/wake-up.mp3";
 import "./app.scss";
 
-const pageLoadTime = 3000;
+const pageLoadTime = 5000;
 
 const App = () => {
   const [animations, setAnimations] = useState(defaultContextValues.animations);
