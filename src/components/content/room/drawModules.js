@@ -25,7 +25,7 @@ import Triangle from "../../../assets/images/layers/triangle.png";
 import Turntable from "../../../assets/images/layers/turntable.png";
 import DSOTMAnimation from "../../../assets/images/gifs/dsotm-animation.webm";
 import KWAnimation from "../../../assets/images/gifs/kw-animation.webm";
-import LaptopAnimation from "../../../assets/images/gifs/laptop-animation.gif";
+import LaptopAnimation from "../../../assets/images/gifs/laptop-animation.webm";
 import LionAnimation from "../../../assets/images/gifs/lion-animation.webm";
 import Spinetta from "../../../assets/images/gifs/spinetta-artaud.webm";
 import TrianglePaint from "../../../assets/images/gifs/triangle-animation.webm";
@@ -201,7 +201,7 @@ export const drawModules = [
     src: Laptop,
     animation: {
       src: LaptopAnimation,
-      type: "image",
+      type: "video",
       sound: HAL9000DeactivationMP3,
       isFullPage: true,
     },

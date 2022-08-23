@@ -10,7 +10,7 @@ const Header = () => {
   const handleContactClick = () => {
     const footer = document.getElementById("footer");
     footer.scrollIntoView({ behavior: "smooth" });
-    toggleAnimation(["fireworks", "arrow"]);
+    toggleAnimation(["fireworks"]);
   };
 
   return (
