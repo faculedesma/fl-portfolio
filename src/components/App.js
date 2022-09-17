@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import useAudio from "./hooks/useAudio";
-import useCheckIsMobile from "./hooks/useCheckIsMobile";
 import Content from "./content/Content";
 import BeYourself from "./common/BeYourself";
-import StillWorking from "./common/still-working/StillWorking";
 import Loader from "./loader/Loader";
 import {
   AnimationsContext,
@@ -24,7 +22,6 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [goToApp, setGoToApp] = useState(false);
   const [playing, toggle] = useAudio(WakeUPMP3);
-  const isMobile = useCheckIsMobile();
   const mounted = useRef(false);
 
   const toggleAnimation = (names) => {
@@ -60,7 +57,7 @@ const App = () => {
     };
   }, []);
 
-  return !isMobile ? (
+  return (
     <AnimationsContext.Provider value={{ animations, toggleAnimation }}>
       <SoundContext.Provider value={{ sound, setSound }}>
         <div className={`app ${!goToApp ? "" : "animate"}`}>
@@ -70,8 +67,6 @@ const App = () => {
         {!goToApp && <Loader isLoading={isLoading} onContinue={onContinue} />}
       </SoundContext.Provider>
     </AnimationsContext.Provider>
-  ) : (
-    <StillWorking />
   );
 };
 

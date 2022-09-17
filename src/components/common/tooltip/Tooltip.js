@@ -1,20 +1,22 @@
 import React from "react";
 import "./tooltip.scss";
 
-const Tooltip = ({ information, top, bottom, left, right, maxHeight }) => {
+const Tooltip = ({ information, close = false, closeTooltip }) => {
   return (
-    <div className="tooltip" style={{ top, bottom, left, right }}>
-      <div
-        className="tooltip-content"
-        style={{ maxHeight: maxHeight || "250px" }}
-      >
+    <div className="tooltip">
+      <div className="tooltip-content">
         {information.generic && (
-          <p className="tooltip-generic">{information.generic}</p>
+          <div className="tooltip-generic">{information.generic}</div>
         )}
         {information.personal && (
-          <p className="tooltip-personal">{information.personal}</p>
+          <div className="tooltip-personal">{information.personal}</div>
         )}
       </div>
+      {close && (
+        <div className="tooltip-close" onClick={closeTooltip}>
+          X
+        </div>
+      )}
     </div>
   );
 };

@@ -31,18 +31,6 @@
   }
 }
 
-@media only screen and (max-width: 1280px) {
-  .fireworks {
-    right: unset;
-    left: 10%;
-  }
-  
-  .fireworks {
-    bottom: 50px;
-    width: 150px;
-  }
-}
-
 @keyframes animation-load {
   from {
     transform: scale(0);
@@ -51,4 +39,30 @@
   to {
     transform: scale(1);
   }
+}
+
+/* ----------- Celullar ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-width: 375px) 
+  and (max-width: 812px) {
+    .fireworks {
+      width: 120px;
+      bottom: 0;
+      left: -80px;
+    }
+}
+
+/* ----------- Tablets ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-width: 812px) 
+  and (max-width: 1280px) {
+    .fireworks {
+      width: 140px;
+      bottom: 0%;
+      left: 0%;
+    }
 }

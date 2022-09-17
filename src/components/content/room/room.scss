@@ -26,18 +26,26 @@
 
       #key-west {
         position: absolute;
-        width: 40%;
-        top: 3%;
-        left: 0;
+        width: 38%;
+        top: 2%;
+        left: 2%;
         z-index: 0;
       }
 
-      #laptop {
+      #hal9000 {
         position: absolute;
-        width: 46.5%;
-        top: 20.2%;
-        left: 17.5%;
-        z-index: 3;
+        width: 9%;
+        top: 59.5%;
+        left: 50%;
+        z-index: 14;
+      }
+
+      #guy-glitch {
+        position: absolute;
+        width: 20%;
+        top: 33.7%;
+        left: 31%;
+        z-index: 5;
       }
 
       #cancion-animal {
@@ -47,16 +55,15 @@
         left: 25%;
         bottom: 40%;
         z-index: 20;
-        opacity: 0;
         transform: scale(0);
-        animation: lion-animation 400ms ease-in-out;
+        animation: cerati-animation 200ms ease-in forwards;
       }
       
       #artaud {
         position: absolute;
-        left: 16%;
+        left: 20%;
         bottom: 72%;
-        width: 20%;
+        width: 19%;
         transform: skew(0deg, -30deg) scale(0);
         box-shadow: 0 0 4px 3px #acacac;
         animation: artaud-animation 400ms ease-in-out forwards;
@@ -65,222 +72,522 @@
       #triangle {
         position: absolute;
         width: 17%;
-        left: 67%;
+        left: 68%;
         bottom: 51%;
         z-index: 20;
+      }
+
+      #turntable {
+        position: absolute;
+        width: 57%;
+        top: 29.7%;
+        left: 36.8%;
+        z-index: 21;
+      }
+
+      #lupe {
+        position: absolute;
+        width: 33%;
+        top: 24%;
+        left: 26%;
+        z-index: 10;
+      }
+      
+      #moris {
+        position: absolute;
+        width: 20.3%;
+        top: 34.1%;
+        left: 30.7%;
+        z-index: 26;
+      }
+      
+      #moris-soul {
+        position: absolute;
+        width: 19.5%;
+        top: 34.3%;
+        left: 56.4%;
+        z-index: 13;
+      }
+
+      #turntable-bw {
+        position: absolute;
+        width: 11%;
+        top: 45.3%;
+        right: 24.3%;
+        z-index: 14;
+      }
+
+      #plant-grow {
+        position: absolute;
+        width: 70%;
+        bottom: 8%;
+        left: 17%;
+        z-index: 2;
+      }
+
+      #stalker-dialogue {
+        position: absolute;
+        width: 50%;
+        bottom: 33%;
+        left: 23%;
+        z-index: 28;
+        box-shadow: 0 0 4px 3px #acacac;
+        transform: scale(0);
+        animation: stalker-display 400ms ease forwards;
+      }
+
+      #pedro {
+        position: absolute;
+        width: 7%;
+        top: 48.3%;
+        right: 10%;
+        z-index: 16;
+      }
+
+      #la-biblia-animate {
+        position: absolute;
+        width: 11%;
+        bottom: 20.5%;
+        right: 31%;
+        z-index: 20;
+        transform: translate(0, 0);
+        transition: la-biblia-animate 200ms ease-in forwards;
+      }
+
+      #mescal {
+        position: absolute;
+        width: 60%;
+        top: 0;
+        left: 0;
+        z-index: 30;
+        box-shadow: 0 0 4px 3px #acacac;
+        transform: scale(0);
+        animation: mescal-show 400ms ease forwards;
       }
     }
   }
 
   .amp {
-    width: 12%;
-    top: 47%;
-    left: 6%;
-    z-index: 3;
-    cursor: inherit;
+    width: 11.1%;
+    top: 46.4%;
+    left: 10.7%;
+    z-index: 4;
+    
+    .tooltip {
+      top: 75%;
+      left: 0%;
+    }
   }
 
+  .ashtray {
+    width: 4.5%;
+    top: 47%;
+    left: 48%;
+    z-index: 2;
+    cursor: inherit;
+
+    .tooltip {
+      bottom: 50%;
+      right: 100%;
+    }
+  }
+  
   .artaud {
-    width: 8%;
+    width: 7%;
     top: 15%;
     left: 46.5%;
     z-index: 6;
+    
+    .tooltip {
+      top: -50%;
+      right: 50%;
+    }
   }
-
+  
   .base {
     position: relative;
     height: 100%;
     width: 100%;
     z-index: 0; 
-    opacity: 0.5;
+    opacity: 0.8;
     cursor: inherit;
   }
 
-  .cactus {
-    width: 7%;
-    top: 49%;
-    right: 6%;
+  .beer {
+    width: 3.5%;
+    top: 46%;
+    left: 31%;
+    z-index: 26;
+
+    .tooltip {
+      bottom: 50%;
+      right: 100%;
+    }
+  }
+
+  .cables {
+    width: 8.7%;
+    top: 47.7%;
+    right: 16%;
     z-index: 15;
     cursor: inherit;
   }
+  
+  .cactus {
+    width: 6%;
+    top: 49.2%;
+    right: 10.5%;
+    z-index: 15;
+
+    .tooltip {
+      bottom: 100%;
+      right: 0;
+    }
+  }
 
   .cancion-animal {
-    width: 7.5%;
-    top: 51.5%;
-    left: 62.5%;
+    width: 7%;
+    top: 51.2%;
+    left: 62.2%;
     z-index: 17;
+
+    .tooltip {
+      top: 75%;
+      left: 0;
+
+      &-content {
+        max-height: 150px;
+      }
+    }
   }
 
-  .dsotm {
-    width: 8%;
-    top: 25%;
-    left: 6%;
-    z-index: 6;
-  }
-
-  .guy {
-    width: 27%;
-    top: 27%;
-    left: 25%;
-    z-index: 1;
-    cursor: inherit;
-  }
-
-  .right-hand {
-    width: 3.5%;
-    top: 39.5%;
-    left: 35.7%;
+  .cushions {
+    width: 24%;
+    bottom: 12%;
+    left: 33%;
     z-index: 3;
     cursor: inherit;
   }
 
+  .dsotm {
+    width: 6.5%;
+    top: 23.3%;
+    left: 12.4%;
+    z-index: 6;
+
+    .tooltip {
+      bottom: 50%;
+      left: 100%;
+    }
+  }
+
+  .guy {
+    width: 20%;
+    top: 33.7%;
+    left: 31%;
+    z-index: 25;
+
+    .tooltip {
+      bottom: 100%;
+      right: 0;
+    }
+  }
+
   .electricity {
-    width: 3%;
+    width: 2.5%;
     top: 52%;
-    left: 2%;
+    left: 8%;
     z-index: 1;
     cursor: inherit;
   }
 
-  .eyes {
-    width: 3%;
-    top: 31%;
-    left: 38.6%;
-    z-index: 7;
+  .electric-guitar {
+    width: 6%;
+    top: 29%;
+    left: 23%;
+    z-index: 3;
+
+    .tooltip {
+      bottom: 50%;
+      right: 100%;
+    }
+  }
+
+  .eg-stand {
+    width: 5.5%;
+    bottom: 45%;
+    left: 23.7%;
+    z-index: 2;
     cursor: inherit;
+
+    .tooltip {
+      bottom: 50%;
+      right: 100%;
+    }
+  }
+
+  .headphones {
+    width: 4.5%;
+    top: 41.5%;
+    right: 14.8%;
+    z-index: 14;
+
+    .tooltip {
+      bottom: 50%;
+      right: 100%;
+    }
+  }
+
+  .hp-support {
+    width: 3%;
+    top: 41.5%;
+    right: 14.8%;
+    z-index: 13;
+
+    .tooltip {
+      bottom: 50%;
+      right: 100%;
+    }
   }
 
   .key-west {
-    width: 6.5%;
-    top: 54%;
-    right: 32%;
+    width: 4.8%;
+    top: 53.5%;
+    right: 34%;
     z-index: 16;
+
+
+    .tooltip {
+      top: 0;
+      right: 100%;
+    }
+  }
+
+  .la-biblia {
+    width: 9.5%;
+    bottom: 19.5%;
+    right: 31%;
+    z-index: 20;
+    cursor: pointer;
+
+    .tooltip {
+      bottom: 50%;
+      right: 100%;
+    }
   }
 
   .lamp {
     width: 5%;
     top: 41%;
-    left: 63.5%;
+    left: 63.6%;
     z-index: 12;
     cursor: inherit;
+
+    .tooltip {
+      top: -75%;
+      left: -100%;
+    }
   }
 
   .laptop {
-    width: 11%;
-    top: 59%;
-    left: 49%;
-    z-index: 3;
-  }
+    width: 9%;
+    top: 59.5%;
+    left: 50%;
+    z-index: 13;
 
+    .tooltip {
+      top: 0;
+      right: 100%;
+    }
+  }
+ 
   .left-speaker {
-    width: 7%;
-    top: 36%;
-    left: 57.5%;
+    width: 6.5%;
+    top: 36.2%;
+    left: 56.8%;
     z-index: 11;
     cursor: inherit;
+
+    .tooltip {
+      top: -100%;
+      right: 0;
+    }
   }
 
   .little-plant {
-    width: 3.2%;
-    top: 50%;
-    right: 22%;
-    z-index: 17;
+    width: 3%;
+    top: 42.5%;
+    right: 35.3%;
+    z-index: 11;
     cursor: inherit;
+
+    .tooltip {
+      top: 50%;
+      right:0;
+    }
   }
 
   .lupe {
     width: 3%;
     top: 56%;
     right: 27%;
-    z-index: 1;
+    z-index: 25;
+
+    .tooltip {
+      top: 50%;
+      right: 0;
+    }
+  }
+
+  .orange {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    opacity: 0.2;
+    z-index: 200;
     cursor: inherit;
+    display: none;
+  }
+
+  .paint {
+    width: 13%;
+    bottom: 35%;
+    left: 24%;
+    z-index: 3;
+
+    .tooltip {
+      top: 100%;
+      right: 25%;
+    }
   }
   
   .plant {
-    width: 5%;
-    bottom: 45%;
-    left: 19%;
-    cursor: inherit;
+    width: 4.5%;
+    bottom: 8.5%;
+    right: 38.5%;
+    z-index: 13;
+
+    .tooltip {
+      bottom: 50%;
+      right: 0;
+    }
   }
-  
-  .plant-top {
-    width: 5.5%;
-    bottom: 50.5%;
-    left: 18.5%;
-    z-index: 14;
-    cursor: inherit;
+
+  .psylocibin {
+    width: 4.5%;
+    top: 11%;
+    left: 33%;
+    opacity: 0.3;
+    z-index: 2;
+  }
+
+  .preamp {
+    width: 3.5%;
+    top: 52%;
+    right: 23%;
+    z-index: 10;
+
+    .tooltip {
+      bottom: 50%;
+      right: 100%;
+    }
   }
 
   .right-speaker {
-    width: 7%;
-    top: 49%;
-    right: 15%;
+    width: 6.5%;
+    top: 48.5%;
+    right: 17.2%;
     z-index: 11;
     cursor: inherit;
+
+    .tooltip {
+      top: 100%;
+      right: 0;
+    }
   }
 
   .sofa {
-    width: 43%;
-    bottom: 6%;
-    left: 19%;
-    z-index: 2;
+    width: 35.5%;
+    bottom: 10%;
+    left: 25%;
+    z-index: 3;
     cursor: inherit;
   }
 
   .stand {
-    width: 48%;
-    top: 2.5%;
-    left: 53%;
-    z-index: 0;
+    width: 31%;
+    top: 41%;
+    left: 54%;
+    z-index: 1;
     cursor: inherit;
   }
 
+  .stalker {
+    width: 5.5%;
+    top: 59.5%;
+    right: 21.5%;
+    z-index: 28;
+  }
+
   .sunglasses {
-    width: 5%;
-    top: 58.8%;
-    right: 26%;
+    width: 4%;
+    top: 58%;
+    right: 28%;
     z-index: 1;
     cursor: inherit;
   }
 
   .table {
-    width: 27%;
-    top: 58%;
-    right: 31%;
-    z-index: 1;
+    width: 26%;
+    top: 56.9%;
+    right: 31.3%;
+    z-index: 2;
     cursor: inherit;
   }
 
   .triangle {
     width: 7%;
-    top: 35%;
-    right: 21%;
+    top: 34%;
+    right: 20.5%;
     z-index: 1;
+
+    .tooltip {
+      bottom: 100%;
+      right: -50%;
+    }
   }
 
   .turntable {
-    width: 13%;
-    top: 44%;
-    right: 22%;
+    width: 11%;
+    top: 45.3%;
+    right: 24.3%;
     z-index: 13;
+
+    .tooltip {
+      bottom: 50%;
+      right: 100%;
+    }
+  }
+
+  .weed {
+    width: 3.5%;
+    bottom: 35.7%;
+    left: 44.4%;
+    z-index: 12;
     cursor: inherit;
+
+    .tooltip {
+      bottom: 50%;
+      right: 100%;
+    }
+  }
+
+  .weed:hover {
+    animation: weed-hover 500ms ease;
   }
 }
 
-
-@keyframes eyes-animation {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(-25%);
-  }
-  
-  100% {
-    transform: translateX(0);
-  }
-}
 
 @keyframes room-load {
   0% {
@@ -294,20 +601,13 @@
   }
 }
 
-@keyframes lion-animation {
+@keyframes cerati-animation {
   0% {
     transform: scale(0);
-    opacity: 0.2;
-  }
-
-  50% {
-    transform: scale(5);
-    opacity: 0.6;
   }
   
   100% {
     transform: scale(5);
-    opacity: 0.6;
   }
 }
 
@@ -320,3 +620,155 @@
     transform: skew(0deg, -30deg) scale(1);
   }
 }
+
+@keyframes moris {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes stalker-display {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes weed-hover {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes la-biblia-animate {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(50%, 50%);
+  }
+}
+
+@keyframes mescal-show {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media only screen 
+and (min-width: 375px) 
+and (max-width: 812px) {
+    .room {
+      .eyes {
+        top: 28.8%;
+        left: 38.6%;
+      }
+
+      .amp {
+        .tooltip {
+          top: 100%;
+          bottom: unset;
+          left: 0;
+        }
+      }
+
+      .artaud {
+        z-index: 20;
+        
+        .tooltip {
+          right: -150px;
+        }
+      }
+
+      .cancion-animal {
+        .tooltip {
+          left: unset;
+          right: -100%;
+        }
+      }
+
+      .eyes {
+        .tooltip {
+          bottom: 100%;
+          left: 0;
+        }
+      }
+
+      .key-west {
+        .tooltip {
+          top: unset;
+          bottom: 100%;
+          right: -65px;
+        }
+      }
+
+      .lamp {
+        .tooltip {
+          right: -100%;
+        }
+      }
+
+      .laptop {
+        .tooltip {
+          top: unset;
+          bottom: 25px;
+          right: -100px;
+        }
+      }
+
+      .left-speaker {
+        .tooltip {
+          top: unset;
+          bottom: 100%;
+          right: -100px;
+        }
+      }
+
+      .plant-top {
+        .tooltip {
+          left: -100%;
+        }
+      }
+
+      .turntable {
+        .tooltip {
+          right: 0;
+        }
+      }
+    }
+  }
+
+@media only screen 
+  and (min-width: 812px) 
+  and (max-width: 1280px) {
+    .room {
+      .eyes {
+        top: 31.5%;
+        left: 38.5%;
+      }
+    }
+  }

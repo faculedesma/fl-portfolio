@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { AnimationsContext } from "../../contexts/AnimationsContext";
 import HandPoint from "../../common/animations/HandPoint";
-import Footer from "../../footer/Footer";
 import Room from "../room/Room";
 
 const HeroDraws = () => {
@@ -21,12 +20,11 @@ const HeroDraws = () => {
 
   return (
     <div className="hero-draws">
-      {animations.hand && <HandPoint />}
+      {/* {animations.hand && <HandPoint />} */}
       <Room
         handleOnMouseLeave={handleOnMouseLeave}
         handleModuleClick={handleModuleClick}
       />
-      <Footer />
     </div>
   );
 };

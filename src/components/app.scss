@@ -10,10 +10,8 @@ body {
   width: 100vw;
   min-height: 100vh;
   background-color: $app-bg-color;
-  background-image: url("/src/assets/images/other/bg-main.webp");
+  background-image: url("/src/assets/images/other/bg-main.png");
   background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   scroll-behavior: smooth;
 
   > span {
@@ -25,6 +23,7 @@ body {
     width: 10px;
     opacity: 0.1;
     overflow-x: hidden;
+    font-family: inherit;
   }
 
   button {
@@ -41,9 +40,9 @@ body {
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1330px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 40px 20px;
 }
 
 .music-button {

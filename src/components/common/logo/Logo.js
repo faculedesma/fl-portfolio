@@ -12,7 +12,6 @@ const Logo = ({ onMouseEnter, onMouseLeave }) => {
       <picture>
         <img src={FLLogo} type="image/webp" alt="logo" />
       </picture>
-      <p>Facundo Ledesma</p>
     </div>
   );
 };

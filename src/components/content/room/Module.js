@@ -5,13 +5,9 @@ import Tooltip from "../../common/tooltip/Tooltip";
 const Module = ({
   id,
   src,
-  animation,
+  animations,
   clickable,
-  styles,
   information,
-  loopCount,
-  cleanLoopCount,
-  incrementLoop,
   handleOnMouseLeave,
   handleModuleClick,
 }) => {
@@ -19,72 +15,71 @@ const Module = ({
   const [open, setOpen] = useState(false);
   const [count, setCount] = useState(0);
   const animationRef = useRef(null);
-  const [playing, toggle] = useAudio(animation?.sound);
+  const [playing, toggle] = useAudio(animations?.[0]?.sound);
+
+  const isAnyAnimationOverlay = () =>
+    animations.find((animation) => animation.overlay);
 
   const handleClose = () => setOpen(false);
 
   const handleOpen = () => {
     setOpen(true);
     setCount(count + 1);
-    if (id === "left-speaker" || id === "right-speaker") {
-      incrementLoop(id);
-    }
   };
 
   const handleClick = () => {
     if (clickable) {
       handleClose();
       setshowAnimation(true);
-      handleModuleClick();
-      if (animation?.sound && !animation?.src) {
-        return;
-      }
+      // handleModuleClick();
       toggle();
     }
   };
 
   const handleLeave = () => {
-    if (showAnimation && !animation?.isFullPage) {
+    if (!isAnyAnimationOverlay()) {
       setshowAnimation(false);
       handleOnMouseLeave();
-    } else {
-      handleClose();
+      if (playing) {
+        toggle();
+      }
     }
-    if (showAnimation && !animation?.isFullPage) {
-      toggle();
-    }
+    handleClose();
   };
 
-  const handleCloseFullPageAnimation = () => {
+  const handleCloseOverlayAnimation = () => {
     setshowAnimation(false);
     handleOnMouseLeave();
+    toggle();
   };
 
-  const getMediaContent = () => {
+  const getMediaContent = (animation) => {
     switch (animation.type) {
       case "video":
         return (
           <video
-            id={id}
+            id={animation.id}
             ref={animationRef}
             src={animation.src}
             onMouseLeave={
-              animation.isFullPage ? handleCloseFullPageAnimation : undefined
+              animation.overlay ? handleCloseOverlayAnimation : undefined
             }
             type="media/webm"
-            loop
+            loop={animation.loop || false}
+            muted={animation.muted ? true : false}
+            onEnded={() => setshowAnimation(false)}
             autoPlay
-            muted
           ></video>
         );
       case "image":
         return (
           <img
-            id={id}
+            id={animation.id}
             src={animation.src}
             onMouseLeave={
-              animation.isFullPage ? handleCloseFullPageAnimation : undefined
+              animation.overlay ? handleCloseOverlayAnimation : undefined
             }
+            loop={animation.loop || false}
           />
         );
     }
@@ -105,63 +100,43 @@ const Module = ({
     };
   }, [handleLeave]);
 
-  useEffect(() => {
-    if (
-      playing &&
-      !showAnimation &&
-      id !== "left-speaker" &&
-      id !== "right-speaker"
-    ) {
-      toggle();
-    }
-  }, [playing, showAnimation]);
-
-  useEffect(() => {
-    if (
-      loopCount.left === 5 &&
-      loopCount.right === 5 &&
-      (id === "left-speaker" || id === "right-speaker")
-    ) {
-      toggle();
-      cleanLoopCount();
-    }
-  }, [loopCount]);
-
   return (
     <>
       <div
         className={`module-image ${id}`}
-        onClick={animation ? handleClick : undefined}
+        onClick={animations ? handleClick : undefined}
         onMouseEnter={clickable ? handleOpen : undefined}
         onMouseLeave={clickable ? handleLeave : undefined}
       >
         <img src={src} alt={id} />
-        {open && (
-          <Tooltip
-            information={information}
-            top={styles.top}
-            bottom={styles.bottom}
-            left={styles.left}
-            right={styles.right}
-            maxHeight={styles.maxHeight}
-          />
-        )}
-        {/* {(id === "right-speaker" || id === "left-speaker") && (
-          <div className="loop-triangle">
-            {count === 1 && <img className="bottom" />}
-            {count === 2 && <img className="left" />}
-            {count === 3 && <img className="right" />}
-          </div>
-        )} */}
+        {open && information && <Tooltip information={information} />}
+        {/* {true && id === "paint" && <Tooltip information={information} />} */}
       </div>
-      {showAnimation && animation && (
-        <div className="module-animation">{getMediaContent()}</div>
-      )}
-      {/* {(id === "right-speaker" || id === "left-speaker") && (
-        <p style={{ position: "absolute", top: 0, right: "250px" }}>
-          Loop Count: {loopCount.left} {loopCount.right}
-        </p>
-      )} */}
+      {showAnimation &&
+        animations &&
+        animations.map((animation) => {
+          return (
+            <div
+              key={animation.id}
+              className="module-animation"
+              onMouseLeave={animation.overlay ? handleLeave : undefined}
+            >
+              {getMediaContent(animation)}
+            </div>
+          );
+        })}
+      {/* {true &&
+        id === "paint" &&
+        animations.map((animation) => {
+          return (
+            <div
+              className="module-animation"
+              onMouseLeave={animation.overlay ? handleLeave : undefined}
+            >
+              {getMediaContent(animation)}
+            </div>
+          );
+        })} */}
     </>
   );
 };
