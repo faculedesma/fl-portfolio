@@ -42,7 +42,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|ico|mp3|mp4|webp|webm)/i,
+        test: /\.(png|gif|ico|mp3|mp4)/i,
         type: "asset",
         parser: {
           dataUrlCondition: {

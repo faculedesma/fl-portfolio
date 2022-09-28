@@ -1,56 +1,85 @@
 import React, { useState, useEffect, useRef } from "react";
 import useAudio from "../../hooks/useAudio";
+import useCheckIsMobile from "../../hooks/useCheckIsMobile";
 import Tooltip from "../../common/tooltip/Tooltip";
 
-const Module = ({
-  id,
-  src,
-  animations,
-  clickable,
-  information,
-  handleOnMouseLeave,
-  handleModuleClick,
-}) => {
+const Module = ({ id, src, animations, clickable, information }) => {
   const [showAnimation, setshowAnimation] = useState(false);
   const [open, setOpen] = useState(false);
-  const [count, setCount] = useState(0);
+  const [clickCount, setClickCount] = useState(0);
   const animationRef = useRef(null);
-  const [playing, toggle] = useAudio(animations?.[0]?.sound);
+  const [playing, toggle] = useAudio(animations?.[0]?.sound, () => {
+    if (isAnyAnimationOverlay()) {
+      handleCloseOverlayAnimation();
+    } else {
+      handleLeave();
+    }
+  });
+  const isMobile = useCheckIsMobile();
 
   const isAnyAnimationOverlay = () =>
-    animations.find((animation) => animation.overlay);
+    animations?.find((animation) => animation.overlay);
 
   const handleClose = () => setOpen(false);
 
   const handleOpen = () => {
-    setOpen(true);
-    setCount(count + 1);
+    if (information) {
+      setOpen(true);
+    }
+  };
+
+  const openBlackPage = () => {
+    if (id === "guy") {
+      const black = document.getElementById("black-page");
+      black.style.display = "inherit";
+    }
   };
 
   const handleClick = () => {
-    if (clickable) {
+    // modules with tooltip & animation for mobile
+    if (clickCount === 1 && isMobile) {
       handleClose();
       setshowAnimation(true);
-      // handleModuleClick();
       toggle();
+      openBlackPage();
+    } else {
+      // modules without tooltip & with animation for mobile
+      if (clickCount === 0 && !information) {
+        setshowAnimation(true);
+      }
+      handleOpen();
     }
+    // desktop, tooltip on hover & animation on click
+    if (clickable && !isMobile) {
+      handleClose();
+      setshowAnimation(true);
+      toggle();
+      openBlackPage();
+    }
+    setClickCount(clickCount + 1);
   };
 
   const handleLeave = () => {
     if (!isAnyAnimationOverlay()) {
       setshowAnimation(false);
-      handleOnMouseLeave();
       if (playing) {
         toggle();
       }
     }
     handleClose();
+    setClickCount(0);
   };
 
   const handleCloseOverlayAnimation = () => {
     setshowAnimation(false);
-    handleOnMouseLeave();
-    toggle();
+    if (playing) {
+      toggle();
+    }
+    if (id === "guy") {
+      const black = document.getElementById("black-page");
+      black.style.display = "none";
+    }
+    setClickCount(0);
   };
 
   const getMediaContent = (animation) => {
@@ -61,25 +90,24 @@ const Module = ({
             id={animation.id}
             ref={animationRef}
             src={animation.src}
-            onMouseLeave={
-              animation.overlay ? handleCloseOverlayAnimation : undefined
-            }
-            type="media/webm"
+            type="media/mp4"
             loop={animation.loop || false}
             muted={animation.muted ? true : false}
             onEnded={() => setshowAnimation(false)}
             autoPlay
+            controls={false}
+            playsInline
           ></video>
         );
       case "image":
         return (
           <img
             id={animation.id}
+            ref={animationRef}
             src={animation.src}
             onMouseLeave={
               animation.overlay ? handleCloseOverlayAnimation : undefined
             }
-            loop={animation.loop || false}
           />
         );
     }
@@ -89,9 +117,14 @@ const Module = ({
     const handleClickOutside = (event) => {
       if (
         animationRef.current &&
-        !animationRef.current.contains(event.target)
+        !animationRef.current.contains(event.target) &&
+        handleLeave
       ) {
-        handleLeave && handleLeave();
+        if (!isAnyAnimationOverlay()) {
+          handleLeave();
+        } else {
+          handleCloseOverlayAnimation();
+        }
       }
     };
     document.addEventListener("click", handleClickOutside, true);
@@ -102,41 +135,24 @@ const Module = ({
 
   return (
     <>
-      <div
-        className={`module-image ${id}`}
-        onClick={animations ? handleClick : undefined}
-        onMouseEnter={clickable ? handleOpen : undefined}
-        onMouseLeave={clickable ? handleLeave : undefined}
-      >
-        <img src={src} alt={id} />
-        {open && information && <Tooltip information={information} />}
-        {/* {true && id === "paint" && <Tooltip information={information} />} */}
+      <div id={id} className={`module-image ${id}`} onMouseLeave={handleLeave}>
+        <img
+          onClick={handleClick}
+          onMouseEnter={handleOpen}
+          src={src}
+          alt={id}
+        />
+        {open && <Tooltip information={information} />}
       </div>
       {showAnimation &&
         animations &&
         animations.map((animation) => {
           return (
-            <div
-              key={animation.id}
-              className="module-animation"
-              onMouseLeave={animation.overlay ? handleLeave : undefined}
-            >
+            <div key={animation.id} className="module-animation">
               {getMediaContent(animation)}
             </div>
           );
         })}
-      {/* {true &&
-        id === "paint" &&
-        animations.map((animation) => {
-          return (
-            <div
-              className="module-animation"
-              onMouseLeave={animation.overlay ? handleLeave : undefined}
-            >
-              {getMediaContent(animation)}
-            </div>
-          );
-        })} */}
     </>
   );
 };

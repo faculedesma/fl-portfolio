@@ -6,12 +6,13 @@ body {
 }
 
 .app {
+  position: relative;
   display: none;
   width: 100vw;
   min-height: 100vh;
   background-color: $app-bg-color;
   background-image: url("/src/assets/images/other/bg-main.png");
-  background-size: cover;
+  background-size: contain;
   scroll-behavior: smooth;
 
   > span {
@@ -30,7 +31,7 @@ body {
     font-family: inherit;
   }
 
-  a { 
+  p { 
     color: $main-font-color;
   }
 }
@@ -42,7 +43,7 @@ body {
 .container {
   max-width: 1330px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 20px 0px;
 }
 
 .music-button {

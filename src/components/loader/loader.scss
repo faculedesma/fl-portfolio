@@ -17,25 +17,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 100;
-    
-    &-recom {
-      position: relative;
-      transform: scale(0);
-      animation: recom-load 400ms ease-in forwards;
-      
-      img {
-        width: 150px;
-      }
 
-      p {
-        position: absolute;
-        font-size: 12px;
-        width: 50%;
-        top: 35%;
-        left: 25%;
-        margin: 0;
-        opacity: 0.5;
-        text-align: center;
+    .loading {
+      img {
+        width: 80px;
+        margin-top: 20px;
+        opacity: 0.8;
       }
     }
     
@@ -58,7 +45,12 @@
         flex-direction: column;
         align-items: center;
           
+        p {
+          color: black;
+        }
+
         svg {
+          fill: black;
           font-size: 25px;
         }
         
@@ -67,16 +59,6 @@
         }
       }
     }
-  }
-}
-
-@keyframes recom-load {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
   }
 }
 

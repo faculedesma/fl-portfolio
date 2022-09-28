@@ -1,6 +1,7 @@
 import React from "react";
 import { MdArrowRightAlt } from "react-icons/md";
 import { BsFillDoorOpenFill } from "react-icons/bs";
+import Loading from "../../assets/images/other/loading.png";
 import "./loader.scss";
 
 const Loader = ({ isLoading, onContinue }) => {
@@ -13,6 +14,11 @@ const Loader = ({ isLoading, onContinue }) => {
           <MdArrowRightAlt />
         </button>
       </div>
+      {isLoading && (
+        <div className="loading">
+          <img src={Loading} alt="loading" />
+        </div>
+      )}
     </div>
   );
 };

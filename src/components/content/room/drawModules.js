@@ -9,6 +9,7 @@ import Cactus from "../../../assets/images/layers/cactus.png";
 import CancionAnimal from "../../../assets/images/layers/cancion-animal.png";
 import DSOTM from "../../../assets/images/layers/dsotm.png";
 import Guy from "../../../assets/images/layers/guy.png";
+import GreatOnesWisdowm from "../../../assets/images/layers/great-ones-wisdom.png";
 import Electricity from "../../../assets/images/layers/electricity.png";
 import ElectricGuitar from "../../../assets/images/layers/electric-guitar.png";
 import EGStand from "../../../assets/images/layers/eg-stand.png";
@@ -23,11 +24,9 @@ import LittlePlant from "../../../assets/images/layers/little-plant.png";
 import Lupe from "../../../assets/images/layers/lupe.png";
 import Paint from "../../../assets/images/layers/paint.png";
 import Psylocibin from "../../../assets/images/layers/psylocibin.png";
-import Orange from "../../../assets/images/layers/orange.png";
 import Plant from "../../../assets/images/layers/plant.png";
 import PreAmp from "../../../assets/images/layers/preamp.png";
 import RightSpeaker from "../../../assets/images/layers/right-speaker.png";
-import Sofa from "../../../assets/images/layers/sofa.png";
 import Cushions from "../../../assets/images/layers/cushions.png";
 import Stand from "../../../assets/images/layers/stand.png";
 import Stalker from "../../../assets/images/layers/stalker.png";
@@ -37,23 +36,54 @@ import Triangle from "../../../assets/images/layers/triangle.png";
 import Turntable from "../../../assets/images/layers/turntable.png";
 import WeedJar from "../../../assets/images/layers/weed.png";
 // Animations
-// import DSOTMAnimation from "../../../assets/images/gifs/dsotm-animation.png";
-import KWAnimation from "../../../assets/images/gifs/kw-animation.png";
-import HAL900 from "../../../assets/images/gifs/hal9000.png";
-import GuyGlitch from "../../../assets/images/gifs/guy-hal9000.png";
-import Cerati from "../../../assets/images/gifs/cerati.png";
-import Spinetta from "../../../assets/images/gifs/spinetta-artaud.mp4";
-import TrianglePaint from "../../../assets/images/gifs/triangle-animation.png";
-// import LSD from "../../../assets/images/gifs/lsd-animation.png";
-import LupeAnimation from "../../../assets/images/gifs/lupe-animation.png";
-import Moris from "../../../assets/images/gifs/moris.png";
-import MorisSoul from "../../../assets/images/gifs/moris-soul.png";
-import TurntableBW from "../../../assets/images/gifs/turntable-bw.png";
-import PlantGrow from "../../../assets/images/gifs/plant-grow.png";
-import StalkerDialogue from "../../../assets/images/gifs/stalker-dialogue.mp4";
-import Pedro from "../../../assets/images/gifs/pedro.png";
-import LaBibliaAnimate from "../../../assets/images/gifs/la-biblia-animate.png";
+import KWAnimation from "../../../assets/images/animations/kw-animation.png";
+import HAL900 from "../../../assets/images/animations/hal9000.png";
+import GuyGlitch from "../../../assets/images/animations/guy-hal9000.png";
+import Cerati from "../../../assets/images/animations/cerati.png";
+import CancionAnimalVinyl from "../../../assets/images/animations/cancion-animal-vinyl.png";
+import Spinetta from "../../../assets/images/animations/spinetta-artaud.mp4";
+import TrianglePaint from "../../../assets/images/animations/triangle-animation.png";
+import LupeAnimation from "../../../assets/images/animations/lupe-animation.png";
+import Moris from "../../../assets/images/animations/moris.png";
+import MorisSoul from "../../../assets/images/animations/moris-soul.png";
+import PlantGrow from "../../../assets/images/animations/plant-grow.png";
+import StalkerDialogue from "../../../assets/images/animations/stalker-dialogue.mp4";
+import Pedro from "../../../assets/images/animations/pedro.png";
 import Mescal from "../../../assets/images/gallery/mescal.png";
+import Fungi from "../../../assets/images/animations/fungi.png";
+import TheEndBase from "../../../assets/images/animations/the-end-base.png";
+import GuyPsychLeft from "../../../assets/images/animations/guy-up-psych.png";
+import GuyPsychRight from "../../../assets/images/animations/guy-up-psych.png";
+import GuyShut from "../../../assets/images/animations/guy-shut.png";
+import HandLeftOne from "../../../assets/images/animations/hand-left-one.png";
+import HandLeftTwo from "../../../assets/images/animations/hand-left-two.png";
+import HandRightOne from "../../../assets/images/animations/hand-right-one.png";
+import HandRightTwo from "../../../assets/images/animations/hand-right-two.png";
+import EnRemolinos from "../../../assets/images/animations/en-remolinos.png";
+import LaBibliaVinyl from "../../../assets/images/animations/la-biblia-vinyl.png";
+import FirelinkShrine from "../../../assets/images/animations/firelink-shrine.png";
+import Consciousness from "../../../assets/images/animations/consciousness.png";
+import Skull from "../../../assets/images/animations/skull.png";
+import PsychCat from "../../../assets/images/animations/psych-cat.png";
+import Afraid from "../../../assets/images/animations/afraid.png";
+import BrainDamage from "../../../assets/images/animations/brain-damage.png";
+import Hand from "../../../assets/images/animations/hand.png";
+import Decision from "../../../assets/images/animations/decision.png";
+import Trap from "../../../assets/images/animations/trap.png";
+import OpenIt from "../../../assets/images/animations/open-it.png";
+import BeCurious from "../../../assets/images/animations/be-curious.png";
+import Reality from "../../../assets/images/animations/reality.png";
+import Eclipse from "../../../assets/images/animations/eclipse.png";
+import Noise from "../../../assets/images/animations/noise.png";
+import Flow from "../../../assets/images/animations/flow.png";
+import Eye from "../../../assets/images/animations/eye.png";
+import TaTeTi from "../../../assets/images/animations/ta-te-ti.png";
+import Infinite from "../../../assets/images/animations/infinite.png";
+import VinylSpiral from "../../../assets/images/animations/vinyl-spiral.png";
+import Responsible from "../../../assets/images/animations/responsible.png";
+import HereNow from "../../../assets/images/animations/here-now.png";
+import DSOTMBase from "../../../assets/images/animations/dsotm-base.png";
+import BeatlesShow from "../../../assets/images/animations/beatles-show.png";
 // Sounds
 import SuelesDejarmeSoloMP3 from "../../../assets/sounds/lion-sueles-dejarme.mp3";
 import BrainDamageMP3 from "../../../assets/sounds/brain-damage.mp3";
@@ -64,7 +94,10 @@ import EnRemolinosMP3 from "../../../assets/sounds/en-remolinos.mp3";
 import PianoOlivos from "../../../assets/sounds/piano-olivos.mp3";
 import BeerOpenMP3 from "../../../assets/sounds/beer-open.mp3";
 import Genesis from "../../../assets/sounds/genesis.mp3";
-import CactusMP3 from "../../../assets/sounds/cactus.mp3";
+import CactusMP3 from "../../../assets/sounds/cactus.ogg";
+import ShineOn from "../../../assets/sounds/shine-on-first.mp3";
+import GwynFirelink from "../../../assets/sounds/gwyn-firelink.mp3";
+import NothingIsReal from "../../../assets/sounds/psych-beatles.mp3";
 
 export const drawModules = [
   {
@@ -83,14 +116,7 @@ export const drawModules = [
         src: MorisSoul,
         type: "image",
         sound: null,
-        overlay: false,
-      },
-      {
-        id: "turntable-bw",
-        src: TurntableBW,
-        type: "image",
-        sound: null,
-        overlay: false,
+        overlay: true,
       },
     ],
     clickable: true,
@@ -119,8 +145,9 @@ export const drawModules = [
     ],
     clickable: true,
     information: {
-      generic: `"Todas las hojas son del viento... Que calor hará sin vos en verano... Siempre desear, nunca tener... Siempre soñar, nunca creer... Las almas repudian todo encierro... No todo tiempo por pasado es mejor, manaña es mejor... Tengo tiempo para saber si lo que sueño concluye en algo... No estoy atado a ningún sueño ya..." Luis Alberto Spinetta.`,
-      personal: "Te quiero flaco.",
+      generic: `No estoy atado a ningún sueño ya.`,
+      personal:
+        "Luis Alberto Spintta was an Argentinian songwriter and artist. Share with love and care for the other. Te quiero flaco.",
     },
   },
   {
@@ -142,13 +169,6 @@ export const drawModules = [
       },
     ],
     clickable: true,
-    information: null,
-  },
-  {
-    id: "orange",
-    src: Orange,
-    animations: null,
-    clickable: false,
     information: null,
   },
   {
@@ -174,7 +194,7 @@ export const drawModules = [
     information: {
       generic: "Cuando te busco no hay sitio en dónde no estés.",
       personal:
-        "We are part of nature and nature is part of us. It's printed in our DNA, everything that happened before us makes us reach this moment, right here right now. The future will always be uncertain. Be grateful for everything you have done to reach this point. Share yourself with others and be part of them. Be free.",
+        "We are part of nature and nature is part of us. It's printed in our DNA, everything that happened before us makes us reach this moment, right here right now. The future always seem to be uncertain. Ideas live in the future, actions in the past. Be grateful for everything you have done to reach this point. Share yourself with others and be part of them. Be free.",
     },
   },
   {
@@ -182,18 +202,25 @@ export const drawModules = [
     src: CancionAnimal,
     animations: [
       {
-        id: "cancion-animal",
+        id: "cerati",
         src: Cerati,
         type: "image",
         sound: SuelesDejarmeSoloMP3,
         overlay: false,
       },
+      {
+        id: "cancion-animal-vinyl",
+        src: CancionAnimalVinyl,
+        type: "image",
+        sound: null,
+        overlay: true,
+      },
     ],
     clickable: true,
     information: {
-      generic: `"Meses navegando, tierra a la vista..." Gustavo Cerati was an argentinian musician. He is a great inspiration. `,
+      generic: `El riesgo es al camino, es más intenso. Meses navegando, tierra a la vista.`,
       personal:
-        "Opportunities at each moment are infinite and at that point we have to make a decision, 0 or 1. Based on each one, a completely new reality develops, the effect of a cause of which we are co-creators. The other part will always be a mystery and the elemental reason for human curiosity. Jump into the void and become infinite.",
+        "Gustavo Cerati was an argentinian musician. He is a great inspiration. Opportunities at each moment are infinite and at that point we have to make a decision, 0 or 1. Based on that, a completely new reality develops, the effect of a cause of which we are co-creators. The other part will always be a mystery and the elemental reason for human curiosity. Jump into the void and become infinite.",
     },
   },
   {
@@ -201,9 +228,136 @@ export const drawModules = [
     src: DSOTM,
     animations: [
       {
-        src: null,
+        id: "psych-cat",
+        src: PsychCat,
         type: "image",
         sound: BrainDamageMP3,
+        overlay: false,
+      },
+      {
+        id: "afraid",
+        src: Afraid,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "brain-damage",
+        src: BrainDamage,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "hand",
+        src: Hand,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "decision",
+        src: Decision,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "trap",
+        src: Trap,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "open-it",
+        src: OpenIt,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "be-curious",
+        src: BeCurious,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "reality",
+        src: Reality,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "eclipse",
+        src: Eclipse,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "noise",
+        src: Noise,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "flow",
+        src: Flow,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "eye",
+        src: Eye,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "ta-te-ti",
+        src: TaTeTi,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "vinyl-spiral",
+        src: VinylSpiral,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "infinite",
+        src: Infinite,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "responsible",
+        src: Responsible,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "here-now",
+        src: HereNow,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "base-dsotm",
+        src: DSOTMBase,
+        type: "image",
+        sound: null,
         overlay: true,
       },
     ],
@@ -212,7 +366,7 @@ export const drawModules = [
       generic:
         "Pink Floyd - The Dark Side Of The Moon (1973). Well, what to say? Feels like waking up.",
       personal:
-        "We'll learn what we've forgotten. As a child we dream in paradise, it feels like each new day is an opportunity to play. Then as we grow we start forgetting the earth is spinning around the sun and we don't even wonder why. Time seems to pull you down as gravity. Will you ever have the time to do what you've ever wanted before you are dead? We hope to find the ones that left us behind in another gig. But you know, why do you need all the things money can buy? What's missing there? Sharing with other beings is what connects us, no matter how different we can be from each other. We shouldn't forget that from here we only see one side of the moon.",
+        "We'll learn what we've forgotten. As a child we dream in paradise, it feels like each new day is an opportunity to play. We grow and we start forgetting who we are. Time seems to pull you down as gravity. Will you ever have the time to do what you've ever wanted before you are dead? We hope to find the ones that left us behind in another gig. But you know, why do you need all the things money can buy? What's missing there? Sharing with other beings is what connects us, no matter how different we can be from each other. We shouldn't forget that from here we only see one side of the moon.",
     },
   },
   {
@@ -220,17 +374,18 @@ export const drawModules = [
     src: Guy,
     animations: [
       {
-        src: null,
-        type: null,
+        id: "en-remolinos",
+        src: EnRemolinos,
+        type: "image",
         sound: EnRemolinosMP3,
-        overlay: false,
+        overlay: true,
       },
     ],
     clickable: true,
     information: {
       generic: "Florecer mirándote a los ojos.",
       personal:
-        "Everybody's eyes are unique. Go deep into them to find answers. Everything is your reflection. Empathy.",
+        "Everybody's eyes are unique. Go deep into them to find answers. The place where light and dark begin to touch is the most profound experience we can have in life, it is the union of opposites that gives rise to the Self.",
     },
   },
   {
@@ -244,9 +399,10 @@ export const drawModules = [
     src: ElectricGuitar,
     animations: [
       {
+        id: null,
         src: null,
         type: null,
-        sound: SuelesDejarmeSoloMP3,
+        sound: ShineOn,
         overlay: false,
       },
     ],
@@ -265,9 +421,59 @@ export const drawModules = [
     src: Headphones,
     animations: [
       {
-        src: null,
-        type: null,
+        id: "the-end-base",
+        src: TheEndBase,
+        type: "image",
         sound: TheEndMP3,
+        overlay: true,
+      },
+      {
+        id: "guy-psych-left",
+        src: GuyPsychLeft,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "guy-psych-right",
+        src: GuyPsychRight,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "guy-shut",
+        src: GuyShut,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "hand-left-one",
+        src: HandLeftOne,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "hand-left-two",
+        src: HandLeftTwo,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "hand-right-one",
+        src: HandRightOne,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "hand-right-two",
+        src: HandRightTwo,
+        type: "image",
+        sound: null,
         overlay: false,
       },
     ],
@@ -305,8 +511,8 @@ export const drawModules = [
     src: LaBiblia,
     animations: [
       {
-        id: "la-biblia-animate",
-        src: null,
+        id: "la-biblia-vinyl",
+        src: LaBibliaVinyl,
         type: "image",
         sound: Genesis,
         overlay: true,
@@ -345,7 +551,39 @@ export const drawModules = [
     information: {
       generic:
         "Hello World! was the first message to be sent on the internet. A revolution! My humans understand me.",
-      personal: `My love for computers started when i was a kid, always made me courious how to interact with them. First playing video-games and then studying computer science in my town's college. I've graduate and started working as a software developer. After years of working i became aware of the true power of technology and how limitless can be. The universe is expanding and we are expanding with him, there's no stopping for learning. Let's join.`,
+      personal: `My love for computers started when i was a kid, always made me curious how to interact with them. First playing video-games and then studying computer science in my town's college. After graduation, started working as a software developer. Years after i became aware of the true power of technology and how limitless can be. The universe is expanding and we are expanding with it, there's no stopping for learning. Let's join.`,
+    },
+  },
+  {
+    id: "sabiduria-loco",
+    src: GreatOnesWisdowm,
+    animations: [
+      {
+        id: "firelink",
+        src: FirelinkShrine,
+        type: "image",
+        sound: GwynFirelink,
+        overlay: false,
+      },
+      {
+        id: "skull",
+        src: Skull,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+      {
+        id: "consciousness",
+        src: Consciousness,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+    ],
+    clickable: true,
+    information: {
+      generic: "Great One's Wisdom (La Sabiduría del Loco)",
+      personal: `Hidetaka Miyazaki is From Software. We are thinking on the basest of planes. What we need, are more eyes. Making contact with eldritch wisdom is a blessing, for even if it drives one mad, it allows one to serve a grander purpose, for posterity.`,
     },
   },
   {
@@ -391,7 +629,8 @@ export const drawModules = [
     ],
     clickable: true,
     information: {
-      generic: `Click to see some artwork i've made!`,
+      generic: "Paint who you are.",
+      personal: `Art was always a very important part of my expression and a direct bridge with my imagination. Started as a child painting in school, left it behind for 'responsabilities' and today is an essential part of me. I love to create things from fantasy trying to have a better understanding of reality. Click to see this piece of art i've made for love ones!`,
     },
   },
   {
@@ -403,7 +642,7 @@ export const drawModules = [
         src: PlantGrow,
         type: "image",
         sound: null,
-        overlay: true,
+        overlay: false,
       },
     ],
     clickable: true,
@@ -416,8 +655,16 @@ export const drawModules = [
   {
     id: "psylocibin",
     src: Psylocibin,
-    animations: null,
-    clickable: false,
+    animations: [
+      {
+        id: "fungi",
+        src: Fungi,
+        type: "image",
+        sound: null,
+        overlay: false,
+      },
+    ],
+    clickable: true,
     information: null,
   },
   {
@@ -434,13 +681,6 @@ export const drawModules = [
     clickable: false,
     information: null,
   },
-  // {
-  //   id: "sofa",
-  //   src: Sofa,
-  //   animations: null,
-  //   clickable: false,
-  //   information: null,
-  // },
   {
     id: "cushions",
     src: Cushions,
@@ -493,21 +733,26 @@ export const drawModules = [
         id: "triangle",
         src: TrianglePaint,
         type: "image",
-        sound: null,
+        sound: NothingIsReal,
         overlay: true,
+      },
+      {
+        id: "beatles-show",
+        src: BeatlesShow,
+        type: "image",
+        sound: null,
+        overlay: false,
       },
     ],
     clickable: true,
-    information: {
-      generic: "Paint who you are.",
-      personal: `Art was always a really important part of my expression and a direct bridge with my imagination. Started as a child painting in school going through upside downs and today is an essential part of me. I love to create things from fantasy trying to have a better understanding of reality.`,
-    },
+    information: null,
   },
   {
     id: "turntable",
     src: Turntable,
     animations: [
       {
+        id: "turntable",
         src: null,
         type: "image",
         sound: null,
@@ -516,8 +761,8 @@ export const drawModules = [
     ],
     clickable: true,
     information: {
-      generic: "",
-      personal: "As you may realized music is a really big part of my life.",
+      generic: "Magic",
+      personal: "",
     },
   },
   {

@@ -17,7 +17,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      z-index: 100;
       
       &-top {
         position: relative;
@@ -42,16 +41,6 @@
         
         .bike-click {
           animation: bike-click 28000ms ease-in forwards;
-        }
-        
-        .rainbow {
-          display: none;
-          position: absolute;
-          width: 40px;
-          top: 13%;
-          left: 32%;
-          opacity: 0.7;
-          animation: rainbow-show 2400ms ease-in forwards;
         }
       }
 
@@ -78,7 +67,7 @@
         p:nth-child(2) {
           font-size: 18px;
           font-weight: bold;
-          align-self: baseline;
+          align-self: center;
           padding: 0 30px;
         }
       }
@@ -106,8 +95,7 @@
             position: absolute;
             left: 0%;
             bottom: -37%;
-            cursor: pointer;
-            animation: small-guy 1500ms ease infinite;
+            // animation: small-guy 1500ms ease infinite;
           }
         }
 
@@ -150,16 +138,17 @@
             box-shadow: -3px 3px 1px #f2b090;
             transform: scale(0);
             animation: button-load 1000ms ease-in-out forwards;
-
+            
             .button-border {
               width: 100%;
               position: absolute;
             }
-
+            
             span {
               font-size: 12px;
+              font-weight: bold;
               color: $main-font-color;
-              letter-spacing: 0.5px;
+              letter-spacing: 0.25px;
             }
           }
         }
@@ -184,8 +173,10 @@
       }
 
       .tooltip {
-        top: 12%;
-        left: 40%;
+        top: 40%;
+        left: 19%;
+        z-index: 100;
+        opacity: 0.9;
       }
     }
   }
@@ -299,20 +290,6 @@
   }
 }
 
-@keyframes rainbow-show {
-  0% {
-   transform: translate(0, 0) scale(0);
-  }
-
-  50% {
-    transform: scale(4);
-  }
-
-  100% {
-    transform: translate(-200px, 100px) scale(0);
-  }
-}
-
 /* ----------- Celullar ----------- */
 
 /* Portrait and Landscape */
@@ -324,20 +301,22 @@
 
       .hero {
         &-section {
+          
           &-top {
             .logo {
               margin-bottom: 10%;
             }
-
+            
+            
             .bike {
               top: -5%;
             }
           }
-
+          
           &-middle {
             margin-top: 10%;
           }
-
+          
           &-bottom {
             .connection-me {
               margin-bottom: 20%;
@@ -345,13 +324,18 @@
           }
 
           .tooltip {
-            top: 67%;
-            left: 32%;
+            top: 25%;
+            left: 20%;
+
+            &-personal {
+              font-size: 16px;
+            }
           }
         }
 
         &-draws {
-          margin-top: 15%;
+          margin-top: 50px;
+          margin-bottom: 50px;
         }
       }
     }
@@ -365,7 +349,39 @@
   and (max-width: 1280px)
   and (orientation: 'landscape') {
     .home-hero {
-      // flex-direction: column;
+      .hero {
+        &-section {
+          &-top {
+            .bike {
+              width: 30px;
+              top: -5px;
+              left: 44%;
+            }
+          }
+
+          &-middle {
+            margin-top: 5%;
+          }
+
+          &-bottom {
+            .connection-me {
+              margin-bottom: 15%;
+            }
+
+            .arrow {
+              right: 30%;
+            }
+          }
+
+          .tooltip {
+            top: 35%;
+          }
+        }
+      }
+
+      &-draws {
+        margin-bottom: 50px;
+      }
     }
   }
 
@@ -375,6 +391,56 @@
   and (orientation: 'portrait') {
     .home-hero {
       flex-direction: column;
+
+      .hero {
+        &-section {
+          &-top {
+            .logo {
+              width: 200px;
+            }
+
+            .bike {
+              top: -2%;
+            }
+
+            .main-title {
+              font-size: 70px;
+
+              img {
+                width: 70px;
+              }
+            }
+          }
+
+          &-middle {
+            margin: 20px;
+
+            p:nth-child(1) {
+              max-width: 75%;
+              font-size: 25px;
+            }
+          }
+
+          &-bottom {
+            .connection-me {
+              margin-bottom: 12%;
+            }
+          }
+
+          .tooltip {
+            top: 23%;
+            left: 35%;
+
+            &-personal {
+              font-size: 16px;
+            }
+          }
+        }
+
+        &-draws {
+          margin-bottom: 50px;
+        }
+      }
     }
   }
 
