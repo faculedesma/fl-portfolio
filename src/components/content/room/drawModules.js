@@ -94,7 +94,7 @@ import EnRemolinosMP3 from "../../../assets/sounds/en-remolinos.mp3";
 import PianoOlivos from "../../../assets/sounds/piano-olivos.mp3";
 import BeerOpenMP3 from "../../../assets/sounds/beer-open.mp3";
 import Genesis from "../../../assets/sounds/genesis.mp3";
-import CactusMP3 from "../../../assets/sounds/cactus.ogg";
+import CactusMP3 from "../../../assets/sounds/cactus.mp3";
 import ShineOn from "../../../assets/sounds/shine-on-first.mp3";
 import GwynFirelink from "../../../assets/sounds/gwyn-firelink.mp3";
 import NothingIsReal from "../../../assets/sounds/psych-beatles.mp3";
