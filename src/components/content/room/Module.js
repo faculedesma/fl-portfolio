@@ -1,89 +1,112 @@
 import React, { useState, useEffect, useRef } from "react";
 import useAudio from "../../hooks/useAudio";
+import useCheckIsMobile from "../../hooks/useCheckIsMobile";
 import Tooltip from "../../common/tooltip/Tooltip";
 
-const Module = ({
-  id,
-  src,
-  animation,
-  clickable,
-  styles,
-  information,
-  loopCount,
-  cleanLoopCount,
-  incrementLoop,
-  handleOnMouseLeave,
-  handleModuleClick,
-}) => {
+const Module = ({ id, src, animations, clickable, information }) => {
   const [showAnimation, setshowAnimation] = useState(false);
   const [open, setOpen] = useState(false);
-  const [count, setCount] = useState(0);
+  const [clickCount, setClickCount] = useState(0);
   const animationRef = useRef(null);
-  const [playing, toggle] = useAudio(animation?.sound);
+  const [playing, toggle] = useAudio(animations?.[0]?.sound, () => {
+    if (isAnyAnimationOverlay()) {
+      handleCloseOverlayAnimation();
+    } else {
+      handleLeave();
+    }
+  });
+  const isMobile = useCheckIsMobile();
+
+  const isAnyAnimationOverlay = () =>
+    animations?.find((animation) => animation.overlay);
 
   const handleClose = () => setOpen(false);
 
   const handleOpen = () => {
-    setOpen(true);
-    setCount(count + 1);
-    if (id === "left-speaker" || id === "right-speaker") {
-      incrementLoop(id);
+    if (information) {
+      setOpen(true);
+    }
+  };
+
+  const openBlackPage = () => {
+    if (id === "guy") {
+      const black = document.getElementById("black-page");
+      black.style.display = "inherit";
     }
   };
 
   const handleClick = () => {
-    if (clickable) {
+    // modules with tooltip & animation for mobile
+    if (clickCount === 1 && isMobile) {
       handleClose();
       setshowAnimation(true);
-      handleModuleClick();
-      if (animation?.sound && !animation?.src) {
-        return;
-      }
       toggle();
+      openBlackPage();
+    } else {
+      // modules without tooltip & with animation for mobile
+      if (clickCount === 0 && !information) {
+        setshowAnimation(true);
+      }
+      handleOpen();
     }
+    // desktop, tooltip on hover & animation on click
+    if (clickable && !isMobile) {
+      handleClose();
+      setshowAnimation(true);
+      toggle();
+      openBlackPage();
+    }
+    setClickCount(clickCount + 1);
   };
 
   const handleLeave = () => {
-    if (showAnimation && !animation?.isFullPage) {
+    if (!isAnyAnimationOverlay()) {
       setshowAnimation(false);
-      handleOnMouseLeave();
-    } else {
-      handleClose();
+      if (playing) {
+        toggle();
+      }
     }
-    if (showAnimation && !animation?.isFullPage) {
+    handleClose();
+    setClickCount(0);
+  };
+
+  const handleCloseOverlayAnimation = () => {
+    setshowAnimation(false);
+    if (playing) {
       toggle();
     }
+    if (id === "guy") {
+      const black = document.getElementById("black-page");
+      black.style.display = "none";
+    }
+    setClickCount(0);
   };
 
-  const handleCloseFullPageAnimation = () => {
-    setshowAnimation(false);
-    handleOnMouseLeave();
-  };
-
-  const getMediaContent = () => {
+  const getMediaContent = (animation) => {
     switch (animation.type) {
       case "video":
         return (
           <video
-            id={id}
+            id={animation.id}
             ref={animationRef}
             src={animation.src}
-            onMouseLeave={
-              animation.isFullPage ? handleCloseFullPageAnimation : undefined
-            }
-            type="media/webm"
-            loop
+            type="media/mp4"
+            loop={animation.loop || false}
+            muted={animation.muted ? true : false}
+            onEnded={() => setshowAnimation(false)}
             autoPlay
-            muted
+            controls={false}
+            playsInline
           ></video>
         );
       case "image":
         return (
           <img
-            id={id}
+            id={animation.id}
+            ref={animationRef}
             src={animation.src}
             onMouseLeave={
-              animation.isFullPage ? handleCloseFullPageAnimation : undefined
+              animation.overlay ? handleCloseOverlayAnimation : undefined
             }
           />
         );
@@ -94,9 +117,14 @@ const Module = ({
     const handleClickOutside = (event) => {
       if (
         animationRef.current &&
-        !animationRef.current.contains(event.target)
+        !animationRef.current.contains(event.target) &&
+        handleLeave
       ) {
-        handleLeave && handleLeave();
+        if (!isAnyAnimationOverlay()) {
+          handleLeave();
+        } else {
+          handleCloseOverlayAnimation();
+        }
       }
     };
     document.addEventListener("click", handleClickOutside, true);
@@ -105,63 +133,26 @@ const Module = ({
     };
   }, [handleLeave]);
 
-  useEffect(() => {
-    if (
-      playing &&
-      !showAnimation &&
-      id !== "left-speaker" &&
-      id !== "right-speaker"
-    ) {
-      toggle();
-    }
-  }, [playing, showAnimation]);
-
-  useEffect(() => {
-    if (
-      loopCount.left === 5 &&
-      loopCount.right === 5 &&
-      (id === "left-speaker" || id === "right-speaker")
-    ) {
-      toggle();
-      cleanLoopCount();
-    }
-  }, [loopCount]);
-
   return (
     <>
-      <div
-        className={`module-image ${id}`}
-        onClick={animation ? handleClick : undefined}
-        onMouseEnter={clickable ? handleOpen : undefined}
-        onMouseLeave={clickable ? handleLeave : undefined}
-      >
-        <img src={src} alt={id} />
-        {open && (
-          <Tooltip
-            information={information}
-            top={styles.top}
-            bottom={styles.bottom}
-            left={styles.left}
-            right={styles.right}
-            maxHeight={styles.maxHeight}
-          />
-        )}
-        {/* {(id === "right-speaker" || id === "left-speaker") && (
-          <div className="loop-triangle">
-            {count === 1 && <img className="bottom" />}
-            {count === 2 && <img className="left" />}
-            {count === 3 && <img className="right" />}
-          </div>
-        )} */}
+      <div id={id} className={`module-image ${id}`} onMouseLeave={handleLeave}>
+        <img
+          onClick={handleClick}
+          onMouseEnter={handleOpen}
+          src={src}
+          alt={id}
+        />
+        {open && <Tooltip information={information} />}
       </div>
-      {showAnimation && animation && (
-        <div className="module-animation">{getMediaContent()}</div>
-      )}
-      {/* {(id === "right-speaker" || id === "left-speaker") && (
-        <p style={{ position: "absolute", top: 0, right: "250px" }}>
-          Loop Count: {loopCount.left} {loopCount.right}
-        </p>
-      )} */}
+      {showAnimation &&
+        animations &&
+        animations.map((animation) => {
+          return (
+            <div key={animation.id} className="module-animation">
+              {getMediaContent(animation)}
+            </div>
+          );
+        })}
     </>
   );
 };

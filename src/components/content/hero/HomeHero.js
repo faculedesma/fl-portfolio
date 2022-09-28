@@ -5,12 +5,10 @@ import "./hero.scss";
 
 const HomeHero = () => {
   return (
-    <section className="home-hero">
-      <div className="home-hero-top">
-        <HeroSection />
-      </div>
+    <div className="home-hero">
+      <HeroSection />
       <HeroDraws />
-    </section>
+    </div>
   );
 };
 

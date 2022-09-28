@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 250px;
+  width: 150px;
   transform: scale(0);
   animation: logo-load 600ms ease-in-out forwards;
 
@@ -21,18 +21,6 @@
       transform: scale(1);
     }
   }
-  
-
-  p {
-    font-size: 10px;
-    padding-left: 5px;
-    opacity: 0;
-    transition: opacity 400ms ease-in-out;
-  }
-}
-
-.logo:hover p {
-    opacity: 1;
 }
 
 @keyframes logo-load {
