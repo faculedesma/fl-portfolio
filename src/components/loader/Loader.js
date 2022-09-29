@@ -8,7 +8,7 @@ const Loader = ({ isLoading, onContinue }) => {
   return (
     <div className="initial-loader">
       <div className="initial-loader-goto">
-        <button disabled={isLoading} onClick={onContinue}>
+        <button disabled={isLoading} onClickCapture={onContinue}>
           <p>Who are you?</p>
           <BsFillDoorOpenFill />
           <MdArrowRightAlt />

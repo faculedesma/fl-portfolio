@@ -94,7 +94,7 @@ import EnRemolinosMP3 from "../../../assets/sounds/en-remolinos.mp3";
 import PianoOlivos from "../../../assets/sounds/piano-olivos.mp3";
 import BeerOpenMP3 from "../../../assets/sounds/beer-open.mp3";
 import Genesis from "../../../assets/sounds/genesis.mp3";
-import CactusMP3 from "../../../assets/sounds/cactus.ogg";
+import CactusMP3 from "../../../assets/sounds/cactus.mp3";
 import ShineOn from "../../../assets/sounds/shine-on-first.mp3";
 import GwynFirelink from "../../../assets/sounds/gwyn-firelink.mp3";
 import NothingIsReal from "../../../assets/sounds/psych-beatles.mp3";
@@ -503,7 +503,7 @@ export const drawModules = [
     information: {
       generic: "Travel other realities to know who you really are.",
       personal:
-        "If I had to choose one trip: finishing 2017 I travelled to a magical place called Key West, in Florida. Didn't know what to really expect but I had the conviction I wanted to do it. It changed my life. Made me realize the power of humans when we work together and collaborate for a greater purpose. Definitely want to keep exploring this vast world in which we live.",
+        "If I had to choose one trip: finishing 2017 I travelled to a magical place called Key West, in Florida. Didn't know what to really expect but I had the conviction I wanted to do it. It changed my life. Made me realize the power when we work together and collaborate for a greater purpose. Definitely want to keep exploring this vast world in which we live.",
     },
   },
   {

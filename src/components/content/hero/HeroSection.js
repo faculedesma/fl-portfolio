@@ -35,7 +35,7 @@ const HeroSection = () => {
       <div className="hero-section">
         <div className="hero-section-top">
           <img
-            onClick={handleClickBike}
+            onClickCapture={handleClickBike}
             id="bike"
             className="bike"
             src={Bike}
