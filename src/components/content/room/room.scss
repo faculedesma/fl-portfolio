@@ -192,7 +192,7 @@
         top: 0;
         left: 0;
         animation: room-load 400ms ease-in;
-        z-index: 33;
+        z-index: 40;
       }
 
       #guy-psych-left {
@@ -200,7 +200,7 @@
         width: 10%;
         top: 47%;
         left: 15%;
-        z-index: 34;
+        z-index: 41;
         transform: scale(0);
         animation: guys-show 400ms ease-in forwards;
       }
@@ -210,7 +210,7 @@
         width: 10%;
         top: 46%;
         left: 56%;
-        z-index: 34;
+        z-index: 41;
         transform: scale(0);
         animation: guys-show 400ms ease-in forwards;
       }
@@ -220,7 +220,7 @@
         width: 20%;
         top: 34%;
         left: 30%;
-        z-index: 34;
+        z-index: 41;
         transform: scale(0);
         animation: guys-show 400ms ease-in forwards;
       }
@@ -230,7 +230,7 @@
         width: 20%;
         top: 35%;
         left: 0;
-        z-index: 34;
+        z-index: 41;
         transform: scale(0);
         animation: hand-show 400ms ease-in forwards;
         animation-delay: 600ms;
@@ -241,7 +241,7 @@
         width: 30%;
         top: 10%;
         left: 10%;
-        z-index: 34;
+        z-index: 41;
         transform: scale(0);
         animation: hand-show 800ms ease-in forwards;
         animation-delay: 1200ms;
@@ -252,7 +252,7 @@
         width: 20%;
         top: 35%;
         right: 0;
-        z-index: 34;
+        z-index: 41;
         transform: scale(0);
         animation: hand-show 800ms ease-in forwards;
         animation-delay: 1800ms;
@@ -263,7 +263,7 @@
         width: 30%;
         top: 20%;
         right: 10%;
-        z-index: 34;
+        z-index: 41;
         transform: scale(0);
         animation: hand-show 800ms ease-in forwards;
         animation-delay: 2400ms;
@@ -576,7 +576,7 @@
   }
 
   .cancion-animal {
-    width: 7%;
+    width: 6%;
     top: 51.2%;
     left: 62.2%;
     z-index: 33;
@@ -1151,10 +1151,6 @@ and (max-width: 812px) {
           #moris-soul {
             z-index: 36;
           }
-
-          #the-end-base {
-            z-index: 34;
-          }
         }
       }
 
@@ -1176,6 +1172,8 @@ and (max-width: 812px) {
       }
 
       .cancion-animal {
+        top: 51%;
+
         .tooltip {
           left: unset;
           top: unset;
@@ -1275,6 +1273,24 @@ and (max-width: 812px) {
           right: -100%;
         }
       }
+
+      .lupe {
+        width: 2.5%;
+        top: 53%;
+        right: 28%;
+      }
+
+      .sunglasses {
+        top: 56%;
+      }
+
+      .preamp {
+        top: 50%;
+      }
+
+      .la-biblia {
+        width: 7.5%;
+      }
     }
   }
 
@@ -1301,6 +1317,35 @@ and (orientation: 'portrait') {
       .tooltip {
         bottom: 0;
         left: 100%;
+      }
+    }
+  }
+}
+
+@media only screen 
+and (min-width: 812px) 
+and (max-width: 1280px)
+and (orientation: 'landscape') {
+  .room {
+    .dsotm {
+      z-index: 26;
+
+      .tooltip {
+        bottom: 0;
+      }
+    }
+
+    .sabiduria-loco {
+      .tooltip {
+        bottom: 0;
+        left: 100%;
+      }
+    }
+
+    .guy {
+      .tooltip {
+        bottom: 85%;
+        right: -50%;
       }
     }
   }

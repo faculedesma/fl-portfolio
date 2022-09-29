@@ -46,6 +46,7 @@ const Module = ({ id, src, animations, clickable, information }) => {
       // modules without tooltip & with animation for mobile
       if (clickCount === 0 && !information) {
         setshowAnimation(true);
+        toggle();
       }
       handleOpen();
     }
@@ -87,6 +88,7 @@ const Module = ({ id, src, animations, clickable, information }) => {
       case "video":
         return (
           <video
+            key={animation.id}
             id={animation.id}
             ref={animationRef}
             src={animation.src}
@@ -102,6 +104,7 @@ const Module = ({ id, src, animations, clickable, information }) => {
       case "image":
         return (
           <img
+            key={animation.id}
             id={animation.id}
             ref={animationRef}
             src={animation.src}
@@ -137,7 +140,7 @@ const Module = ({ id, src, animations, clickable, information }) => {
     <>
       <div id={id} className={`module-image ${id}`} onMouseLeave={handleLeave}>
         <img
-          onClick={handleClick}
+          onClickCapture={handleClick}
           onMouseEnter={handleOpen}
           src={src}
           alt={id}

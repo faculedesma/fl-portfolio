@@ -503,7 +503,7 @@ export const drawModules = [
     information: {
       generic: "Travel other realities to know who you really are.",
       personal:
-        "If I had to choose one trip: finishing 2017 I travelled to a magical place called Key West, in Florida. Didn't know what to really expect but I had the conviction I wanted to do it. It changed my life. Made me realize the power of humans when we work together and collaborate for a greater purpose. Definitely want to keep exploring this vast world in which we live.",
+        "If I had to choose one trip: finishing 2017 I travelled to a magical place called Key West, in Florida. Didn't know what to really expect but I had the conviction I wanted to do it. It changed my life. Made me realize the power when we work together and collaborate for a greater purpose. Definitely want to keep exploring this vast world in which we live.",
     },
   },
   {
