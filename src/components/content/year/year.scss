@@ -1,0 +1,29 @@
+.year {
+  position: absolute;
+  font-size: 10px;
+  bottom: 12%;
+  right: 17%;
+  cursor: pointer;
+  transform: scale(0);
+  transform: skew(0, 0);
+  animation: year-load 400ms ease-in forwards;
+}
+
+@keyframes year-load {
+  0% {
+    transform: scale(0) skew(0, 0);
+  }
+
+  100% {
+    transform: scale(1) skew(60deg, -30deg);
+  }
+}
+
+/* Celular */
+@media only screen 
+and (min-width: 375px) 
+and (max-width: 812px) {
+  .year {
+    font-size: 8px;
+  }
+}

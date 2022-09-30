@@ -43,7 +43,7 @@ import Cerati from "../../../assets/images/animations/cerati.png";
 import CancionAnimalVinyl from "../../../assets/images/animations/cancion-animal-vinyl.png";
 import Spinetta from "../../../assets/images/animations/spinetta-artaud.mp4";
 import TrianglePaint from "../../../assets/images/animations/triangle-animation.png";
-import LupeAnimation from "../../../assets/images/animations/lupe-animation.png";
+import LupeAnimation from "../../../assets/images/animations/lupe-zoom.png";
 import Moris from "../../../assets/images/animations/moris.png";
 import MorisSoul from "../../../assets/images/animations/moris-soul.png";
 import PlantGrow from "../../../assets/images/animations/plant-grow.png";
@@ -147,7 +147,7 @@ export const drawModules = [
     information: {
       generic: `No estoy atado a ningún sueño ya.`,
       personal:
-        "Luis Alberto Spintta was an Argentinian songwriter and artist. Share with love and care for the other. Te quiero flaco.",
+        "Luis Alberto Spintta was an Argentine singer, guitarist, poet, writer and composer, one of the most important and respected musicians in Argentina, Latin America and the Spanish-speaking world. He left his mark by being a warrior for peace. Te quiero flaco.",
     },
   },
   {
@@ -218,9 +218,9 @@ export const drawModules = [
     ],
     clickable: true,
     information: {
-      generic: `El riesgo es al camino, es más intenso. Meses navegando, tierra a la vista.`,
+      generic: `El riesgo es al camino, es más intenso; meses navegando, tierra a la vista.`,
       personal:
-        "Gustavo Cerati was an argentinian musician. He is a great inspiration. Opportunities at each moment are infinite and at that point we have to make a decision, 0 or 1. Based on that, a completely new reality develops, the effect of a cause of which we are co-creators. The other part will always be a mystery and the elemental reason for human curiosity. Jump into the void and become infinite.",
+        "Gustavo Cerati was an argentine musician. He is a great inspiration, the energy he deliver to the world is unique. Opportunities at each moment are infinite and at that point we have to make a decision, 0 or 1. Based on that, a completely new reality develops, the effect of a cause of which we are co-creators. The other part will always be a mystery and the elemental reason for human curiosity. Jump into the void and become infinite.",
     },
   },
   {
@@ -583,7 +583,7 @@ export const drawModules = [
     clickable: true,
     information: {
       generic: "Great One's Wisdom (La Sabiduría del Loco)",
-      personal: `Hidetaka Miyazaki is From Software. We are thinking on the basest of planes. What we need, are more eyes. Making contact with eldritch wisdom is a blessing, for even if it drives one mad, it allows one to serve a grander purpose, for posterity.`,
+      personal: `Hidetaka Miyazaki is a Korean game developer. Inspired me by having created timeless art masterpieces. Details make simplicity beautiful. We are thinking on the basest of planes. What we need, are more eyes. Making contact with eldritch wisdom is a blessing, for even if it drives one mad, it allows one to serve a grander purpose, for posterity.`,
     },
   },
   {
