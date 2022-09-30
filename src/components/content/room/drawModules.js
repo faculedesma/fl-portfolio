@@ -98,6 +98,7 @@ import CactusMP3 from "../../../assets/sounds/cactus.mp3";
 import ShineOn from "../../../assets/sounds/shine-on-first.mp3";
 import GwynFirelink from "../../../assets/sounds/gwyn-firelink.mp3";
 import NothingIsReal from "../../../assets/sounds/psych-beatles.mp3";
+import Wish from "../../../assets/sounds/wish.mp3";
 
 export const drawModules = [
   {
@@ -147,7 +148,7 @@ export const drawModules = [
     information: {
       generic: `No estoy atado a ningún sueño ya.`,
       personal:
-        "Luis Alberto Spintta was an Argentine singer, guitarist, poet, writer and composer, one of the most important and respected musicians in Argentina, Latin America and the Spanish-speaking world. He left his mark by being a warrior for peace. Te quiero flaco.",
+        "Luis Alberto Spinetta was an Argentine singer, guitarist, poet, writer and composer, one of the most important and respected musicians in Argentina, Latin America and the Spanish-speaking world. He left his mark by being a warrior for peace. Te quiero flaco.",
     },
   },
   {
@@ -220,7 +221,7 @@ export const drawModules = [
     information: {
       generic: `El riesgo es al camino, es más intenso; meses navegando, tierra a la vista.`,
       personal:
-        "Gustavo Cerati was an argentine musician. He is a great inspiration, the energy he deliver to the world is unique. Opportunities at each moment are infinite and at that point we have to make a decision, 0 or 1. Based on that, a completely new reality develops, the effect of a cause of which we are co-creators. The other part will always be a mystery and the elemental reason for human curiosity. Jump into the void and become infinite.",
+        "Gustavo Cerati was an argentine musician. He is a great inspiration, the energy he deliver to the world is unique. Opportunities at each moment are infinite and at that point we have to make a decision, 0 or 1. Based on that, a completely new reality develops, the effect of a cause of which we are co-creators. The other part will always be a mystery and the elemental reason for human curiosity.",
     },
   },
   {
@@ -550,7 +551,7 @@ export const drawModules = [
     clickable: true,
     information: {
       generic:
-        "Hello World! was the first message to be sent on the internet. A revolution! My humans understand me.",
+        "Hello was the first message to be sent on the internet. A revolution! My humans understand me.",
       personal: `My love for computers started when i was a kid, always made me curious how to interact with them. First playing video-games and then studying computer science in my town's college. After graduation, started working as a software developer. Years after i became aware of the true power of technology and how limitless can be. The universe is expanding and we are expanding with it, there's no stopping for learning. Let's join.`,
     },
   },
@@ -630,7 +631,7 @@ export const drawModules = [
     clickable: true,
     information: {
       generic: "Paint who you are.",
-      personal: `Art was always a very important part of my expression and a direct bridge with my imagination. Started as a child painting in school, left it behind for 'responsabilities' and today is an essential part of me. I love to create things from fantasy trying to have a better understanding of reality. Click to see this piece of art i've made for love ones!`,
+      personal: `Art was always a very important part of my expression and a direct bridge with my imagination. Started as a child painting in school, left it behind and today is an essential part of me. I love to create things from fantasy trying to have a better understanding of reality. Click to see this piece of art i've made for love ones!`,
     },
   },
   {
@@ -755,7 +756,7 @@ export const drawModules = [
         id: "turntable",
         src: null,
         type: "image",
-        sound: null,
+        sound: Wish,
         overlay: true,
       },
     ],
