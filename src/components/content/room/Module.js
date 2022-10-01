@@ -20,6 +20,8 @@ const Module = ({ id, src, animations, clickable, information }) => {
   const isAnyAnimationOverlay = () =>
     animations?.find((animation) => animation.overlay);
 
+  const hasSound = () => animations?.[0].sound;
+
   const handleClose = () => setOpen(false);
 
   const handleOpen = () => {
@@ -40,13 +42,13 @@ const Module = ({ id, src, animations, clickable, information }) => {
     if (clickCount === 1 && isMobile) {
       handleClose();
       setshowAnimation(true);
-      toggle();
+      if (hasSound()) toggle();
       openBlackPage();
     } else {
       // modules without tooltip & with animation for mobile
       if (clickCount === 0 && !information) {
         setshowAnimation(true);
-        toggle();
+        if (hasSound()) toggle();
       }
       handleOpen();
     }
@@ -54,7 +56,7 @@ const Module = ({ id, src, animations, clickable, information }) => {
     if (clickable && !isMobile) {
       handleClose();
       setshowAnimation(true);
-      toggle();
+      if (hasSound()) toggle();
       openBlackPage();
     }
     setClickCount(clickCount + 1);
