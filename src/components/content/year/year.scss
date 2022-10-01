@@ -1,6 +1,6 @@
 .year {
   position: absolute;
-  font-size: 10px;
+  font-size: 8px;
   bottom: 12%;
   right: 17%;
   cursor: pointer;
@@ -24,6 +24,15 @@
 and (min-width: 375px) 
 and (max-width: 812px) {
   .year {
-    font-size: 8px;
+    font-size: 4px;
+  }
+}
+
+@media only screen 
+and (min-width: 375px) 
+and (max-width: 812px)
+and (orientation: 'landscape') {
+  .year {
+    font-size: 6px;
   }
 }

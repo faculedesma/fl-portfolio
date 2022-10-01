@@ -4,11 +4,12 @@ Created with love :star2:
 
 ## About The Project
 
-I've created this project with the motivation to mix my passions for art :art:, music :guitar: & computers :computer:. I felt that the best way to do it was creating my own animations and draws (some are borrowed from lottie files) and represent all things I love that connect me with myself and the world :earth_americas:.
+I've created this project with the motivation to mix my passions for art :art:, music :guitar: & computers :computer:. I felt that the best way to do it was creating my own animations and draws that represent all things I love that connect me with myself and the world :earth_americas:.
 Took inspiration from some awesome websites :boom: out there that I really recommend you to see if you enjoy creativity, some of them are:
 
 - [Bruno Simon][bruno-simon-url]
 - [Robby Leonardi][robby-leonardi-url]
+- [Jesse Zhou][jesse-zhou-url]
 - [Jacek Jeznach][jacek-jeznach-url]
 
 This is just the first version, a lot more to come in the future.
@@ -26,10 +27,9 @@ I'm using these technologies to build this project:
 [![Webpack][webpack.js]][webpack-url]
 [![Babel][babel.js]][babel-url]
 
-### Animations
+### Animations & Illustrations
 
 [![Procreate][procreate]][procreate-url]
-[![Lottie][lottie.js]][lottie-url]
 
 ## Getting Started
 
@@ -78,4 +78,4 @@ Facundo Ledesma - faculedesma1993@gmail.com
 [lottie-url]: https://lottiefiles.com/
 [bruno-simon-url]: https://bruno-simon.com/
 [jacek-jeznach-url]: https://jacekjeznach.com/
-[robby-leonardi-url]: http://www.rleonardi.com/
+[jesse-zhou-url]: https://jesse-zhou.com/

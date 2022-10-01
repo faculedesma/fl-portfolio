@@ -342,6 +342,23 @@
     }
   }
 
+@media only screen
+  and (min-width: 375px)
+  and (max-width: 812px)
+  and (orientation: 'landscape') {
+    .home-hero {
+      .hero {
+        &-section {
+          .tooltip {
+            top: 18%;
+            left: 50%;
+          }
+        }
+      }
+    }
+  }
+  
+
 /* ----------- Tablets ----------- */
 
 /* Portrait and Landscape */

@@ -119,14 +119,6 @@
         z-index: 34;
       }
 
-      #turntable-bw {
-        position: absolute;
-        width: 11%;
-        top: 45.3%;
-        right: 24.3%;
-        z-index: 14;
-      }
-
       #plant-grow {
         position: absolute;
         width: 70%;
@@ -1155,6 +1147,8 @@ and (max-width: 812px) {
       }
 
       .amp {
+        z-index: 36;
+
         .tooltip {
           top: 100%;
           bottom: unset;
@@ -1172,7 +1166,7 @@ and (max-width: 812px) {
       }
 
       .cancion-animal {
-        top: 51%;
+        top: 50%;
 
         .tooltip {
           left: unset;
@@ -1293,6 +1287,31 @@ and (max-width: 812px) {
       }
     }
   }
+
+@media only screen
+and (min-width: 375px)
+and (max-width: 812px)
+and (orientation: 'landscape') {
+    .room {
+      .cancion-animal {
+        top: 51%;
+      }
+
+      .lupe {
+        top: 55%;
+      }
+
+      .sunglasses {
+        top: 58%;
+      }
+
+      .preamp {
+        top: 52%;
+      }
+    }
+  }
+
+  
 
 /* ----------- Tablets ----------- */
 
