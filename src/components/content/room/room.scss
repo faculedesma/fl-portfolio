@@ -1147,7 +1147,7 @@ and (max-width: 812px) {
       }
 
       .amp {
-        z-index: 36;
+        z-index: 25;
 
         .tooltip {
           top: 100%;
@@ -1167,11 +1167,12 @@ and (max-width: 812px) {
 
       .cancion-animal {
         top: 50%;
+        z-index: 27;
 
         .tooltip {
           left: unset;
           top: unset;
-          right: 0%;
+          right: -100%;
           bottom: 100%;
         }
       }
@@ -1188,7 +1189,7 @@ and (max-width: 812px) {
 
       .lamp {
         .tooltip {
-          right: -100%;
+          top: -150%;
         }
       }
 
@@ -1235,7 +1236,7 @@ and (max-width: 812px) {
       }
 
       .paint {
-        z-index: 35;
+        z-index: 33;
 
         .tooltip {
           bottom: 100%;
@@ -1246,14 +1247,14 @@ and (max-width: 812px) {
 
       .plant {
         .tooltip {
-          bottom: 50%;
+          bottom: 75%;
           left: -100px;
         }
       }
 
       .turntable {
         .tooltip {
-          top: -50%;
+          top: -75%;
         }
       }
 
@@ -1293,6 +1294,17 @@ and (min-width: 375px)
 and (max-width: 812px)
 and (orientation: 'landscape') {
     .room {
+      .amp {
+        z-index: 25;
+
+        .tooltip {
+          top: unset;
+          right: unset;
+          bottom: -50%;
+          left: -100%;
+        }
+      }
+
       .cancion-animal {
         top: 51%;
       }
@@ -1307,6 +1319,10 @@ and (orientation: 'landscape') {
 
       .preamp {
         top: 52%;
+      }
+
+      .paint {
+        z-index: 33;
       }
     }
   }

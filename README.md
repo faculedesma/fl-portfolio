@@ -8,7 +8,6 @@ I've created this project with the motivation to mix my passions for art :art:, 
 Took inspiration from some awesome websites :boom: out there that I really recommend you to see if you enjoy creativity, some of them are:
 
 - [Bruno Simon][bruno-simon-url]
-- [Robby Leonardi][robby-leonardi-url]
 - [Jesse Zhou][jesse-zhou-url]
 - [Jacek Jeznach][jacek-jeznach-url]
 
