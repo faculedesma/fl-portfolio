@@ -25,6 +25,19 @@
         opacity: 0.8;
       }
     }
+
+    .headphones {
+      margin-bottom: 20px;
+
+      svg {
+        font-size: 35px;
+      }
+
+      .tooltip {
+        bottom: 100%;
+        right: -75%;
+      }
+    }
     
     &-goto {
       display: flex;

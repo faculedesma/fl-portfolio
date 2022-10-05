@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Room from "../room/Room";
 import Year from "../year/Year";
+import Contact from "../../contact/Contact";
 
 const HeroDraws = () => {
   const mounted = useRef(false);
@@ -16,6 +17,7 @@ const HeroDraws = () => {
     <div className="hero-draws">
       <Room />
       <Year />
+      <Contact />
     </div>
   );
 };

@@ -1,15 +1,58 @@
 .contact {
   position: absolute;
-  min-width: 100px;
+  min-width: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  right: 10%;
-  top: 25%;
-  transform: skew(-30deg, 30deg);
-  opacity: 0.8;
-
+  left: 22%;
+  bottom: 14%;
+  font-size: 10px;
+  transform: scale(0) skew(0, 0);
+  animation: contact-load 400ms ease-in forwards;
+  opacity: 0.7;
+  filter: drop-shadow(3px 4px .5px #edc6b2);
+  
   a {
-    color: #63342e;
+    transform: scale(1);
+    transition: all  ease-in-out 200ms;
+    color: black;
+  }
+
+  a:hover {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes contact-load {
+  0% {
+    transform: scale(0) skew(0, 0);
+  }
+
+  100% {
+    transform: scale(1) skew(-60deg, 30deg);
+  }
+}
+
+/* Celular */
+@media only screen 
+and (min-width: 375px) 
+and (max-width: 812px) {
+  .contact {
+    min-width: 75px;
+    left: 18%;
+    bottom: 12%;
+    font-size: 6px;
+  }
+}
+
+@media only screen 
+and (min-width: 375px) 
+and (max-width: 844px)
+and (orientation: 'landscape') {
+  .contact {
+    min-width: 90px;
+    left: 23%;
+    bottom: 13%;
+    font-size: 8px;
   }
 }
