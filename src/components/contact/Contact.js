@@ -27,7 +27,11 @@ const Contact = () => {
       >
         <FaLinkedinIn />
       </a>
-      <a className="behance" target="_blank">
+      <a
+        className="behance"
+        href="https://www.behance.net/facundoledesma5"
+        target="_blank"
+      >
         <FaBehance />
       </a>
     </div>

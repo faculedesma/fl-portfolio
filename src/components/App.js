@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import useAudio from "./hooks/useAudio";
 import Content from "./content/Content";
 import Loader from "./loader/Loader";
-import Contact from "./contact/Contact"; // TODO
 import BlackPage from "./black/Black";
 import {
   SoundContext,
@@ -40,7 +39,6 @@ const App = () => {
     <SoundContext.Provider value={{ sound, setSound }}>
       <div className={`app ${!goToApp ? "" : "animate"}`}>
         <Content />
-        {/* <Contact /> */}
         <BlackPage />
       </div>
       {!goToApp && <Loader isLoading={isLoading} onContinue={onContinue} />}

@@ -110,9 +110,7 @@ const Module = ({ id, src, animations, clickable, information }) => {
             id={animation.id}
             ref={animationRef}
             src={animation.src}
-            onMouseLeave={
-              animation.overlay ? handleCloseOverlayAnimation : undefined
-            }
+            onMouseLeave={() => setOpen(false)}
           />
         );
     }
@@ -140,7 +138,11 @@ const Module = ({ id, src, animations, clickable, information }) => {
 
   return (
     <>
-      <div id={id} className={`module-image ${id}`} onMouseLeave={handleLeave}>
+      <div
+        id={id}
+        className={`module-image ${id}`}
+        onMouseLeave={() => setOpen(false)}
+      >
         <img
           onClickCapture={handleClick}
           onMouseEnter={handleOpen}
