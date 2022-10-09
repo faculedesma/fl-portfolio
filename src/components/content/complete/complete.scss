@@ -1,0 +1,46 @@
+.complete-counter {
+  position: absolute;
+  top: 0;
+  right: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  svg {
+    cursor: pointer;
+    transform: scale(1);
+    animation: check 800ms ease-in-out infinite;
+    margin-left: 5px;
+  }
+
+  .tooltip {
+    z-index: 100;
+    top: 100%;
+    right: 0;
+  }
+}
+
+@keyframes check {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ----------- Celullar ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-width: 375px) 
+  and (max-width: 812px) {
+    .complete-counter {
+      font-size: 10px;
+    }
+  }

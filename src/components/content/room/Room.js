@@ -3,7 +3,7 @@ import Module from "./Module";
 import { drawModules } from "./drawModules";
 import "./room.scss";
 
-const Room = () => {
+const Room = ({ increaseCount }) => {
   return (
     <div className="room">
       {drawModules.map((module) => {
@@ -15,6 +15,7 @@ const Room = () => {
             animations={module.animations}
             clickable={module.clickable}
             information={module.information}
+            increaseCompleteCount={increaseCount}
           />
         );
       })}

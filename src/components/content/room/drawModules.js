@@ -84,6 +84,7 @@ import Responsible from "../../../assets/images/animations/responsible.png";
 import HereNow from "../../../assets/images/animations/here-now.png";
 import DSOTMBase from "../../../assets/images/animations/dsotm-base.png";
 import BeatlesShow from "../../../assets/images/animations/beatles-show.png";
+import StephenHawking from "../../../assets/images/animations/stephen-hawking.png";
 // Sounds
 import SuelesDejarmeSoloMP3 from "../../../assets/sounds/lion-sueles-dejarme.mp3";
 import BrainDamageMP3 from "../../../assets/sounds/brain-damage.mp3";
@@ -99,6 +100,7 @@ import ShineOn from "../../../assets/sounds/shine-on-first.mp3";
 import GwynFirelink from "../../../assets/sounds/gwyn-firelink.mp3";
 import NothingIsReal from "../../../assets/sounds/psych-beatles.mp3";
 import Wish from "../../../assets/sounds/wish.mp3";
+import GodExistance from "../../../assets/sounds/god-existance.mp3";
 
 export const drawModules = [
   {
@@ -163,6 +165,7 @@ export const drawModules = [
     src: Beer,
     animations: [
       {
+        id: "beer",
         src: null,
         type: null,
         sound: BeerOpenMP3,
@@ -525,9 +528,17 @@ export const drawModules = [
   {
     id: "lamp",
     src: Lamp,
-    animations: [],
+    animations: [
+      {
+        id: "stephen-hawking",
+        src: StephenHawking,
+        type: "image",
+        sound: GodExistance,
+        overlay: false,
+      },
+    ],
     clickable: true,
-    information: { generic: "Who's your God?", personal: "" },
+    information: { generic: "Who's God?", personal: "" },
   },
   {
     id: "laptop",
