@@ -481,6 +481,17 @@
         transform: scale(0);
         animation: cerati-animation 500ms ease-in forwards;
       }
+
+      #stephen-hawking {
+        position: absolute;
+        width: 12%;
+        right: 19%;
+        bottom: 14%;
+        z-index: 34;
+        opacity: 0.4;
+        transform: scale(0);
+        animation: cerati-animation 500ms ease-in forwards;
+      }
     }
   }
 
@@ -699,7 +710,6 @@
     top: 41%;
     left: 63.6%;
     z-index: 12;
-    cursor: inherit;
 
     .tooltip {
       width: 120px;

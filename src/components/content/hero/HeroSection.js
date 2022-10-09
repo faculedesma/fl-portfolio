@@ -12,8 +12,9 @@ import Tooltip from "../../common/tooltip/Tooltip";
 import MainTitle from "./MainTitle";
 
 const content = {
+  generic: "Welcome to my portfolio!",
   personal:
-    "Welcome to my portfolio. This is my first independent project and it was born from my curiosity about doing something different, introspective, and a way to mix my passions for art, music & computers. It was a journey of self-knowledge, to find out who I am and what inspires me. The room next contains multiple objects that represent a part of me. Go ahead and get to know me. Mystery is fundamental. Created with love. Hope you enjoy it!",
+    "This is my first independent project and it was born from my curiosity about doing something different, introspective, and a way to mix my passions for art, music & computers. It was a journey of self-knowledge, to find out who I am and what inspires me. The room next contains multiple objects that represent a part of me. Go ahead and get to know me. Mystery is fundamental. Created with love. Hope you enjoy it!",
 };
 
 const HeroSection = () => {

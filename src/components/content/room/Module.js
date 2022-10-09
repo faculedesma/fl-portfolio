@@ -3,7 +3,14 @@ import useAudio from "../../hooks/useAudio";
 import useCheckIsMobile from "../../hooks/useCheckIsMobile";
 import Tooltip from "../../common/tooltip/Tooltip";
 
-const Module = ({ id, src, animations, clickable, information }) => {
+const Module = ({
+  id,
+  src,
+  animations,
+  clickable,
+  information,
+  increaseCompleteCount,
+}) => {
   const [showAnimation, setshowAnimation] = useState(false);
   const [open, setOpen] = useState(false);
   const [clickCount, setClickCount] = useState(0);
@@ -42,12 +49,14 @@ const Module = ({ id, src, animations, clickable, information }) => {
     if (clickCount === 1 && isMobile) {
       handleClose();
       setshowAnimation(true);
+      if (clickable) increaseCompleteCount(id);
       if (hasSound()) toggle();
       openBlackPage();
     } else {
       // modules without tooltip & with animation for mobile
       if (clickCount === 0 && !information) {
         setshowAnimation(true);
+        if (clickable) increaseCompleteCount(id);
         if (hasSound()) toggle();
       }
       handleOpen();
@@ -56,6 +65,8 @@ const Module = ({ id, src, animations, clickable, information }) => {
     if (clickable && !isMobile) {
       handleClose();
       setshowAnimation(true);
+      if (clickable) increaseCompleteCount(id);
+
       if (hasSound()) toggle();
       openBlackPage();
     }
@@ -85,19 +96,20 @@ const Module = ({ id, src, animations, clickable, information }) => {
     setClickCount(0);
   };
 
+  const handleEndVideo = () => setshowAnimation(false);
+
   const getMediaContent = (animation) => {
     switch (animation.type) {
       case "video":
         return (
           <video
-            key={animation.id}
             id={animation.id}
             ref={animationRef}
             src={animation.src}
             type="media/mp4"
             loop={animation.loop || false}
             muted={animation.muted ? true : false}
-            onEnded={() => setshowAnimation(false)}
+            onEnded={handleEndVideo}
             autoPlay
             controls={false}
             playsInline
@@ -106,13 +118,14 @@ const Module = ({ id, src, animations, clickable, information }) => {
       case "image":
         return (
           <img
-            key={animation.id}
             id={animation.id}
             ref={animationRef}
             src={animation.src}
             onMouseLeave={() => setOpen(false)}
           />
         );
+      default:
+        return <></>;
     }
   };
 

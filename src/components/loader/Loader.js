@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { MdArrowRightAlt } from "react-icons/md";
 import { BsFillDoorOpenFill } from "react-icons/bs";
 import { BsHeadphones } from "react-icons/bs";
-import Loading from "../../assets/images/other/loading.png";
 import Tooltip from "../common/tooltip/Tooltip";
 import "./loader.scss";
 
@@ -27,11 +26,7 @@ const Loader = ({ isLoading, onContinue }) => {
           <MdArrowRightAlt />
         </button>
       </div>
-      {isLoading && (
-        <div className="loading">
-          <img src={Loading} alt="loading" />
-        </div>
-      )}
+      {isLoading && <div className="spinner"></div>}
     </div>
   );
 };
