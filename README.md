@@ -50,7 +50,7 @@ If you want to play with it just follow these steps:
    ```
 3. Run the application in development mode
    ```sh
-   npm run dev
+   npm start
    ```
 
 ## License
