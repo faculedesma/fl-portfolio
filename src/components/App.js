@@ -22,15 +22,16 @@ const App = () => {
     toggle();
   };
 
+  const handleIsLoaded = () => setIsLoading(false);
+
   useEffect(() => {
     setIsLoading(true);
     mounted.current = true;
 
-    window.addEventListener("load", () => {
-      setIsLoading(false);
-    });
+    window.addEventListener("load", handleIsLoaded);
 
     return () => {
+      window.removeEventListener("load", handleIsLoaded, true);
       mounted.current = false;
     };
   }, []);
