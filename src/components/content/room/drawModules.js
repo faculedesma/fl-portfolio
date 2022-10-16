@@ -98,7 +98,7 @@ import Genesis from "../../../assets/sounds/genesis.mp3";
 import CactusMP3 from "../../../assets/sounds/cactus.mp3";
 import ShineOn from "../../../assets/sounds/shine-on-first.mp3";
 import GwynFirelink from "../../../assets/sounds/gwyn-firelink.mp3";
-import NothingIsReal from "../../../assets/sounds/psych-beatles.mp3";
+import NothingIsReal from "../../../assets/sounds/nothing-is-real.mp3";
 import Wish from "../../../assets/sounds/wish.mp3";
 import GodExistance from "../../../assets/sounds/god-existance.mp3";
 
