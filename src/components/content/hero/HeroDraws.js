@@ -4,7 +4,7 @@ import Year from "../year/Year";
 import Contact from "../../contact/Contact";
 import Complete from "../complete/Complete";
 
-const total = 21;
+const total = 22;
 
 const HeroDraws = () => {
   const [completeCount, setCompleteCount] = useState([]);

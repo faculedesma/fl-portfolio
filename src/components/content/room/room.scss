@@ -492,6 +492,25 @@
         transform: scale(0);
         animation: cerati-animation 500ms ease-in forwards;
       }
+
+      #syd {
+        position: absolute;
+        width: 5%;
+        top: 35%;
+        left: 23%;
+        z-index: 3;
+        opacity: 0.6;
+        transform: scale(0) translateY(0);
+        animation: syd-diamond 3000ms ease-in;
+      }
+
+      #jimi {
+        position: absolute;
+        width: 0;
+        top: 0;
+        left: 0;
+        z-index: 30;
+      }
     }
   }
 
@@ -525,7 +544,7 @@
     width: 7%;
     top: 15%;
     left: 46.5%;
-    z-index: 6;
+    z-index: 5;
     
     .tooltip {
       top: -150%;
@@ -635,11 +654,11 @@
     width: 6%;
     top: 29%;
     left: 23%;
-    z-index: 3;
+    z-index: 5;
 
     .tooltip {
-      bottom: 50%;
-      right: 100%;
+      left: 0;
+      bottom: 100%;
     }
   }
 
@@ -649,11 +668,6 @@
     left: 23.7%;
     z-index: 2;
     cursor: inherit;
-
-    .tooltip {
-      bottom: 50%;
-      right: 100%;
-    }
   }
 
   .headphones {
@@ -796,8 +810,25 @@
     width: 4.5%;
     top: 11%;
     left: 33%;
-    opacity: 0.3;
     z-index: 2;
+    
+    img {
+      opacity: 0.3;
+    }
+    
+    .tooltip {
+      width: 120px;
+      bottom: 100%;
+      left: 0;
+
+      &-content {
+        height: 50px;
+      }
+
+      &-generic {
+        padding: 15% 0;
+      }
+    }
   }
 
   .preamp {
@@ -906,10 +937,9 @@
     bottom: 35.7%;
     left: 44.4%;
     z-index: 12;
-    cursor: inherit;
 
     .tooltip {
-      bottom: 50%;
+      top: 0;
       right: 100%;
     }
   }
@@ -1128,6 +1158,20 @@
   }
 }
 
+@keyframes syd-diamond {
+  0% {
+    transform: scale(0) translateY(0);
+  }
+
+  50% {
+    transform: scale(1) translateY(-500%);
+  }
+
+  100% {
+    transform: scale(0) translateY(-1000%);
+  }
+}
+
 /* Celular */
 @media only screen 
 and (min-width: 375px) 
@@ -1295,6 +1339,17 @@ and (max-width: 812px) {
 
       .la-biblia {
         width: 7.5%;
+      }
+
+      .weed {
+        z-index: 30;
+
+        .tooltip {
+          right: unset;
+          top: unset;
+          left: 0;
+          bottom: 100%;
+        }
       }
     }
   }

@@ -85,6 +85,7 @@ import HereNow from "../../../assets/images/animations/here-now.png";
 import DSOTMBase from "../../../assets/images/animations/dsotm-base.png";
 import BeatlesShow from "../../../assets/images/animations/beatles-show.png";
 import StephenHawking from "../../../assets/images/animations/stephen-hawking.png";
+import Syd from "../../../assets/images/animations/syd.png";
 // Sounds
 import SuelesDejarmeSoloMP3 from "../../../assets/sounds/lion-sueles-dejarme.mp3";
 import BrainDamageMP3 from "../../../assets/sounds/brain-damage.mp3";
@@ -101,6 +102,7 @@ import GwynFirelink from "../../../assets/sounds/gwyn-firelink.mp3";
 import NothingIsReal from "../../../assets/sounds/nothing-is-real.mp3";
 import Wish from "../../../assets/sounds/wish.mp3";
 import GodExistance from "../../../assets/sounds/god-existance.mp3";
+import LittleWing from "../../../assets/sounds/little-wing.mp3";
 
 export const drawModules = [
   {
@@ -403,15 +405,18 @@ export const drawModules = [
     src: ElectricGuitar,
     animations: [
       {
-        id: null,
-        src: null,
-        type: null,
+        id: "syd",
+        src: Syd,
+        type: "image",
         sound: ShineOn,
         overlay: false,
       },
     ],
     clickable: true,
-    information: null,
+    information: {
+      generic: "We'll meet again.",
+      personal: `The term "poison" is derived from the Latin "venenus" and this in turn from the Indo-European root "wen" (to wish).`,
+    },
   },
   {
     id: "eg-stand",
@@ -677,7 +682,10 @@ export const drawModules = [
       },
     ],
     clickable: true,
-    information: null,
+    information: {
+      generic: "Connections.",
+      personal: "",
+    },
   },
   {
     id: "preamp",
@@ -780,8 +788,20 @@ export const drawModules = [
   {
     id: "weed",
     src: WeedJar,
-    animations: null,
-    clickable: false,
-    information: null,
+    animations: [
+      {
+        id: "jimi",
+        src: null,
+        type: "image",
+        sound: LittleWing,
+        overlay: false,
+      },
+    ],
+    clickable: true,
+    information: {
+      generic: "Compassion. Empathy and Action.",
+      personal:
+        "In times of crisis and social unrest, compassionate leadership can unify us as human beings. Without it, we become lonely individuals, facing challenges alone.",
+    },
   },
 ];
