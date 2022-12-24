@@ -60,8 +60,11 @@ body {
 
 .container {
   max-width: 1330px;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 40px 20px 0px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
 
 @media only screen and (min-width: 600px) {

@@ -34,14 +34,14 @@
         .bike {
           cursor: pointer;
           position: absolute;
-          width: 30px;
-          top: 4%;
+          width: 20px;
+          top: 7%;
           left: 44%;
           animation: bike-load 1200ms ease-in infinite;
         }
         
         .bike-click {
-          animation: bike-click 28000ms ease-in forwards;
+          animation: bike-click 40000ms ease-in forwards;
         }
       }
 
@@ -286,7 +286,7 @@
   }
   
   100% {
-    transform: translate(200px, -100px);
+    transform: translate(2000px, -1000px);
   }
 }
 
@@ -309,7 +309,7 @@
             
             
             .bike {
-              top: -5%;
+              top: -1%;
             }
           }
           
@@ -370,7 +370,6 @@
         &-section {
           &-top {
             .bike {
-              width: 30px;
               top: -5px;
               left: 44%;
             }
