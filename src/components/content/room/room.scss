@@ -504,7 +504,7 @@
         animation: syd-diamond 3000ms ease-in;
       }
 
-      #jimi {
+      #jimi, #messi-gus {
         position: absolute;
         width: 0;
         top: 0;
@@ -946,6 +946,18 @@
 
   .weed:hover {
     animation: weed-hover 500ms ease;
+  }
+
+  .world-cup {
+    width: 3.2%;
+    bottom: 31%;
+    right: 32%;
+    z-index: 27;
+
+    .tooltip {
+      bottom: -100%;
+      left: -100%;
+    }
   }
 }
 

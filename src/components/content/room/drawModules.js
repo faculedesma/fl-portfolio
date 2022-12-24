@@ -35,6 +35,7 @@ import Table from "../../../assets/images/layers/table.png";
 import Triangle from "../../../assets/images/layers/triangle.png";
 import Turntable from "../../../assets/images/layers/turntable.png";
 import WeedJar from "../../../assets/images/layers/weed.png";
+import WordlCup from "../../../assets/images/layers/world-cup.png";
 // Animations
 import KWAnimation from "../../../assets/images/animations/kw-animation.png";
 import HAL900 from "../../../assets/images/animations/hal9000.png";
@@ -103,6 +104,7 @@ import NothingIsReal from "../../../assets/sounds/nothing-is-real.mp3";
 import Wish from "../../../assets/sounds/wish.mp3";
 import GodExistance from "../../../assets/sounds/god-existance.mp3";
 import LittleWing from "../../../assets/sounds/little-wing.mp3";
+import ZonaDePromesas from "../../../assets/sounds/zona-de-promesas.mp3";
 
 export const drawModules = [
   {
@@ -224,7 +226,7 @@ export const drawModules = [
     ],
     clickable: true,
     information: {
-      generic: `El riesgo es al camino, es más intenso; meses navegando, tierra a la vista.`,
+      generic: `El riesgo es el camino, es más intenso; meses navegando, tierra a la vista.`,
       personal:
         "Gustavo Cerati was an argentine musician. He is a great inspiration, the energy he deliver to the world is unique. Opportunities at each moment are infinite and at that point we have to make a decision, 0 or 1. Based on that, a completely new reality develops, the effect of a cause of which we are co-creators. The other part will always be a mystery and the elemental reason for human curiosity.",
     },
@@ -802,6 +804,24 @@ export const drawModules = [
       generic: "Compassion. Empathy and Action.",
       personal:
         "In times of crisis and social unrest, compassionate leadership can unify us as human beings. Without it, we become lonely individuals, facing challenges alone.",
+    },
+  },
+  {
+    id: "world-cup",
+    src: WordlCup,
+    animations: [
+      {
+        id: "messi-gus",
+        src: null,
+        type: "image",
+        sound: ZonaDePromesas,
+        overlay: false,
+      },
+    ],
+    clickable: true,
+    information: {
+      generic: "Tarda en llegar y al final hay recompensa.",
+      personal: "",
     },
   },
 ];
