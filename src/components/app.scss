@@ -1,18 +1,18 @@
 @font-face {
   font-family: "American-Typewriter";
-  src: url("../assets/fonts/american-typewriter-light.ttf") format('truetype');
+  src: url("../assets/fonts/american-typewriter-light.ttf") format("truetype");
   font-weight: 200;
 }
 
 @font-face {
   font-family: "American-Typewriter";
-  src: url("../assets/fonts/american-typewriter-regular.ttf") format('truetype');
+  src: url("../assets/fonts/american-typewriter-regular.ttf") format("truetype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "American-Typewriter";
-  src: url("../assets/fonts/american-typewriter-bold.ttf") format('truetype');
+  src: url("../assets/fonts/american-typewriter-bold.ttf") format("truetype");
   font-weight: 600;
 }
 
@@ -28,10 +28,10 @@ body {
   display: none;
   width: 100vw;
   min-height: 100vh;
-  background-color: $app-bg-color;
   background-image: url("/src/assets/images/other/bg-main.png");
   background-size: contain;
   scroll-behavior: smooth;
+  z-index: 101;
 
   > span {
     position: absolute;
@@ -49,13 +49,14 @@ body {
     font-family: inherit;
   }
 
-  p { 
+  p {
     color: $main-font-color;
   }
 }
 
 .animate {
   display: inherit;
+  animation: show-bg 0.80901699437s ease-in-out forwards;
 }
 
 .container {
@@ -70,5 +71,15 @@ body {
 @media only screen and (min-width: 600px) {
   .container {
     max-width: 1280px;
+  }
+}
+
+@keyframes show-bg {
+  0% {
+    background-color: none;
+  }
+
+  100% {
+    background-color: $app-bg-color;
   }
 }

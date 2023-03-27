@@ -1,32 +1,37 @@
-import React, { useState } from "react";
-import { MdArrowRightAlt } from "react-icons/md";
-import { BsFillDoorOpenFill } from "react-icons/bs";
-import { BsHeadphones } from "react-icons/bs";
-import Tooltip from "../common/tooltip/Tooltip";
+import React, { useRef } from "react";
+import { IoInfinite } from "react-icons/io5";
 import "./loader.scss";
 
-const headphonesInfo = { personal: "Use headphones for the full experience!" };
-
 const Loader = ({ isLoading, onContinue }) => {
-  const [open, setOpen] = useState(false);
+  const loaderRef = useRef();
 
+  const handleEnterRoom = () => {
+    if (loaderRef.current) {
+      loaderRef.current.classList.add("hide-loader");
+      loaderRef.current.classList.remove("complete");
+    }
+    onContinue();
+  };
   return (
-    <div className="initial-loader">
-      <div className="initial-loader-goto">
-        <div className="headphones">
-          <BsHeadphones
-            onMouseEnter={() => setOpen(true)}
-            onMouseLeave={() => setOpen(false)}
-          />
-          {open && <Tooltip information={headphonesInfo} />}
-        </div>
-        <button disabled={isLoading} onClickCapture={onContinue}>
-          <p>Who are you?</p>
-          <BsFillDoorOpenFill />
-          <MdArrowRightAlt />
-        </button>
+    <div
+      ref={loaderRef}
+      className={`initial-loader ${isLoading ? "loop-loading" : "complete"}`}
+    >
+      <div className="initial-loader--bg">
+        <div className="initial-loader--bg-left"></div>
+        <div className="initial-loader--bg-right"></div>
       </div>
-      {isLoading && <div className="spinner"></div>}
+      {isLoading ? (
+        <div className="initial-loader--center">
+          <p>Who are you?</p>
+          <IoInfinite />
+          <div className="initial-loader--center-circle"></div>
+        </div>
+      ) : (
+        <div className="initial-loader--cta">
+          <button onClickCapture={handleEnterRoom}>Enter the void</button>
+        </div>
+      )}
     </div>
   );
 };

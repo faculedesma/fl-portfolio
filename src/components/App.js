@@ -22,7 +22,11 @@ const App = () => {
     toggle();
   };
 
-  const handleIsLoaded = () => setIsLoading(false);
+  const handleIsLoaded = () => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -42,7 +46,7 @@ const App = () => {
         <Content />
         <BlackPage />
       </div>
-      {!goToApp && <Loader isLoading={isLoading} onContinue={onContinue} />}
+      <Loader isLoading={isLoading} onContinue={onContinue} />
     </SoundContext.Provider>
   );
 };

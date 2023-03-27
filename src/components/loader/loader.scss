@@ -1,4 +1,4 @@
-@import '../../utils/variables';
+@import "../../utils/variables";
 
 .initial {
   &-loader {
@@ -11,57 +11,69 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: $app-bg-color;
-    background-image: url("../../assets/images/other/bg-main.png");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
     z-index: 100;
 
-    .spinner {
-      width: 50px;
-      height: 50px;
-      border: 1px solid black;
-      border-radius: 50%;
-      animation: 1s spinner linear infinite;
-      position: relative;
-      opacity: 0.4;
-      margin-top: 20px;
-
-      &:before {
-        content: '';
-        display: block;
-        width: 0;
-        height: 0;
+    &--bg {
+      &-left,
+      &-right {
+        width: 50%;
+        height: 100%;
         position: absolute;
-        top: -.2em;
-        left: 50%;
-        border: .2em solid black;
+        top: 0;
+        background-color: black;
+      }
+
+      &-left {
+        left: 0;
+      }
+
+      &-right {
+        right: 0;
+      }
+    }
+
+    &--center {
+      width: 500px;
+      height: 500px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      transform: scale(0);
+      animation: goto-load 0.20225424859s ease-in forwards;
+
+      > p {
+        color: $app-bg-color;
+        font-size: 4rem;
+        font-weight: 300;
+        text-align: center;
+      }
+
+      svg {
+        color: $app-bg-color;
+      }
+
+      &-circle {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid $app-bg-color;
         border-radius: 50%;
       }
     }
 
-    .headphones {
-      margin-bottom: 20px;
-
-      svg {
-        font-size: 35px;
-      }
-
-      .tooltip {
-        bottom: 100%;
-        right: -75%;
-      }
-    }
-    
-    &-goto {
+    &--cta {
+      width: 100%;
+      height: 100%;
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 30px;
-      transform: scale(0);
-      animation: goto-load 500ms ease-in forwards;
-      opacity: 0.7;
+      justify-content: center;
 
       button {
         cursor: pointer;
@@ -72,53 +84,154 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-          
-        p {
-          color: black;
-        }
+        color: $app-bg-color;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        z-index: 100;
+      }
+    }
+  }
+}
 
-        svg {
-          fill: black;
-          font-size: 25px;
-        }
-        
-        :nth-child(3) {
-          animation: arrow-animation 600ms ease-in-out infinite;
-        }
+.loop-loading {
+  .initial-loader {
+    &--center {
+      svg {
+        animation: loop-circle 1.61803398875s ease-in-out infinite;
+      }
+
+      &-circle {
+        animation: loop-circle 1.61803398875s ease-in-out infinite;
+      }
+    }
+
+    &--cta {
+      display: none;
+    }
+  }
+}
+
+.complete {
+  .initial-loader {
+    &--center {
+      animation: hide-item 1.61803398875s ease-in-out forwards;
+    }
+
+    &--cta {
+      animation: show-cta 0.80901699437s ease-out forwards;
+    }
+  }
+}
+
+.hide-loader {
+  .initial-loader {
+    &--center {
+      svg,
+      p,
+      &-circle,
+      button {
+        display: none;
+      }
+    }
+
+    &--bg {
+      &-left {
+        animation: hide-left 1.61803398875s ease-in-out forwards;
+      }
+
+      &-right {
+        animation: hide-right 1.61803398875s ease-in-out forwards;
       }
     }
   }
 }
 
 @keyframes goto-load {
-  from {
+  0% {
     transform: scale(0);
   }
 
-  to {
+  100% {
     transform: scale(1);
   }
 }
 
-@keyframes arrow-animation {
+@keyframes show-cta {
   0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes hide-item {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes loop-circle {
+  0% {
+    opacity: 0;
   }
 
   50% {
-    transform: scale(1.5);
+    opacity: 1;
   }
 
   100% {
-    transform: scale(1);
+    opacity: 0;
   }
 }
 
-@keyframes spinner {
+@keyframes hide-left {
   0% {
-    transform: rotate(0deg);
+    transform: scaleX(1);
+    transform-origin: right;
   }
+
   100% {
-    transform: rotate(360deg);
+    transform: scaleX(0);
+  }
+}
+
+@keyframes hide-right {
+  0% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+  .initial-loader {
+    &--center {
+      width: 300px;
+      height: 300px;
+
+      > p {
+        font-size: 2rem;
+      }
+    }
+
+    &--cta {
+      button {
+        font-size: 0.5rem;
+      }
+    }
   }
 }
