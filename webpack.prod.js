@@ -1,5 +1,5 @@
 const { merge } = require("webpack-merge");
-import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const commonConfig = require("./webpack.common");
 
 const prodConfig = {
