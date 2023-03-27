@@ -7,7 +7,7 @@
     &-image {
       position: absolute;
       cursor: pointer;
-      
+
       img {
         width: 100%;
         animation: room-load 800ms ease-in-out;
@@ -68,7 +68,7 @@
         transform: translate(20px, -20px);
         animation: ca-vinyl 200ms ease-in forwards;
       }
-      
+
       #artaud {
         position: absolute;
         left: 20%;
@@ -90,9 +90,10 @@
       #turntable {
         position: absolute;
         width: 57%;
-        top: 29.7%;
-        left: 36.8%;
-        z-index: 21;
+        top: 7.6%;
+        left: 11.8%;
+        z-index: 50;
+        animation: show-syd-face 32.360679775s ease-in forwards;
       }
 
       #lupe {
@@ -102,7 +103,7 @@
         left: 22%;
         z-index: 26;
       }
-      
+
       #moris {
         position: absolute;
         width: 20.5%;
@@ -110,7 +111,7 @@
         left: 30.7%;
         z-index: 35;
       }
-      
+
       #moris-soul {
         position: absolute;
         width: 107.5%;
@@ -308,7 +309,7 @@
         right: 10%;
         z-index: 40;
       }
-      
+
       #afraid {
         position: absolute;
         width: 15%;
@@ -504,7 +505,8 @@
         animation: syd-diamond 3000ms ease-in;
       }
 
-      #jimi, #messi-gus {
+      #jimi,
+      #messi-gus {
         position: absolute;
         width: 0;
         top: 0;
@@ -519,7 +521,7 @@
     top: 46.4%;
     left: 10.7%;
     z-index: 4;
-    
+
     .tooltip {
       width: 140px;
       top: 75%;
@@ -539,24 +541,24 @@
       right: 100%;
     }
   }
-  
+
   .artaud {
     width: 7%;
     top: 15%;
     left: 46.5%;
     z-index: 5;
-    
+
     .tooltip {
       top: -150%;
       left: 50%;
     }
   }
-  
+
   .base {
     position: relative;
     height: 100%;
     width: 100%;
-    z-index: 0; 
+    z-index: 0;
     opacity: 0.8;
     cursor: inherit;
   }
@@ -573,7 +575,8 @@
     }
   }
 
- .beer:active, .beer:focus {
+  .beer:active,
+  .beer:focus {
     animation: beer-open 500ms ease;
   }
 
@@ -584,7 +587,7 @@
     z-index: 15;
     cursor: inherit;
   }
-  
+
   .cactus {
     width: 6%;
     top: 49.2%;
@@ -700,7 +703,6 @@
     right: 34%;
     z-index: 16;
 
-
     .tooltip {
       top: 0;
       right: 100%;
@@ -743,7 +745,7 @@
       right: 100%;
     }
   }
- 
+
   .left-speaker {
     width: 6.5%;
     top: 36.2%;
@@ -766,7 +768,7 @@
 
     .tooltip {
       top: 50%;
-      right:0;
+      right: 0;
     }
   }
 
@@ -793,7 +795,7 @@
       right: 25%;
     }
   }
-  
+
   .plant {
     width: 4.5%;
     bottom: 8.5%;
@@ -811,11 +813,11 @@
     top: 11%;
     left: 33%;
     z-index: 2;
-    
+
     img {
       opacity: 0.3;
     }
-    
+
     .tooltip {
       width: 120px;
       bottom: 100%;
@@ -861,7 +863,7 @@
     top: 27%;
     left: 62%;
     z-index: 6;
-    
+
     img {
       opacity: 0.7;
     }
@@ -961,7 +963,6 @@
   }
 }
 
-
 @keyframes room-load {
   0% {
     transform: scale(0);
@@ -978,7 +979,7 @@
   0% {
     transform: scale(0);
   }
-  
+
   100% {
     transform: scale(1);
   }
@@ -988,7 +989,7 @@
   0% {
     transform: skew(0, 0) scale(0);
   }
-  
+
   100% {
     transform: skew(0deg, -30deg) scale(1);
   }
@@ -1184,235 +1185,234 @@
   }
 }
 
+@keyframes show-syd-face {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Celular */
-@media only screen 
-and (min-width: 375px) 
-and (max-width: 812px) {
-    .room {
-      .module {
-        &-animation {
-          #mescal {
-            top: -100%;
-            left: 0;
-            width: 80vw;
-            z-index: 40;
-          }
-
-          #hal9000 {
-            z-index: 35;
-          }
-
-          #moris {
-            z-index: 37;
-          }
-
-          #moris-soul {
-            z-index: 36;
-          }
-        }
-      }
-
-      .amp {
-        z-index: 25;
-
-        .tooltip {
-          top: 100%;
-          bottom: unset;
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+  .room {
+    .module {
+      &-animation {
+        #mescal {
+          top: -100%;
           left: 0;
+          width: 80vw;
+          z-index: 40;
         }
-      }
 
-      .artaud {
-        .tooltip {
-          top: unset;
-          right: unset;
-          bottom: 100%;
-          left: -100px;
+        #hal9000 {
+          z-index: 35;
         }
-      }
 
-      .cancion-animal {
-        top: 50%;
-        z-index: 27;
-
-        .tooltip {
-          left: unset;
-          top: unset;
-          right: -100%;
-          bottom: 100%;
+        #moris {
+          z-index: 37;
         }
-      }
 
-      .key-west {
-        z-index: 27;
-        
-        .tooltip {
-          top: unset;
-          bottom: 100%;
-          right: -65px;
-        }
-      }
-
-      .lamp {
-        .tooltip {
-          top: -150%;
-        }
-      }
-
-      .laptop {
-        z-index: 34;
-
-        .tooltip {
-          top: unset;
-          right: unset;
-          bottom: 100%;
-          left: -100px;
-        }
-      }
-
-      .left-speaker {
-        .tooltip {
-          top: unset;
-          bottom: 100%;
-          right: -100px;
-        }
-      }
-
-      .plant {
-        z-index: 35;
-
-        .tooltip {
-          bottom: 100%;
-          left: 0;
-        }
-      }
-
-      .dsotm {
-        .tooltip {
-          bottom: 100%;
-          left: -100%;
-        }
-      }
-
-      .sabiduria-loco {
-        .tooltip {
-          bottom: 100%;
-          left: -150px;
-        }
-      }
-
-      .paint {
-        z-index: 33;
-
-        .tooltip {
-          bottom: 100%;
-          top: unset;
-          right: unset;
-        }
-      }
-
-      .plant {
-        .tooltip {
-          bottom: 75%;
-          left: -100px;
-        }
-      }
-
-      .turntable {
-        .tooltip {
-          top: -75%;
-        }
-      }
-
-      .cactus {
-        z-index: 26;
-      }
-
-      .guy {
-        .tooltip {
-          bottom: 100%;
-          right: -100%;
-        }
-      }
-
-      .lupe {
-        width: 2.5%;
-        top: 53%;
-        right: 28%;
-      }
-
-      .sunglasses {
-        top: 56%;
-      }
-
-      .preamp {
-        top: 50%;
-      }
-
-      .la-biblia {
-        width: 7.5%;
-      }
-
-      .weed {
-        z-index: 30;
-
-        .tooltip {
-          right: unset;
-          top: unset;
-          left: 0;
-          bottom: 100%;
+        #moris-soul {
+          z-index: 36;
         }
       }
     }
-  }
 
-@media only screen
-and (min-width: 375px)
-and (max-width: 812px)
-and (orientation: 'landscape') {
-    .room {
-      .amp {
-        z-index: 25;
+    .amp {
+      z-index: 25;
 
-        .tooltip {
-          top: unset;
-          right: unset;
-          bottom: -50%;
-          left: -100%;
-        }
+      .tooltip {
+        top: 100%;
+        bottom: unset;
+        left: 0;
       }
+    }
 
-      .cancion-animal {
-        top: 51%;
+    .artaud {
+      .tooltip {
+        top: unset;
+        right: unset;
+        bottom: 100%;
+        left: -100px;
       }
+    }
 
-      .lupe {
-        top: 55%;
+    .cancion-animal {
+      top: 50%;
+      z-index: 27;
+
+      .tooltip {
+        left: unset;
+        top: unset;
+        right: -100%;
+        bottom: 100%;
       }
+    }
 
-      .sunglasses {
-        top: 58%;
+    .key-west {
+      z-index: 27;
+
+      .tooltip {
+        top: unset;
+        bottom: 100%;
+        right: -65px;
       }
+    }
 
-      .preamp {
-        top: 52%;
+    .lamp {
+      .tooltip {
+        top: -150%;
       }
+    }
 
-      .paint {
-        z-index: 33;
+    .laptop {
+      z-index: 34;
+
+      .tooltip {
+        top: unset;
+        right: unset;
+        bottom: 100%;
+        left: -100px;
+      }
+    }
+
+    .left-speaker {
+      .tooltip {
+        top: unset;
+        bottom: 100%;
+        right: -100px;
+      }
+    }
+
+    .plant {
+      z-index: 35;
+
+      .tooltip {
+        bottom: 100%;
+        left: 0;
+      }
+    }
+
+    .dsotm {
+      .tooltip {
+        bottom: 100%;
+        left: -100%;
+      }
+    }
+
+    .sabiduria-loco {
+      .tooltip {
+        bottom: 100%;
+        left: -150px;
+      }
+    }
+
+    .paint {
+      z-index: 33;
+
+      .tooltip {
+        bottom: 100%;
+        top: unset;
+        right: unset;
+      }
+    }
+
+    .plant {
+      .tooltip {
+        bottom: 75%;
+        left: -100px;
+      }
+    }
+
+    .turntable {
+      .tooltip {
+        top: -75%;
+      }
+    }
+
+    .cactus {
+      z-index: 26;
+    }
+
+    .guy {
+      .tooltip {
+        bottom: 100%;
+        right: -100%;
+      }
+    }
+
+    .lupe {
+      width: 2.5%;
+      top: 53%;
+      right: 28%;
+    }
+
+    .sunglasses {
+      top: 56%;
+    }
+
+    .preamp {
+      top: 50%;
+    }
+
+    .la-biblia {
+      width: 7.5%;
+    }
+
+    .weed {
+      z-index: 30;
+
+      .tooltip {
+        right: unset;
+        top: unset;
+        left: 0;
+        bottom: 100%;
       }
     }
   }
+}
 
-  
+@media only screen and (min-width: 375px) and (max-width: 812px) and (orientation: "landscape") {
+  .room {
+    .amp {
+      z-index: 25;
+
+      .tooltip {
+        top: unset;
+        right: unset;
+        bottom: -50%;
+        left: -100%;
+      }
+    }
+
+    .cancion-animal {
+      top: 51%;
+    }
+
+    .lupe {
+      top: 55%;
+    }
+
+    .sunglasses {
+      top: 58%;
+    }
+
+    .preamp {
+      top: 52%;
+    }
+
+    .paint {
+      z-index: 33;
+    }
+  }
+}
 
 /* ----------- Tablets ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-and (min-width: 812px) 
-and (max-width: 1280px)
-and (orientation: 'portrait') {
+@media only screen and (min-width: 812px) and (max-width: 1280px) and (orientation: "portrait") {
   .room {
     .module {
       &-animation {
@@ -1434,10 +1434,7 @@ and (orientation: 'portrait') {
   }
 }
 
-@media only screen 
-and (min-width: 812px) 
-and (max-width: 1280px)
-and (orientation: 'landscape') {
+@media only screen and (min-width: 812px) and (max-width: 1280px) and (orientation: "landscape") {
   .room {
     .dsotm {
       z-index: 26;

@@ -87,6 +87,7 @@ import DSOTMBase from "../../../assets/images/animations/dsotm-base.png";
 import BeatlesShow from "../../../assets/images/animations/beatles-show.png";
 import StephenHawking from "../../../assets/images/animations/stephen-hawking.png";
 import Syd from "../../../assets/images/animations/syd.png";
+import SydFace from "../../../assets/images/animations/syd-face.png";
 // Sounds
 import SuelesDejarmeSoloMP3 from "../../../assets/sounds/lion-sueles-dejarme.mp3";
 import BrainDamageMP3 from "../../../assets/sounds/brain-damage.mp3";
@@ -775,7 +776,7 @@ export const drawModules = [
     animations: [
       {
         id: "turntable",
-        src: null,
+        src: SydFace,
         type: "image",
         sound: Wish,
         overlay: true,
