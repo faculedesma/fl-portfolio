@@ -4,21 +4,21 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  
+
   .hero {
     &-draws {
       position: relative;
       flex: 3;
-      animation: hero-load 1000 ease-in-out; 
+      animation: hero-load 1000 ease-in-out;
     }
-    
+
     &-section {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      
+
       &-top {
         position: relative;
         display: flex;
@@ -39,7 +39,7 @@
           left: 44%;
           animation: bike-load 1200ms ease-in infinite;
         }
-        
+
         .bike-click {
           animation: bike-click 40000ms ease-in forwards;
         }
@@ -52,19 +52,18 @@
         animation: hero-bottom-load $hero-bottom-load-time ease-in;
         animation-fill-mode: forwards;
         flex: 1;
-  
+
         p {
           text-align: center;
         }
-  
+
         p:nth-child(1) {
           animation: hero-bottom-laod-subtitle 1200ms ease-in;
           animation-fill-mode: forwards;
-          color: $secondary-font-color;
           font-size: 21px;
           font-weight: lighter;
         }
-  
+
         p:nth-child(2) {
           font-size: 18px;
           font-weight: bold;
@@ -86,11 +85,11 @@
 
         .connection-me {
           position: relative;
-          
+
           .ladder {
             width: 50px;
           }
-          
+
           .guy-small {
             width: 40px;
             position: absolute;
@@ -120,7 +119,7 @@
             bottom: 0;
             opacity: 0.7;
           }
-            
+
           button {
             width: 100%;
             height: 100%;
@@ -138,12 +137,12 @@
             box-shadow: -3px 3px 1px #f2b090;
             transform: scale(0);
             animation: button-load 1000ms ease-in-out forwards;
-            
+
             .button-border {
               width: 100%;
               position: absolute;
             }
-            
+
             span {
               font-size: 12px;
               font-weight: bold;
@@ -176,7 +175,6 @@
         top: 40%;
         left: 19%;
         z-index: 100;
-        opacity: 0.9;
       }
     }
   }
@@ -284,7 +282,7 @@
   0% {
     transform: translate(0, 0);
   }
-  
+
   100% {
     transform: translate(2000px, -1000px);
   }
@@ -293,100 +291,136 @@
 /* ----------- Celullar ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-width: 375px) 
-  and (max-width: 900px) {
-    .home-hero {
-      flex-direction: column;
+@media only screen and (min-width: 375px) and (max-width: 900px) {
+  .home-hero {
+    flex-direction: column;
 
-      .hero {
-        &-section {
-          
-          &-top {
-            .logo {
-              margin-bottom: 10%;
-            }
-            
-            
-            .bike {
-              top: -1%;
-            }
-          }
-          
-          &-middle {
-            margin-top: 10%;
-          }
-          
-          &-bottom {
-            .connection-me {
-              margin-bottom: 20%;
-            }
+    .hero {
+      &-section {
+        &-top {
+          .logo {
+            margin-bottom: 10%;
           }
 
-          .tooltip {
-            top: 25%;
-            left: 20%;
-
-            &-personal {
-              font-size: 16px;
-            }
+          .bike {
+            top: -1%;
           }
         }
 
-        &-draws {
-          margin-top: 50px;
-          margin-bottom: 50px;
+        &-middle {
+          margin-top: 10%;
+        }
+
+        &-bottom {
+          .connection-me {
+            margin-bottom: 20%;
+          }
+        }
+
+        .tooltip {
+          top: 25%;
+          left: 20%;
+
+          &-personal {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &-draws {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 812px) and (orientation: "landscape") {
+  .home-hero {
+    .hero {
+      &-section {
+        .tooltip {
+          top: 18%;
+          left: 50%;
         }
       }
     }
   }
-
-@media only screen
-  and (min-width: 375px)
-  and (max-width: 812px)
-  and (orientation: 'landscape') {
-    .home-hero {
-      .hero {
-        &-section {
-          .tooltip {
-            top: 18%;
-            left: 50%;
-          }
-        }
-      }
-    }
-  }
-  
+}
 
 /* ----------- Tablets ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-width: 812px) 
-  and (max-width: 1280px)
-  and (orientation: 'landscape') {
-    .home-hero {
-      .hero {
-        &-section {
-          &-top {
-            .bike {
-              top: -5px;
-              left: 44%;
-            }
+@media only screen and (min-width: 812px) and (max-width: 1280px) and (orientation: "landscape") {
+  .home-hero {
+    .hero {
+      &-section {
+        &-top {
+          .bike {
+            top: -5px;
+            left: 44%;
+          }
+        }
+
+        &-bottom {
+          .connection-me {
+            margin-bottom: 15%;
           }
 
-          &-bottom {
-            .connection-me {
-              margin-bottom: 15%;
-            }
+          .arrow {
+            right: 30%;
+          }
+        }
 
-            .arrow {
-              right: 30%;
-            }
+        .tooltip {
+          top: 35%;
+        }
+      }
+    }
+
+    &-draws {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media only screen and (min-width: 812px) and (max-width: 1280px) and (orientation: "portrait") {
+  .home-hero {
+    flex-direction: column;
+
+    .hero {
+      &-section {
+        &-top {
+          .logo {
+            width: 200px;
           }
 
-          .tooltip {
-            top: 35%;
+          .bike {
+            top: -2%;
+          }
+        }
+
+        &-middle {
+          margin: 20px;
+
+          p:nth-child(1) {
+            max-width: 75%;
+            font-size: 25px;
+          }
+        }
+
+        &-bottom {
+          .connection-me {
+            margin-bottom: 12%;
+          }
+        }
+
+        .tooltip {
+          top: 23%;
+          left: 35%;
+
+          &-personal {
+            font-size: 16px;
           }
         }
       }
@@ -396,56 +430,4 @@
       }
     }
   }
-
-  @media only screen 
-  and (min-width: 812px) 
-  and (max-width: 1280px)
-  and (orientation: 'portrait') {
-    .home-hero {
-      flex-direction: column;
-
-      .hero {
-        &-section {
-          &-top {
-            .logo {
-              width: 200px;
-            }
-
-            .bike {
-              top: -2%;
-            }
-          }
-
-          &-middle {
-            margin: 20px;
-
-            p:nth-child(1) {
-              max-width: 75%;
-              font-size: 25px;
-            }
-          }
-
-          &-bottom {
-            .connection-me {
-              margin-bottom: 12%;
-            }
-          }
-
-          .tooltip {
-            top: 23%;
-            left: 35%;
-
-            &-personal {
-              font-size: 16px;
-            }
-          }
-        }
-
-        &-draws {
-          margin-bottom: 50px;
-        }
-      }
-    }
-  }
-
-
+}
