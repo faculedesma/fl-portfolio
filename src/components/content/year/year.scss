@@ -1,3 +1,5 @@
+@import "../../../utils/variables";
+
 .year {
   position: absolute;
   font-size: 8px;
@@ -6,6 +8,8 @@
   transform: scale(0);
   transform: skew(0, 0);
   animation: year-load 400ms ease-in forwards;
+  font-weight: bold;
+  color: $main-font-color;
 }
 
 @keyframes year-load {
@@ -19,18 +23,13 @@
 }
 
 /* Celular */
-@media only screen 
-and (min-width: 375px) 
-and (max-width: 812px) {
+@media only screen and (min-width: 375px) and (max-width: 812px) {
   .year {
     font-size: 4px;
   }
 }
 
-@media only screen 
-and (min-width: 375px) 
-and (max-width: 812px)
-and (orientation: 'landscape') {
+@media only screen and (min-width: 375px) and (max-width: 812px) and (orientation: "landscape") {
   .year {
     font-size: 6px;
   }

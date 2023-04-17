@@ -20,9 +20,9 @@ const Counter = ({ count, total }) => {
 
   return (
     <div className="complete-counter">
-      <p>
-        {count}/{total}
-      </p>
+      <p>{count}</p>
+      <p>/</p>
+      <p>{total}</p>
       {count === total && <FaCheck id="check" onClick={handleComplete} />}
       {complete && (
         <Tooltip

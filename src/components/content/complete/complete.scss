@@ -1,3 +1,5 @@
+@import "../../../utils/variables";
+
 .complete-counter {
   position: absolute;
   top: 0;
@@ -5,12 +7,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
+  p {
+    color: $main-font-color;
+    font-weight: bold;
+  }
+
+  p:nth-child(2) {
+    color: $app-highlight-color;
+  }
+
   svg {
     cursor: pointer;
     transform: scale(1);
     animation: check 800ms ease-in-out infinite;
     margin-left: 5px;
+    color: $app-highlight-color;
   }
 
   .tooltip {
@@ -37,10 +49,8 @@
 /* ----------- Celullar ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-width: 375px) 
-  and (max-width: 812px) {
-    .complete-counter {
-      font-size: 10px;
-    }
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+  .complete-counter {
+    font-size: 10px;
   }
+}
