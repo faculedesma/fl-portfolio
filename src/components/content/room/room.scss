@@ -729,8 +729,14 @@
 
     .tooltip {
       width: 120px;
+      height: 40px;
+      padding: 0;
       top: -75%;
       left: -100%;
+
+      &-generic {
+        padding: 0;
+      }
     }
   }
 

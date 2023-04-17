@@ -67,7 +67,7 @@
     animation-delay: 500ms;
   }
 
-  .d{
+  .d {
     animation-delay: 550ms;
   }
 
@@ -80,7 +80,7 @@
   0% {
     transform: scale(0);
   }
-  
+
   50% {
     transform: scale(1.2);
   }
@@ -94,8 +94,31 @@
   0% {
     transform: scale(0) rotate(0deg);
   }
-  
+
   100% {
     transform: scale(1) rotate(360deg);
+  }
+}
+
+@media only screen and (min-width: 812px) and (max-width: 1280px) {
+  // and (orientation: 'portrait') {
+  .main-title {
+    font-size: 60px;
+
+    img {
+      width: 60px;
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 812px) and (orientation: "portrait") {
+  .main-title {
+    font-size: 43px;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 812px) and (orientation: "landscape") {
+  .main-title {
+    font-size: 55px;
   }
 }

@@ -307,10 +307,6 @@
           }
         }
 
-        &-middle {
-          margin-top: 10%;
-        }
-
         &-bottom {
           .connection-me {
             margin-bottom: 20%;
@@ -339,6 +335,10 @@
   .home-hero {
     .hero {
       &-section {
+        &-middle {
+          width: 55%;
+        }
+
         .tooltip {
           top: 18%;
           left: 50%;
