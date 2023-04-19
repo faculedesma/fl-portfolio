@@ -5,7 +5,7 @@ import "./room.scss";
 
 const Room = ({ increaseCount }) => {
   return (
-    <div className="room">
+    <div id="room" className="room">
       {drawModules.map((module) => {
         return (
           <Module

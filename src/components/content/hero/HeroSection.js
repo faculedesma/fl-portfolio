@@ -21,7 +21,11 @@ const HeroSection = () => {
   const [playing, toggle] = useAudio(JugbandBlues);
   const [open, setOpen] = useState(false);
 
-  const handleClick = () => setOpen(true);
+  const handleClick = () => {
+    setOpen(true);
+    const room = document.getElementById("room");
+    room.scrollIntoView({ behavior: "smooth" });
+  };
 
   const handleClickBike = () => {
     const bike = document.getElementById("bike");

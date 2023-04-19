@@ -546,7 +546,7 @@ export const drawModules = [
       },
     ],
     clickable: true,
-    information: { generic: "Who's God?", personal: "" },
+    information: { generic: "¿God?", personal: "" },
   },
   {
     id: "laptop",
