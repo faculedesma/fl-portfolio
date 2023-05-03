@@ -44,7 +44,7 @@ const commonConfig = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "FL | Facundo Ledesma",
+      title: "FL | Facundo Ledesma Art Portfolio",
       filename: "index.html",
       template: "src/assets/template.html",
       favicon: "src/assets/logo.ico",
