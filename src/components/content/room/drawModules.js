@@ -603,7 +603,7 @@ export const drawModules = [
     clickable: true,
     information: {
       generic: "Great One's Wisdom (La Sabiduría del Loco)",
-      personal: `Hidetaka Miyazaki is a Korean game developer. Inspired me by having created timeless art masterpieces. Details make simplicity beautiful. We are thinking on the basest of planes. What we need, are more eyes. Making contact with eldritch wisdom is a blessing, for even if it drives one mad, it allows one to serve a grander purpose, for posterity.`,
+      personal: `Hidetaka Miyazaki is a Japanese game developer. Inspired me by having created timeless art masterpieces. Details make simplicity beautiful. We are thinking on the basest of planes. What we need, are more eyes. Making contact with eldritch wisdom is a blessing, for even if it drives one mad, it allows one to serve a grander purpose, for posterity.`,
     },
   },
   {
