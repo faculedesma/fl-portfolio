@@ -1,7 +1,8 @@
 .room {
-  width: 90%;
-  margin: 0 auto;
+  width: 80%;
   position: relative;
+  transform: rotate(-30deg) 30s;
+  transition: ease-in-out infinite;
 
   .module {
     &-image {
@@ -109,7 +110,7 @@
         width: 20.5%;
         top: 34.1%;
         left: 30.7%;
-        z-index: 35;
+        z-index: 101;
       }
 
       #moris-soul {
@@ -117,7 +118,7 @@
         width: 107.5%;
         top: -3.2%;
         left: -3%;
-        z-index: 34;
+        z-index: 100;
       }
 
       #plant-grow {
@@ -1463,5 +1464,11 @@
         right: -50%;
       }
     }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .room {
+    width: 100%;
   }
 }

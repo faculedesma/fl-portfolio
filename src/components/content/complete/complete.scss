@@ -3,7 +3,7 @@
 .complete-counter {
   position: absolute;
   top: 0;
-  right: 7%;
+  right: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +11,7 @@
   p {
     color: $main-font-color;
     font-weight: bold;
+    font-size: 1rem;
   }
 
   p:nth-child(2) {

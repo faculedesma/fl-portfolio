@@ -2,16 +2,20 @@
 
 .contact {
   position: absolute;
-  min-width: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  left: 22%;
-  bottom: 14%;
-  font-size: 10px;
+  gap: 2rem;
+  left: 18%;
+  bottom: 28%;
   transform: scale(0) skew(0, 0);
   animation: contact-load 400ms ease-in forwards;
   opacity: 0.7;
+
+  svg {
+    stroke: black;
+    stroke-width: 2.5px;
+  }
 
   a {
     transform: scale(1);
@@ -40,7 +44,6 @@
     min-width: 75px;
     left: 18%;
     bottom: 12%;
-    font-size: 6px;
   }
 }
 
@@ -49,6 +52,5 @@
     min-width: 90px;
     left: 23%;
     bottom: 13%;
-    font-size: 8px;
   }
 }

@@ -1,38 +1,26 @@
 import React from "react";
-import {
-  FaLinkedinIn,
-  FaBehance,
-  FaGithubAlt,
-  FaPaperPlane,
-} from "react-icons/fa";
+import { Linkedin, Github, Mail } from "lucide-react";
 import "./contact.scss";
 
 const Contact = () => {
   return (
     <div className="contact">
       <a className="mail" href="mailto: faculedesma1993@gmail.com">
-        <FaPaperPlane />
+        <Mail size={12} />
       </a>
       <a
         className="github"
         href="https://github.com/faculedesma"
         target="_blank"
       >
-        <FaGithubAlt />
+        <Github size={12} />
       </a>
       <a
         className="linkedin"
         href="https://linkedin.com/in/facundo-ledesma/"
         target="_blank"
       >
-        <FaLinkedinIn />
-      </a>
-      <a
-        className="behance"
-        href="https://www.behance.net/facundoledesma5"
-        target="_blank"
-      >
-        <FaBehance />
+        <Linkedin size={12} />
       </a>
     </div>
   );

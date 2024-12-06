@@ -38,7 +38,7 @@ const Module = ({
   };
 
   const openBlackPage = () => {
-    if (id === "guy") {
+    if (id === "guy" || id === "amp") {
       const black = document.getElementById("black-page");
       black.style.display = "inherit";
     }
@@ -89,7 +89,7 @@ const Module = ({
     if (playing) {
       toggle();
     }
-    if (id === "guy") {
+    if (id === "guy" || id === "amp") {
       const black = document.getElementById("black-page");
       black.style.display = "none";
     }

@@ -6,7 +6,7 @@ import "./hero.scss";
 const HomeHero = () => {
   return (
     <div className="home-hero">
-      <HeroSection />
+      {/* <HeroSection /> */}
       <HeroDraws />
     </div>
   );
