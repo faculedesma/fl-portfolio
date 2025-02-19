@@ -8,6 +8,9 @@
 
   .hero {
     &-draws {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
       flex: 3;
       animation: hero-load 1000 ease-in-out;
