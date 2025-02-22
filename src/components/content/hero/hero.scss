@@ -13,7 +13,7 @@
       justify-content: center;
       position: relative;
       flex: 3;
-      animation: hero-load 1000 ease-in-out;
+      animation: hero-load 1000ms ease-in-out;
     }
 
     &-section {
